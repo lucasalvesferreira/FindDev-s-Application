@@ -1,5 +1,5 @@
 # FindDev-s
-![image](https://user-images.githubusercontent.com/89035290/202961702-5169d838-9327-4d55-a460-52ea7787c3d0.png)
+![findDevMobile](https://user-images.githubusercontent.com/89035290/221726085-20984696-8f83-4eb3-bbff-9c291e22c8d5.png)
 
 SOMOS UMA PLATAFORMA DE EMPREGO PARA FREELANCERS, ONDE 
 CONECTAMOS QUEM SABE FAZER COM QUEM PRECISA.
@@ -31,20 +31,10 @@ josias.silva@bandtec.com.br
 ![Badge](https://img.shields.io/badge/Java-11-red)
 ![Badge](https://img.shields.io/badge/SpringBoot-2.7-green)
 
-Foi utilizado para esse projeto:
+Foi utilizado para esse projeto mobile:
+- Kotlin
 
-**FrontEnd**
-- React 
-- TypeScript
-- Node, NPM
-
-**Backend**
-- Java 11
-- Spring Boot
-- SqlServer
-- JPA
 
 **Desnvolvimento**
-- IntelliJ
-- Postman 
-- Visual Studio Code
+- Android-Studio
+
