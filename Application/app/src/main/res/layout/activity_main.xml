@@ -17,11 +17,22 @@
         >
 
         <fragment
+            android:id="@+id/header_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.finddev.Header_Login"
-            tools:layout="@layout/fragment_header__login"
-            android:layout_marginBottom="100dp"
+            class="com.example.finddev.HeaderCadastro"
+            tools:layout="@layout/fragment_header_cadastro"
+            android:layout_marginBottom="75dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textSize="40sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="50dp"
             />
 
         <ScrollView
@@ -34,15 +45,6 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cadastro"
-                    android:textSize="40sp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="50dp"
-                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -53,7 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Email"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
                         />
@@ -64,7 +66,6 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
                         />
                 </LinearLayout>
 
@@ -72,12 +73,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layout_marginBottom="30dp"
                     >
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Senha"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
                         />
@@ -91,145 +93,6 @@
                         />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Confirmação de senha"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:hint="***********"
-                        android:inputType="textPassword"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nome"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:hint=""
-                        android:inputType="text"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CPF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:inputType="text"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Telefone"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:hint=""
-                        android:inputType="phone"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estado"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:inputType="text"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <androidx.constraintlayout.utils.widget.MotionLabel
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cidade"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/montserrat_light"
-                        android:textColor="@color/white"
-                        />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:inputType="text"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-
-                        />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -240,7 +103,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Cadastrar"
+                        android:text="Entrar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/preto_1"
                         />

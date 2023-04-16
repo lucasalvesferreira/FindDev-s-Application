@@ -14,7 +14,7 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
-            android:name=".cadastro_dev"
+            android:name=".CadastroDev"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
