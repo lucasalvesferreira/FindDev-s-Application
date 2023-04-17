@@ -18,7 +18,7 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.finddev.Header_Login"
+            class="com.example.finddev.HeaderLogin"
             tools:layout="@layout/fragment_header__login"
             android:layout_marginBottom="100dp"
         />
