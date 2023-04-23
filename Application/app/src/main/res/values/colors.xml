@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="roxa">#8257E5</color>
+    <color name="verde_escuro">#00875F</color>
+    <color name="verde_claro">#00B37E</color>
+    <color name="roxo_claro">#9747FF</color>
+    <color name="roxo_escuro">#633BBC</color>
+    <color name="laranja">#FBA94C</color>
+    <color name="vermelho">#F75A68</color>
+    <color name="preto_1">#09090A</color>
+    <color name="preto_2">#121214</color>
+    <color name="preto_3">#121212</color>
+    <color name="cinza">#323238</color>
 </resources>
