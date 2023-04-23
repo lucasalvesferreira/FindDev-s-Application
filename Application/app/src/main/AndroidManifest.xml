@@ -23,7 +23,7 @@
             android:name=".activity_cadastro_empresa"
             android:exported="false" />
         <activity
-            android:name=".cadastro_dev"
+            android:name=".CadastroDev"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
