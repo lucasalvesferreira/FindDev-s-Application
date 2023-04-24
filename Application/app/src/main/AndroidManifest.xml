@@ -14,16 +14,16 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
-            android:name=".activity_cadastro_step3"
+            android:name=".ActivityCadastroStep3"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_step_1"
+            android:name=".ActivityCadastroStep1"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_empresa"
+            android:name=".ActivityCadastroEmpresa"
             android:exported="false" />
         <activity
-            android:name=".cadastro_dev"
+            android:name=".CadastroDev"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Header_Cadastro">
+    tools:context=".HeaderCadastro">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -35,16 +35,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botao_login"
+                android:background="@drawable/botao_cadastro"
                 android:gravity="center"
-            >
+                android:id="@+id/header_login"
+                android:onClick="navegarLogin"
+                >
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Login"
+                    android:text="Cadastro"
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@color/preto_1"
-                    android:onClick="navegarLogin"
                 />
             </LinearLayout>
         </LinearLayout>

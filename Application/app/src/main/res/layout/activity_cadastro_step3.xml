@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_cadastro_step3">
+    tools:context=".ActivityCadastroStep3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             class="com.example.finddev.Header_Cadastro"
-            tools:layout="@layout/fragment_header__cadastro"
+            tools:layout="@layout/fragment_header_login"
             android:layout_marginBottom="40dp"
         />
 
