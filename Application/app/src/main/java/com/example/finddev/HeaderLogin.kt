@@ -17,13 +17,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Header_Cadastro.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Header_Cadastro : Fragment() {
-========
- * Use the [HeaderLogin.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HeaderLogin : Fragment() {
->>>>>>>> feature/login:Application/app/src/main/java/com/example/finddev/HeaderLogin.kt
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,7 +36,7 @@ class HeaderLogin : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_header__cadastro, container, false)
+        return inflater.inflate(R.layout.fragment_header_login, container, false)
     }
 
     fun navegarLogin(componente: View){
@@ -60,11 +55,7 @@ class HeaderLogin : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-<<<<<<<< HEAD:Application/app/src/main/java/com/example/finddev/Header_Cadastro.kt
-            Header_Cadastro().apply {
-========
             HeaderLogin().apply {
->>>>>>>> feature/login:Application/app/src/main/java/com/example/finddev/HeaderLogin.kt
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
