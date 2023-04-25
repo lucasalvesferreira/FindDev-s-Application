@@ -106,7 +106,5 @@ class CadastroDev : AppCompatActivity() {
             startActivity(cadastroStep3)
         }
 
-        startActivity(cadastroStep3)
-
     }
 }
