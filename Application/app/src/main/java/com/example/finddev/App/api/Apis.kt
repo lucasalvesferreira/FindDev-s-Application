@@ -6,11 +6,27 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Apis {
     var BASE_URL = "https://ec2-44-214-40-119.compute-1.amazonaws.com:8080/api/v1"
 
+    fun getApiUsuario() : ApiUsuario {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+        return retrofit.create(ApiUsuario::class.java)
+    }
+
     fun getApiDesenvolvedor() : ApiDesenvolvedor {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .build()
         return retrofit.create(ApiDesenvolvedor::class.java)
+    }
+
+    fun getApiEmpresa() : ApiEmpresa {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+        return retrofit.create(ApiEmpresa::class.java)
     }
 }

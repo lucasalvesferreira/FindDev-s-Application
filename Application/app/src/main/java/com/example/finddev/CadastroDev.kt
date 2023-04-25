@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.example.finddev.App.api.Apis
-import com.example.finddev.App.model.DesenvolvedorModel
+import com.example.finddev.App.model.UsuarioModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -109,7 +109,7 @@ class CadastroDev : AppCompatActivity() {
 
 
         if (validado) {
-            val dev = DesenvolvedorModel(
+            val dev = UsuarioModel(
                 nome = nome.text.toString(),
                 email = email.text.toString(),
                 senha = senha.text.toString(),
@@ -120,12 +120,12 @@ class CadastroDev : AppCompatActivity() {
             )
 
             val apiDesenvolvedores = Apis.getApiDesenvolvedor()
-            val chamadaGet = apiDesenvolvedores.createDeveloper(dev)
+            val chamadaPost = apiDesenvolvedores.createDeveloper(dev)
 
-            chamadaGet.enqueue(object : Callback<List<DesenvolvedorModel>> {
+            chamadaPost.enqueue(object : Callback<List<UsuarioModel>> {
                 override fun onResponse(
-                    call: Call<List<DesenvolvedorModel>>,
-                    response: Response<List<DesenvolvedorModel>>
+                    call: Call<List<UsuarioModel>>,
+                    response: Response<List<UsuarioModel>>
                 ) {
                     if (response.isSuccessful) {
                         val desenvolvedores = response.body()
@@ -135,7 +135,7 @@ class CadastroDev : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<List<DesenvolvedorModel>>, t: Throwable) {
+                override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
                     Toast.makeText(
                         baseContext, "Erro na API: ${t.message}",
                         Toast.LENGTH_SHORT
