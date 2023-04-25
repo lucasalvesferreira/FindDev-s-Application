@@ -40,18 +40,22 @@ class HeaderCadastro : Fragment() {
         return inflater.inflate(R.layout.fragment_header_cadastro, container, false)
     }
 
-    fun navegarLogin(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // encontra o botão pelo id
-        val button = view.findViewById<Button>(R.id.header_login)
+        val btCadastrar = view.findViewById<Button>(R.id.bt_cadastro)
+        btCadastrar.setOnClickListener {
 
-        // define o listener de clique do botão
-        button.setOnClickListener {
-            // cria uma Intent para iniciar a nova Activity
-            val intent = Intent(activity, CadastroDev::class.java)
-            startActivity(intent)
+            // (activity as MainActivity).testeLoko()
+
+            val cadastroStep1 = Intent(it.context, ActivityCadastroStep1::class.java)
+            startActivity(cadastroStep1)
         }
+    }
+
+    fun navegarLogin(view: View){
+        val cadastroStep1 = Intent(activity?.applicationContext, ActivityCadastroStep1::class.java)
+        startActivity(cadastroStep1)
     }
 
     companion object {

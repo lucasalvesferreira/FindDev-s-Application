@@ -17,9 +17,10 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.finddev.Header_Cadastro"
+            class="com.example.finddev.HeaderLogin"
             tools:layout="@layout/fragment_header_login"
             android:layout_marginBottom="40dp"
+            android:id="@+id/fragment_header_cadastro_step_3"
         />
 
         <LinearLayout

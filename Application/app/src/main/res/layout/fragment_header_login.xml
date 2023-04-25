@@ -44,7 +44,7 @@
                     android:text="Login"
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@color/preto_1"
-                    android:onClick="navegarLogin"
+                    android:id="@+id/bt_login"
                 />
             </LinearLayout>
         </LinearLayout>
