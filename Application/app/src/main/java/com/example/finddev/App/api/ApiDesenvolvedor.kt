@@ -13,7 +13,9 @@ interface ApiDesenvolvedor {
     fun getAllDevelopers(): Call<List<DesenvolvedorModel>>
 
     @POST("/dev")
-    fun createDeveloper(@Query("desenvolvedor") desenvolvedorModel: DesenvolvedorModel): Call<Unit>
+    fun createDeveloper(
+        @Query("desenvolvedor") desenvolvedorModel: DesenvolvedorModel
+    ): Call<List<DesenvolvedorModel>>
 
     @POST("/user/login")
     fun logIn(@Query("login_model") loginModel: LoginModel) : Call<List<DesenvolvedorModel>>

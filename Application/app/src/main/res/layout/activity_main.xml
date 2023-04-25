@@ -23,7 +23,7 @@
             class="com.example.finddev.HeaderCadastro"
             tools:layout="@layout/fragment_header_cadastro"
             android:layout_marginBottom="75dp"
-            />
+        />
 
         <TextView
             android:layout_width="wrap_content"

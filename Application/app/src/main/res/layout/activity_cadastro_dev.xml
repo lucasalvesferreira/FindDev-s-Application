@@ -18,9 +18,10 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.finddev.Header_Cadastro"
+            class="com.example.finddev.HeaderLogin"
             tools:layout="@layout/fragment_header_login"
             android:layout_marginBottom="100dp"
+            android:id="@+id/fragment_header_cadastro_dev"
         />
 
         <ScrollView
@@ -60,10 +61,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:hint="exemplo@email.com"
-                        android:inputType="text"
+                        android:inputType="textEmailAddress"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
+                        android:id="@+id/et_email"
                     />
                 </LinearLayout>
 
@@ -87,6 +88,7 @@
                         android:inputType="textPassword"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
+                        android:id="@+id/et_senha"
                     />
                 </LinearLayout>
 
@@ -110,8 +112,9 @@
                         android:inputType="textPassword"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
+                        android:id="@+id/et_confirmacao"
 
-                        />
+                    />
                 </LinearLayout>
 
                 <LinearLayout
@@ -134,7 +137,7 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
+                        android:id="@+id/et_nome"
                         />
                 </LinearLayout>
 
@@ -157,7 +160,7 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
+                        android:id="@+id/et_cpf"
                         />
                 </LinearLayout>
 
@@ -181,6 +184,7 @@
                         android:inputType="phone"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
+                        android:id="@+id/et_telefone"
                         />
                 </LinearLayout>
 
@@ -203,7 +207,7 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
+                        android:id="@+id/et_estado"
                         />
                 </LinearLayout>
 
@@ -226,7 +230,7 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
-
+                        android:id="@+id/et_cidade"
                         />
                 </LinearLayout>
 
@@ -242,6 +246,7 @@
                         android:text="Cadastrar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/preto_1"
+                        android:onClick="cadastrarDev"
                     />
                 </LinearLayout>
 
