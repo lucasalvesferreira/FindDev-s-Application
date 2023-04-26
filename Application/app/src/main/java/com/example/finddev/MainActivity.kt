@@ -1,21 +1,19 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.finddev.App.api.ApiUsuario
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         val usuarios = response.body()
-                        val logou = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        val logou = Intent(applicationContext, posLoginDev ::class.java)
                         startActivity(logou) // TODO mudar quando criar tela de login
                     }else {
                         var code = response.code()

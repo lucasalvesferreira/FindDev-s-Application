@@ -1,11 +1,11 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import retrofit2.Call
@@ -174,7 +174,11 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                         startActivity(logar)
                     } else {
                         var code = response.code()
-//                        idResponse.text = "Erro ao cadastrar"+ "${code}" TODO colocar na tela de cadastro campo para aparecer mensagem de erro
+//                        idResponse.text = "Erro ao cadastrar"+ "${code}"
+                        Toast.makeText(
+                            baseContext, "Ops, algo deu errado!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 
