@@ -111,6 +111,11 @@
                         android:onClick="logar"
                         />
                 </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/id_response_main"></TextView>
 
             </LinearLayout>
         </ScrollView>

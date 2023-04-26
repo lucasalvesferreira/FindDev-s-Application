@@ -1,10 +1,16 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.UsuarioModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class CadastroDev : AppCompatActivity() {
@@ -65,13 +71,14 @@ class CadastroDev : AppCompatActivity() {
         if (nome.text.isEmpty()) {
             nome.error = "Campo obrigatório"
             validado = false
-        }else if(
-            namePattern.matcher(nome.text).matches() ||
-            nome.text.split("\\s+".toRegex()).size < 2
-        ){
-            nome.error = "Por favor, digite seu nome completo usando apenas letras, pontos, espaços, hífens e apóstrofos."
-            validado = false
         }
+//        else if(
+//            namePattern.matcher(nome.text).matches() ||
+//            nome.text.split("\\s+".toRegex()).size < 2
+//        ){
+//            nome.error = "Por favor, digite seu nome completo usando apenas letras, pontos, espaços, hífens e apóstrofos."
+//            validado = false
+//        }
 
         if (telefone.text.isEmpty()) {
             telefone.error = "Campo obrigatório"
@@ -102,9 +109,49 @@ class CadastroDev : AppCompatActivity() {
         }
 
 
-        if (validado){
-            startActivity(cadastroStep3)
-        }
+        if (validado) {
+            val dev = UsuarioModel(
+                nome = nome.text.toString(),
+                email = email.text.toString(),
+                senha = senha.text.toString(),
+                estado = estado.text.toString(),
+                cidade = cidade.text.toString(),
+                telefone = telefone.text.toString(),
+                cpf = cpf.text.toString()
+            )
 
+            val apiDesenvolvedores = Apis.getApiDesenvolvedor()
+            val chamadaPost = apiDesenvolvedores.createDeveloper(dev)
+
+
+            chamadaPost.enqueue(object : Callback<UsuarioModel> {
+
+
+                override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
+                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                        val findDev = response.body()
+                        val logar = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        startActivity(logar)
+                    } else {
+                        var code = response.code()
+//                        idResponse.text = "Erro ao cadastrar"+ "${code}"
+                        Toast.makeText(
+                            baseContext, "Ops, algo deu errado!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
+                    Toast.makeText(
+                        baseContext, "Erro na API: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    t.printStackTrace()
+                }
+            })
+
+
+        }
     }
 }

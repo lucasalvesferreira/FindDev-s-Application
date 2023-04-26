@@ -55,29 +55,8 @@
                     android:textAlignment="center"
                 />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:gravity="bottom"
-            >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/botao_cadastro_empresa"
-                    android:gravity="center"
-                >
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Comece sua jornada"
-                        android:backgroundTint="@color/preto_1"
-                    />
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
+
 
     </LinearLayout>
 
