@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
@@ -71,13 +72,14 @@ class CadastroDev : AppCompatActivity() {
         if (nome.text.isEmpty()) {
             nome.error = "Campo obrigatório"
             validado = false
-        }else if(
-            namePattern.matcher(nome.text).matches() ||
-            nome.text.split("\\s+".toRegex()).size < 2
-        ){
-            nome.error = "Por favor, digite seu nome completo usando apenas letras, pontos, espaços, hífens e apóstrofos."
-            validado = false
         }
+//        else if(
+//            namePattern.matcher(nome.text).matches() ||
+//            nome.text.split("\\s+".toRegex()).size < 2
+//        ){
+//            nome.error = "Por favor, digite seu nome completo usando apenas letras, pontos, espaços, hífens e apóstrofos."
+//            validado = false
+//        }
 
         if (telefone.text.isEmpty()) {
             telefone.error = "Campo obrigatório"
@@ -122,20 +124,22 @@ class CadastroDev : AppCompatActivity() {
             val apiDesenvolvedores = Apis.getApiDesenvolvedor()
             val chamadaPost = apiDesenvolvedores.createDeveloper(dev)
 
-            chamadaPost.enqueue(object : Callback<List<UsuarioModel>> {
-                override fun onResponse(
-                    call: Call<List<UsuarioModel>>,
-                    response: Response<List<UsuarioModel>>
-                ) {
-                    if (response.isSuccessful) {
-                        val desenvolvedores = response.body()
-                        if (desenvolvedores?.isNotEmpty()!!) {
-                            startActivity(cadastroStep3)
-                        }
+//            var idResponse = findViewById<TextView>(R.id.id_response) TODO colocar na tela de cadastro campo para aparecer mensagem de erro
+            chamadaPost.enqueue(object : Callback<UsuarioModel> {
+
+
+                override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
+                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                        val findDev = response.body()
+                        val logar = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        startActivity(logar)
+                    } else {
+                        var code = response.code()
+//                        idResponse.text = "Erro ao cadastrar"+ "${code}" TODO colocar na tela de cadastro campo para aparecer mensagem de erro
                     }
                 }
 
-                override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
+                override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                     Toast.makeText(
                         baseContext, "Erro na API: ${t.message}",
                         Toast.LENGTH_SHORT
@@ -143,6 +147,8 @@ class CadastroDev : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
+
+
         }
     }
 }

@@ -16,5 +16,5 @@ data class UsuarioModel(
     val bairro:String? = null,
     val endereco:String? = null,
     val cnpj:String? = null,
-    val perfil:PerfilModel? = null
+    val perfil:PerfilModel? = null,
 )

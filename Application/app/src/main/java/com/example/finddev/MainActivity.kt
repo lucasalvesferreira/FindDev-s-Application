@@ -3,8 +3,10 @@ package com.example.finddev
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.finddev.App.api.ApiUsuario
 import com.example.finddev.App.api.Apis
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun logar(componente: View){
+        println("Entrou")
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
@@ -56,20 +59,25 @@ class MainActivity : AppCompatActivity() {
             val apiUsuario = Apis.getApiUsuario()
             val chamadaGet = apiUsuario.logIn(loginModel)
 
-            chamadaGet.enqueue(object : Callback<List<UsuarioModel>> {
+            var idResponse_main = findViewById<TextView>(R.id.id_response_main)
+            chamadaGet.enqueue(object : Callback<UsuarioModel> {
                 override fun onResponse(
-                    call: Call<List<UsuarioModel>>,
-                    response: Response<List<UsuarioModel>>
+                    call: Call<UsuarioModel>,
+                    response: Response<UsuarioModel>
                 ) {
                     if (response.isSuccessful) {
                         val usuarios = response.body()
-                        if (usuarios?.isNotEmpty()!!) {
-                            startActivity(cadastroStep3) // TODO mudar quando criar tela de login
-                        }
+                        val logou = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        startActivity(logou) // TODO mudar quando criar tela de login
+                    }else {
+                        var code = response.code()
+                        Log.d("TAG", "Erro ao logar : Status = "+ "${code}")
+                        idResponse_main.text = "Usuario e senha não encontrados!"
+
                     }
                 }
 
-                override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
+                override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                     Toast.makeText(
                         baseContext, "Erro na API: ${t.message}",
                         Toast.LENGTH_SHORT
