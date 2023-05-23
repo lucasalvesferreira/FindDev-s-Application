@@ -6,6 +6,10 @@ plugins {
 android {
     namespace 'com.example.finddev'
     compileSdk 33
+    configurations.all {
+        resolutionStrategy.force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+        resolutionStrategy.force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+    }
 
     defaultConfig {
         applicationId "com.example.finddev"
@@ -36,12 +40,8 @@ android {
 dependencies {
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-//    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-//    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
-
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
