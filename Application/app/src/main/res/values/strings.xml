@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FindDev</string>
     <string name="selected_item">Selected item:</string>
+    <string name="text_cadastro">Cadastro</string>
 
     <string-array name="Teste">
         <item>Java</item>

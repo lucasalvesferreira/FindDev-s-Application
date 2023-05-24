@@ -37,7 +37,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cadastro"
+                    android:text="@string/text_cadastro"
                     android:textSize="40sp"
                     android:fontFamily="@font/montserrat_bold"
                     android:textColor="@color/white"
