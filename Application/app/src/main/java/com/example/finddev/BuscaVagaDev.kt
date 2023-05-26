@@ -12,33 +12,45 @@ import com.example.finddev.App.model.dtos.VagaModel
 
 class BuscaVagaDev : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        var spinner1: Spinner
+        var spinner2: Spinner
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_busca_vaga_dev)
         carregarVagas()
 
+        spinner1 = findViewById(R.id.sp_front_of_dev)
+        spinner2 = findViewById(R.id.sp_senior)
 
-        // access the items of the list
-        val languages = resources.getStringArray(R.array.Teste)
+        val spinnerItems = resources.getStringArray(R.array.Teste)
 
-        // access the spinner
-        val spinner = findViewById<Spinner>(R.id.sp_front_of_dev)
-        if (spinner != null) {
-            val adapter = ArrayAdapter(this,
-                android.R.layout.simple_spinner_item, languages)
-            spinner.adapter = adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-            spinner.onItemSelectedListener = object :
-                AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>,
-                                            view: View, position: Int, id: Long) {
-                    Toast.makeText(this@BuscaVagaDev,
-                        getString(R.string.selected_item) + " " +
-                                "" + languages[position], Toast.LENGTH_SHORT).show()
-                }
+        spinner1.adapter = adapter
+        spinner2.adapter = adapter
 
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // write code to perform some action
-                }
+        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedItem = spinnerItems[position]
+                // Lógica para tratar a seleção do primeiro spinner
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Lógica para tratamento quando nada é selecionado
+            }
+        }
+
+        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedItem = spinnerItems[position]
+                // Lógica para tratar a seleção do segundo spinner
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Lógica para tratamento quando nada é selecionado
             }
         }
     }

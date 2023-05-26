@@ -10,4 +10,12 @@
         <item name="android:textColorHint">#8D8D99</item>
         <item name="android:layout_marginBottom">30dp</item>
     </style>
+    <style name="card_vagas">
+        <item name="android:background">@drawable/card_border</item> <!-- Cor de fundo preto -->
+        <item name="android:padding">16dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:outlineProvider">bounds</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
 </resources>

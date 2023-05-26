@@ -14,7 +14,6 @@
         android:gravity="center_horizontal"
         android:background="@color/preto_1"
         android:padding="40dp"
-
         >
 
         <LinearLayout
@@ -47,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Características de sua vaga"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
             android:layout_marginBottom="50dp"
@@ -137,12 +136,15 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/ll_vagas">
+                style="@style/card_vagas"
+                android:id="@+id/ll_vagas"
+                >
             </LinearLayout>
         </ScrollView>
 
