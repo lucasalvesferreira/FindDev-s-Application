@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Header_Cadastro">
+    tools:context=".HeaderLogin">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -44,7 +44,7 @@
                     android:text="Login"
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@color/preto_1"
-                    android:onClick="navegarLogin"
+                    android:id="@+id/bt_login"
                 />
             </LinearLayout>
         </LinearLayout>

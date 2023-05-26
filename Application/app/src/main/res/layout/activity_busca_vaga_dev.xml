@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BuscaVagaDev">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,24 +16,43 @@
         android:padding="40dp"
         >
 
-        <fragment
-            android:id="@+id/header_login"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            class="com.example.finddev.HeaderCadastro"
-            tools:layout="@layout/fragment_header_cadastro"
-            android:layout_marginBottom="75dp"
-        />
+            android:layout_height="150dp"
+            android:id="@+id/box"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/logo"
+                    android:minHeight="85dp"
+                    android:minWidth="75dp"
+                    android:id="@+id/id_logo"
+                    />
+            </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:textSize="40sp"
+            android:text="Características de sua vaga"
+            android:textSize="20sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
             android:layout_marginBottom="50dp"
             />
+        </LinearLayout>
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -54,19 +73,17 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
+                        android:text="FRENTE DE DESENVOLVIMENTO"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
                         />
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
-                        android:hint="exemplo@email.com"
-                        android:inputType="text"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-                        android:id="@+id/et_email"
+                        android:background="@drawable/borda_busca_vagas_dev"
+                        style="@style/spinner_dev"
+                        android:id="@+id/sp_front_of_dev"
                         />
                 </LinearLayout>
 
@@ -79,19 +96,17 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Senha"
+                        android:text="SENIORIDADE"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
                         />
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
-                        android:hint="***********"
-                        android:inputType="textPassword"
-                        android:background="@drawable/borda_input_cadastro"
-                        style="@style/input_cadastro"
-                        android:id="@+id/et_senha"
+                        android:background="@drawable/borda_busca_vagas_dev"
+                        style="@style/spinner_dev"
+                        android:id="@+id/sp_senior"
                         />
                 </LinearLayout>
 
@@ -99,16 +114,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/botao_login"
                     android:gravity="center"
                     >
                     <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Entrar"
+                        android:layout_width="150dp"
+                        android:layout_height="65dp"
+                        android:text="PROCURAR"
                         android:fontFamily="@font/montserrat"
-                        android:backgroundTint="@color/preto_1"
-                        android:onClick="logar"
+                        android:backgroundTint="@color/roxo_claro"
+                        android:onClick="procurar"
                         />
                 </LinearLayout>
                 <TextView
@@ -119,8 +133,22 @@
 
             </LinearLayout>
         </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                style="@style/card_vagas"
+                android:id="@+id/ll_vagas"
+                >
+            </LinearLayout>
+        </ScrollView>
 
 
     </LinearLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

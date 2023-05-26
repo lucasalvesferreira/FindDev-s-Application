@@ -10,21 +10,43 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
-            android:name=".activity_cadastro_step3"
+            android:name=".VagaFragment"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_step_1"
+            android:name=".VagasActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_empresa"
+            android:name=".BuscaVagaDev"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".posLoginEmpresa"
             android:exported="false" />
         <activity
-            android:name=".cadastro_dev"
+            android:name=".posLoginDev"
             android:exported="false" />
+        <activity
+            android:name=".ActivityCadastroStep3"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityCadastroStep1"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityCadastroEmpresa"
+            android:exported="true" />
+        <activity
+            android:name=".CadastroDev"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

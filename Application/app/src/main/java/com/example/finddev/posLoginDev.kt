@@ -1,11 +1,11 @@
 package com.example.finddev
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
-class activity_cadastro_step_1 : AppCompatActivity() {
+class posLoginDev : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_step1)
+        setContentView(R.layout.activity_pos_login_dev)
     }
 }
