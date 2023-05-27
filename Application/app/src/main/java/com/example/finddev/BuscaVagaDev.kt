@@ -3,17 +3,13 @@ package com.example.finddev
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.commit
 import com.example.finddev.App.model.dtos.VagaModel
 
 class BuscaVagaDev : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         var spinner1: Spinner
         var spinner2: Spinner
 
@@ -54,15 +50,16 @@ class BuscaVagaDev : AppCompatActivity() {
             }
         }
     }
+
     fun carregarVagas() {
 
         supportFragmentManager.beginTransaction()
 
         // aqui seria a chamada p/ API
         val vagas = listOf<VagaModel>(
-            VagaModel(1, "vaga A", "aaaa "),
-            VagaModel(2, "vaga B", "bbbb  "),
-            VagaModel(3, "vaga C", "cc ccc cc")
+            VagaModel(1, "vaga A", "aaaa ", 3000.00),
+            VagaModel(2, "vaga B", "bbbb  ", 2000.00),
+            VagaModel(3, "vaga C", "cc ccc cc", 1500.00)
         )
 
         supportFragmentManager.commit {
@@ -80,4 +77,5 @@ class BuscaVagaDev : AppCompatActivity() {
             }
         }
     }
+
 }

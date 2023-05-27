@@ -1,8 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/black" /> <!-- Cor de fundo do card -->
+    <solid android:color="#121214" /> <!-- Cor de fundo do card -->
     <stroke
         android:width="4dp"
-        android:color="#660099" /> <!-- Cor roxa da borda -->
+        android:color="#00B37E" /> <!-- Cor roxa da borda -->
     <corners android:radius="8dp" />
     <padding
         android:left="0dp"
