@@ -17,6 +17,13 @@ class BuscaVagaDev : AppCompatActivity() {
         setContentView(R.layout.activity_busca_vaga_dev)
         carregarVagas()
 
+        val backButton = findViewById<ImageView>(R.id.backButton)
+        backButton.setOnClickListener {
+            onBackPressed() // Volta para a tela anterior
+        }
+
+
+
         spinner1 = findViewById(R.id.sp_front_of_dev)
         spinner2 = findViewById(R.id.sp_senior)
 

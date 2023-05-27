@@ -17,5 +17,10 @@
         <item name="android:outlineProvider">bounds</item>
         <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
+    <style name="ClickableImageStyle">
+        <item name="android:clickable">true</item> <!-- Permite que a imagem seja clicável -->
+        <item name="android:foreground">?attr/selectableItemBackground</item> <!-- Adiciona um efeito de clique -->
+    </style>
+
 
 </resources>

@@ -15,13 +15,19 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
-            android:name=".VagaFragment"
+            android:name=".PerfilDev"
             android:exported="false" />
         <activity
-            android:name=".VagasActivity"
-            android:exported="false" />
+            android:name=".VagaFragment"
+            android:exported="true" />
         <activity
             android:name=".BuscaVagaDev"
+            android:exported="true"></activity>
+        <activity
+            android:name=".posLoginEmpresa"
+            android:exported="true" />
+        <activity
+            android:name=".posLoginDev"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,12 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".posLoginEmpresa"
-            android:exported="false" />
-        <activity
-            android:name=".posLoginDev"
-            android:exported="false" />
         <activity
             android:name=".ActivityCadastroStep3"
             android:exported="true" />
