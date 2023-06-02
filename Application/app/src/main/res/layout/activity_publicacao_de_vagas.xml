@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PublicacaoDeVagas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/preto_1"
+        android:padding="40dp"
+    >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:id="@+id/relativeHeader"
+        >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/setavoltar"
+                android:id="@+id/setaVoltar"
+                android:layout_centerVertical="true"
+                android:onClick="voltarMenu"
+            />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/logo"
+                android:minHeight="75dp"
+                android:minWidth="75dp"
+                android:id="@+id/id_logo"
+                android:layout_centerHorizontal="true"
+            />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalhes da vaga"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_marginBottom="40dp"
+        />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+            >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                >
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Título"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/white"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:inputType="text"
+                        android:background="@drawable/borda_input_cadastro"
+                        style="@style/input_cadastro"
+                        android:id="@+id/et_titulo"
+                    />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                >
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Senioridade"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/white"
+                    />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/borda_input_cadastro"
+                        style="@style/input_cadastro"
+                        android:id="@+id/sp_senioridade"
+                    />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frente de desenvolvimento"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/white"
+                        />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/borda_input_cadastro"
+                        style="@style/input_cadastro"
+                        android:id="@+id/sp_frente"
+                    />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descrição"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/white"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="200sp"
+                        android:inputType="text"
+                        android:background="@drawable/borda_input_cadastro"
+                        style="@style/input_cadastro"
+                        android:id="@+id/et_descricao"
+                    />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+            >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botao_login"
+                    android:gravity="center"
+                    >
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Publicar"
+                        android:fontFamily="@font/montserrat"
+                        android:backgroundTint="@color/preto_1"
+                        android:onClick="publicarVaga"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
