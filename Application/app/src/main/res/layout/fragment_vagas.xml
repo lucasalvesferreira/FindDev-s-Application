@@ -8,28 +8,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:gravity="center"
         style="@style/card_vagas"
+        android:padding="10dp"
         android:layout_marginBottom="50dp"
         >
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-        />
+            android:src="@mipmap/logo"
+            android:paddingLeft="20dp"
+            android:layout_marginRight="40dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_titulo"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_light"
             android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_descricao"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat_light"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_valor"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_light"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 </FrameLayout>
