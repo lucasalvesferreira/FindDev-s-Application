@@ -55,3 +55,7 @@ class PerfilCompleto : AppCompatActivity() {
         )
     }
 }
+
+private fun Intent.putExtra(s: String, perfil: PerfilModel) {
+
+}
