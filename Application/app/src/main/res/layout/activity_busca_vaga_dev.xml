@@ -7,14 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".BuscaVagaDev">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/preto_1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@color/preto_1"
         android:padding="40dp"
         >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/seta"
+            style="@style/ClickableImageStyle"
+            android:id="@+id/backButton"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,6 +35,8 @@
             android:id="@+id/box"
             android:gravity="center"
             >
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,10 +69,6 @@
         </LinearLayout>
 
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,7 +102,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginBottom="30dp"
                     >
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
@@ -115,6 +125,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/procurar"
                     >
                     <Button
                         android:layout_width="150dp"
@@ -123,6 +135,7 @@
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/roxo_claro"
                         android:onClick="procurar"
+
                         />
                 </LinearLayout>
                 <TextView
@@ -132,23 +145,24 @@
                     android:id="@+id/id_response_main"></TextView>
 
             </LinearLayout>
-        </ScrollView>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             >
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                style="@style/card_vagas"
                 android:id="@+id/ll_vagas"
+                android:gravity="center"
                 >
             </LinearLayout>
         </ScrollView>
 
 
     </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

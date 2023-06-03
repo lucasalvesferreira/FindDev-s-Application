@@ -31,8 +31,10 @@ class VagaFragment : Fragment() {
 
         val tvTitulo = view.findViewById<TextView>(R.id.tv_titulo)
         val tvDescricao = view.findViewById<TextView>(R.id.tv_descricao)
+        val tvValor = view.findViewById<TextView>(R.id.tv_valor)
 
         tvTitulo.text = vaga!!.titulo
         tvDescricao.text = vaga!!.descricao
+        tvValor.text = vaga!!.valor.toString()
     }
 }

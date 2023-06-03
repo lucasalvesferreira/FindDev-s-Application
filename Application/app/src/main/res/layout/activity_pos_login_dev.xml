@@ -75,6 +75,7 @@
                     android:backgroundTint="@color/preto_1"
                     android:paddingHorizontal="70dp"
                     android:paddingVertical="30dp"
+                    android:onClick="Encontre"
                     />
             </LinearLayout>
 
@@ -94,6 +95,7 @@
                     android:backgroundTint="@color/preto_1"
                     android:paddingHorizontal="25dp"
                     android:paddingVertical="30dp"
+                    android:onClick="Perfil"
                     />
             </LinearLayout>
         </LinearLayout>
