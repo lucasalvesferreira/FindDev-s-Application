@@ -21,6 +21,18 @@
         <item name="android:clickable">true</item> <!-- Permite que a imagem seja clicável -->
         <item name="android:foreground">?attr/selectableItemBackground</item> <!-- Adiciona um efeito de clique -->
     </style>
+        <style name="RatingBarStyle" parent="@android:style/Widget.RatingBar">
+            <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+            <item name="android:minHeight">48dp</item>
+            <item name="android:maxHeight">48dp</item>
+        </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Outras configurações do tema -->
+
+        <item name="android:windowBackground">@color/preto_1</item>
+    </style>
+    </resources>
 
 
-</resources>
+
+
