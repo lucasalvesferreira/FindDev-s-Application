@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 
@@ -23,7 +24,7 @@ class HeaderSetaVoltar : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnBack = view.findViewById<ImageView>(R.id.backButton)
+        val btnBack = view.findViewById<ImageButton>(R.id.backButton)
         btnBack.setOnClickListener {
             requireActivity().onBackPressed()
         }

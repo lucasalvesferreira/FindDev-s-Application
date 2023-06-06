@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".ModalVaga"
+            android:exported="false" />
+        <activity
+            android:name=".ListaBuscaVagasDev"
+            android:exported="false" />
+        <activity
+            android:name=".JobsEncerradosDev"
+            android:exported="false" />
+        <activity
             android:name=".PerfilCompleto"
             android:exported="false" />
         <activity

@@ -18,7 +18,7 @@ class posLoginDev : AppCompatActivity() {
     }
 
     fun Perfil(componente: View){
-        val telaPerfilDev = Intent(applicationContext, PerfilDev::class.java)
+        val telaPerfilDev = Intent(applicationContext, PerfilCompleto::class.java)
 
         startActivity(telaPerfilDev)
     }

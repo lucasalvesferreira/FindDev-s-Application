@@ -1,5 +1,6 @@
 package com.example.finddev
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,80 +10,57 @@ import com.example.finddev.App.model.dtos.VagaModel
 
 class BuscaVagaDev : AppCompatActivity() {
 
+    private lateinit var spinnerFrenteDesenvolvimento: Spinner
+    private lateinit var spinnerSenioridade: Spinner
+    private lateinit var btnProcurar: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        var spinner1: Spinner
-        var spinner2: Spinner
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_busca_vaga_dev)
-        carregarVagas()
+
+        spinnerFrenteDesenvolvimento = findViewById(R.id.spinnerFrenteDesenvolvimento)
+        spinnerSenioridade = findViewById(R.id.spinnerSenioridade)
+        btnProcurar = findViewById(R.id.btnProcurar)
+
 
         val backButton = findViewById<ImageView>(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed() // Volta para a tela anterior
         }
 
-
-
-        spinner1 = findViewById(R.id.sp_front_of_dev)
-        spinner2 = findViewById(R.id.sp_senior)
-
-        val spinnerItems = resources.getStringArray(R.array.Teste)
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        spinner1.adapter = adapter
-        spinner2.adapter = adapter
-
-        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = spinnerItems[position]
-                // Lógica para tratar a seleção do primeiro spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
-
-        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = spinnerItems[position]
-                // Lógica para tratar a seleção do segundo spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
-    }
-
-    fun carregarVagas() {
-
-        supportFragmentManager.beginTransaction()
-
-        // aqui seria a chamada p/ API
-        val vagas = listOf<VagaModel>(
-            VagaModel(1, "vaga A", "aaaa ", 3000.00),
-            VagaModel(2, "vaga B", "bbbb  ", 2000.00),
-            VagaModel(3, "vaga C", "cc ccc cc", 1500.00)
+        // Configurar os adapters para os spinners
+        val frenteDesenvolvimentoAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.frentes_desenvolvimento,
+            android.R.layout.simple_spinner_item
         )
+        frenteDesenvolvimentoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerFrenteDesenvolvimento.adapter = frenteDesenvolvimentoAdapter
 
-        supportFragmentManager.commit {
+        val senioridadeAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.senioridades,
+            android.R.layout.simple_spinner_item
+        )
+        senioridadeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerSenioridade.adapter = senioridadeAdapter
 
-            vagas.forEach {
-                val fragmento = VagaFragment()
+        // Definir o listener para o botão "Procurar"
+        btnProcurar.setOnClickListener {
+            // Obter os valores selecionados nos spinners
+            val frenteDesenvolvimento = spinnerFrenteDesenvolvimento.selectedItem.toString()
+            val senioridade = spinnerSenioridade.selectedItem.toString()
 
-                val argumentos = Bundle()
-                argumentos.putSerializable("vaga", it)
-
-                fragmento.arguments = argumentos
-
-                add(R.id.ll_vagas, fragmento)
-                setReorderingAllowed(true)
-            }
+            // Criar um Intent para iniciar a ListaVagasActivity
+            val intent = Intent(this, ListaBuscaVagasDev::class.java)
+            // Passar os valores selecionados como extras para a próxima Activity
+            intent.putExtra("frenteDesenvolvimento", frenteDesenvolvimento)
+            intent.putExtra("senioridade", senioridade)
+            // Iniciar a próxima Activity
+            startActivity(intent)
         }
     }
-
 }
+
+
