@@ -13,7 +13,6 @@
         android:gravity="center_horizontal"
         android:background="@color/preto_1">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -28,14 +27,12 @@
             style="@style/ClickableImageStyle"
             android:id="@+id/backButton"/>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:id="@+id/box"
             android:gravity="center"
             >
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -93,8 +90,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:background="@drawable/borda_busca_vagas_dev"
-                        style="@style/spinner_dev"
-                        android:id="@+id/sp_front_of_dev"
+                        style="@style/SpinnerDev"
+                        android:theme="@style/SpinnerSelectedItem"
+                        android:id="@+id/spinnerFrenteDesenvolvimento"
+                        android:entries="@array/frentes_desenvolvimento"
+                        android:prompt="@string/frente_desenvolvimento"
                         />
                 </LinearLayout>
 
@@ -115,8 +115,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:background="@drawable/borda_busca_vagas_dev"
-                        style="@style/spinner_dev"
-                        android:id="@+id/sp_senior"
+                        style="@style/SpinnerDev"
+                        android:theme="@style/SpinnerSelectedItem"
+                        android:entries="@array/senioridades"
+                        android:id="@+id/spinnerSenioridade"
                         />
                 </LinearLayout>
 
@@ -129,36 +131,16 @@
                     android:id="@+id/procurar"
                     >
                     <Button
+                        android:id="@+id/btnProcurar"
                         android:layout_width="150dp"
                         android:layout_height="65dp"
-                        android:text="PROCURAR"
+                        android:text="@string/procurar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/roxo_claro"
-                        android:onClick="procurar"
-
                         />
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:id="@+id/id_response_main"></TextView>
 
             </LinearLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/ll_vagas"
-                android:gravity="center"
-                >
-            </LinearLayout>
-        </ScrollView>
 
 
     </LinearLayout>

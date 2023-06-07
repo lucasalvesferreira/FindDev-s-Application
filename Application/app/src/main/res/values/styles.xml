@@ -5,10 +5,15 @@
         <item name="android:textColorHint">#8D8D99</item>
         <item name="android:layout_marginBottom">30dp</item>
     </style>
-    <style name="spinner_dev">
+    <style name="SpinnerDev" parent="android:Widget.Spinner">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textColorHint">#8D8D99</item>
+        <item name="android:textColorHint">@color/white</item>
         <item name="android:layout_marginBottom">30dp</item>
+    </style>
+    <style name="SpinnerSelectedItem" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:background">@color/preto_1</item> <!-- Cor de fundo preto -->
     </style>
     <style name="card_vagas">
         <item name="android:background">@drawable/card_border</item> <!-- Cor de fundo preto -->
@@ -26,12 +31,22 @@
             <item name="android:minHeight">48dp</item>
             <item name="android:maxHeight">48dp</item>
         </style>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Outras configurações do tema -->
 
-        <item name="android:windowBackground">@color/preto_1</item>
+    <style name="ModalVagaStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/ModalVagaAnimation</item>
     </style>
-    </resources>
+
+    <style name="ModalVagaAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+</resources>
 
 
 

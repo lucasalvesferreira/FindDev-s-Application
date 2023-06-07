@@ -9,3 +9,14 @@ data class VagaModel(
     var valor:Double
 ) : Serializable {
 }
+
+data class Vaga(
+    val id:Int,
+    val imagem: Int,
+    val titulo: String,
+    val subtitulo: String,
+    val valor: String,
+    val frenteDesenvolvimento: String,
+    val senioridade: String,
+    var descricao:String
+    )

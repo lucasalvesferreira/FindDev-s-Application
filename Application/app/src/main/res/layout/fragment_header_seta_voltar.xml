@@ -16,12 +16,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
         >
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@mipmap/seta"
                 android:id="@+id/backButton"
                 android:layout_marginRight="30dp"
+                android:background="@color/preto_1"
                 />
 
             <ImageView
