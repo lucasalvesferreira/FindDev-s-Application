@@ -21,6 +21,18 @@
     <string name="text_lagradouro">Lagradouro</string>
     <string name="text_numero">Número</string>
     <string name="text_cadastrar">Cadastrar</string>
+    <string name="text_emp_dev">Empresa ou desenvolvedor</string>
+    <string name="text_quetion">Você atuará como desenvolvedor ou como contratante na FindDev?</string>
+    <string name="text_company">EMPRESA</string>
+    <string name="text_dev">DESENVOLVEDOR</string>
+    <string name="text_congratulation">Parabéns!</string>
+    <string name="text_sucess">Seu cadastro foi realizado com sucesso!</string>
+    <string name="text_login">LOGIN</string>
+    <string name="text_enter">Entrar</string>
+    <string name="text_option">Escolha uma opção:</string>
+    <string name="text_find_job">Encontre o job ideal</string>
+    <string name="text_profile">Perfil e estatísticas</string>
+    <string name="text_public">Publique sua vaga</string>
 
 
     <string-array name="Teste">
@@ -33,4 +45,5 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="text_perfil">Perfil e estatísticas</string>
 </resources>

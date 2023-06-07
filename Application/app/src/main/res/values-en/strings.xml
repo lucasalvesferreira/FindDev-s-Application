@@ -23,4 +23,17 @@
     <string name="text_bairro">Neighborhood</string>
     <string name="text_lagradouro">Public place</string>
     <string name="text_numero">Number</string>
+    <string name="text_emp_dev">Company or developer</string>
+    <string name="text_quetion">Will you be a developer or a contractor at FindDev?</string>
+    <string name="text_company">COMPANY</string>
+    <string name="text_dev">DEVELOPER</string>
+    <string name="text_congratulation">Congratulations!</string>
+    <string name="text_sucess">Your registration was successful!</string>
+    <string name="text_login">LOGIN</string>
+    <string name="text_enter">"Enter "</string>
+    <string name="text_option">Choose an option:</string>
+    <string name="text_find_job">Find the ideal job</string>
+    <string name="text_perfil">Profile and statistics</string>
+    <string name="text_profile">Profile and statistics</string>
+    <string name="text_public">Post your vacancy</string>
 </resources>
