@@ -17,7 +17,7 @@ class posLoginEmpresa : AppCompatActivity() {
     }
 
     fun redirecionarPerfil(componente: View){
-        val criacaoDeVagas = Intent(applicationContext, PublicacaoDeVagas::class.java)
-        startActivity(criacaoDeVagas)
+        val perfilEmpresa = Intent(applicationContext, PerfilEmpresa::class.java)
+        startActivity(perfilEmpresa)
     }
 }
