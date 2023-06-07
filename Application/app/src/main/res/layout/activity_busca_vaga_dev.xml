@@ -90,7 +90,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:background="@drawable/borda_busca_vagas_dev"
-                        android:textColor="@color/white"
                         style="@style/SpinnerDev"
                         android:theme="@style/SpinnerSelectedItem"
                         android:id="@+id/spinnerFrenteDesenvolvimento"
@@ -120,7 +119,6 @@
                         android:theme="@style/SpinnerSelectedItem"
                         android:entries="@array/senioridades"
                         android:id="@+id/spinnerSenioridade"
-                        android:prompt="@string/senioridade"
                         />
                 </LinearLayout>
 
