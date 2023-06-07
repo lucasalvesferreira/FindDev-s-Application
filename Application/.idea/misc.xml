@@ -17,6 +17,8 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FDAPP/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_cadastro.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable-v24/ic_rating_bar_empty.xml" value="0.119" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable-v24/ic_rating_bar_filled.xml" value="0.119" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/background_linha_roxa.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/background_senioridade.xml" value="0.131" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/borda_busca_vagas_dev.xml" value="0.1515" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/borda_imagem_card.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/borda_input_cadastro.xml" value="0.1515" />
@@ -24,15 +26,25 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/botao_cadastro.xml" value="0.1515" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/botao_cadastro_empresa.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/botao_voltar.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/btn_modal_candidatar.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/card_border.xml" value="0.168" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/card_border_jobs_encerrados.xml" value="0.131" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/custom_rating_bar.xml" value="0.119" />
-        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_busca_vaga_dev.xml" value="0.16091954022988506" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/custom_ratingbar.xml" value="0.131" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/drawable/modal_background.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/font/montserrat_light.xml" value="0.11312790206838329" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_busca_vaga_dev.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_dev.xml" value="0.22103463018383926" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_empresa.xml" value="0.21823554242296328" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_step1.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_step3.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_jobs_encerrados_dev.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_lista_busca_vagas_dev.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_completo.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_dev.xml" value="0.21084337349397592" />
-        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_dev.xml" value="0.22" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_vaga.xml" value="0.14407866609662248" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_completo.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_dev.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_dev.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_empresa.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_vaga_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/activity_vagas.xml" value="0.17552083333333332" />
@@ -41,6 +53,7 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_seta_voltar.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/fragment_vagas.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/Find/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga.xml" value="0.22" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_step3.xml" value="0.17552083333333332" />
       </map>
     </option>

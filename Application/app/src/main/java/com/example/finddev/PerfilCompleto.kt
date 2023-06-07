@@ -16,6 +16,7 @@ class PerfilCompleto : AppCompatActivity() {
     private lateinit var tvBiografiaCompleto: TextView
     private lateinit var tvExperienciaCompleto: TextView
     private lateinit var btnEditar: Button
+    private lateinit var btnAvaliar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,12 @@ class PerfilCompleto : AppCompatActivity() {
         btnEditar.setOnClickListener {
             val intent = Intent(this, PerfilCompleto::class.java)
             intent.putExtra("perfil", perfil)
+            startActivity(intent)
+        }
+
+        btnAvaliar = findViewById(R.id.btnAvaliar)
+        btnAvaliar.setOnClickListener {
+            val intent = Intent(this, JobsEncerradosDev::class.java)
             startActivity(intent)
         }
     }

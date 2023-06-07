@@ -1,11 +1,9 @@
 package com.example.finddev
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.RatingBar
+import android.widget.*
 
 class PerfilDev : AppCompatActivity() {
 
@@ -16,10 +14,17 @@ class PerfilDev : AppCompatActivity() {
     private lateinit var edtBiografia: EditText
     private lateinit var edtExperiencia: EditText
     private lateinit var btnAvaliar: Button
+    private lateinit var btnEditar: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_dev)
+
+        btnEditar = findViewById(R.id.btnEditar)
+        btnEditar.setOnClickListener {
+            val intent = Intent(this, PerfilCompleto::class.java)
+            startActivity(intent)
+        }
 
         val headerSetaVoltar = HeaderSetaVoltar()
         supportFragmentManager.beginTransaction()

@@ -19,8 +19,16 @@
             android:exported="false" />
         <activity
             android:name=".PublicacaoDeVagas"
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
+        <activity
+            android:name=".ModalVaga"
+            android:exported="false" />
+        <activity
+            android:name=".ListaBuscaVagasDev"
+            android:exported="false" />
+        <activity
+            android:name=".JobsEncerradosDev"
+            android:exported="false" />
         <activity
             android:name=".PerfilCompleto"
             android:exported="false" />
