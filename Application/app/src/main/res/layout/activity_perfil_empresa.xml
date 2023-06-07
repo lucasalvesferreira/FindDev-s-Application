@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilEmpresa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/preto_1"
+        android:padding="40dp"
+    >
+        <fragment
+            android:id="@+id/header_seta_voltar"
+            android:name="com.example.finddev.HeaderSetaVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_header_seta_voltar"
+            android:layout_marginBottom="30dp"
+        />
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/foto_perfil"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+        >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XT"
+                android:textSize="60sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classificação: "
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                android:id="@+id/numero_classificacao"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/star"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/edit"
+                android:layout_marginLeft="20dp"
+            />
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+            >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nomeEmpresa"
+                    android:text="X-Team"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_bold"
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/resumo"
+                    android:text="High-performing software engineers for the world's most ambitious."
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat"
+                />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Biografia"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                    />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/biografia"
+                        android:text="Since 2006, X-Team has provided high-performing, on-demand teams of software developers for the world's leading brands. We are leaders in the remote work movement, and believe in building a world where ok."
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                    />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Localização"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                    />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                            >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/estado"
+                                    android:text="\u25CF  São Paulo"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:fontFamily="@font/montserrat"
+                                />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/cidade"
+                                    android:text="\u25CF  Campinas"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:fontFamily="@font/montserrat"
+                                />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/bairro"
+                                    android:text="\u25CF  Chácara Santo Antônio"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:fontFamily="@font/montserrat"
+                                />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/endereco"
+                                    android:text="\u25CF  Rua Alexandre Dumas, 2051"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:fontFamily="@font/montserrat"
+                                />
+                            </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:id="@+id/relativeLayoutButtons"
+                    >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/botao_cadastro_empresa"
+                            android:gravity="center"
+                        >
+                            <Button
+                                android:layout_height="80dp"
+                                android:layout_width="130dp"
+                                android:backgroundTint="@color/preto_1"
+                                android:text="Vagas em aberto"
+                                android:fontFamily="@font/montserrat"
+                                android:onClick="vagasPublicadas"
+                                android:id="@+id/botaoVagasAbertas"
+                            />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/botao_cadastro_empresa"
+                            android:gravity="center"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toStartOf="@+id/botaoVagasAbertas"
+                        >
+
+                            <Button
+                                android:layout_height="80dp"
+                                android:layout_width="140dp"
+                                android:backgroundTint="@color/preto_1"
+                                android:text="Contratar"
+                                android:fontFamily="@font/montserrat"
+                                android:onClick="contratar"
+                                android:id="@+id/botaoContratar"
+
+                            />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                    >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/botao_cadastro_empresa"
+                            android:gravity="center"
+
+                        >
+                            <Button
+                                android:layout_height="80dp"
+                                android:layout_width="180dp"
+
+                                android:text="Colaboradores"
+                                android:fontFamily="@font/montserrat"
+                                android:onClick="colaboradores"
+                                android:id="@+id/botaoColaboradores"
+                                android:backgroundTint="@color/preto_1"
+                            />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
