@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FindDev</string>
+    <string name="selected_item">Artículo seleccionado:</string>
+    <string name="text_campo_obrigatorio">Campo obligatorio</string>
+    <string name="text_caracteristicas_vaga">Características de tu vacante</string>
+    <string name="text_frente_dev">FRENTE DE DESARROLLO</string>
+    <string name="text_senioridade">ANTIGÜEDAD</string>
+    <string name="text_procurar">BUSCAR</string>
+    <string name="text_cadastro">Registro</string>
+    <string name="text_email">Email</string>
+    <string name="text_senha">Contraseña</string>
+    <string name="text_conf_senha">Confirmación de contraseña</string>
+    <string name="text_nome">Nombre</string>
+    <string name="text_cpf">CPF</string>
+    <string name="text_telefone">Teléfono</string>
+    <string name="text_estado">Estado</string>
+    <string name="hello_blank_fragment">" Hola fragmento en blanco"</string>
+    <string name="text_cidade">Ciudad</string>
+    <string name="text_cadastrar">Registrar</string>
+    <string name="text_cnpj">CNPJ</string>
+    <string name="text_cep">CEP</string>
+    <string name="text_bairro">Vecindario</string>
+    <string name="text_lagradouro">Lugar público</string>
+    <string name="text_numero">Número</string>
+</resources>

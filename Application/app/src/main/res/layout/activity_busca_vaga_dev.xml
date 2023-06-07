@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Características de sua vaga"
+            android:text="@string/text_caracteristicas_vaga"
             android:textSize="24sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
@@ -74,7 +74,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="FRENTE DE DESENVOLVIMENTO"
+                        android:text="@string/text_frente_dev"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -97,7 +97,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SENIORIDADE"
+                        android:text="@string/text_senioridade"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -120,7 +120,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="65dp"
-                        android:text="PROCURAR"
+                        android:text="@string/text_procurar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/roxo_claro"
                         android:onClick="procurar"

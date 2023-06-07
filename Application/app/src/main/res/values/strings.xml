@@ -1,7 +1,27 @@
 <resources>
     <string name="app_name">FindDev</string>
-    <string name="selected_item">Selected item:</string>
+    <string name="selected_item">Item selecionado:</string>
+    <string name="text_campo_obrigatorio">Campo obrigatório</string>
+    <string name="text_caracteristicas_vaga">Características de sua vaga</string>
+    <string name="text_frente_dev">FRENTE DE DESENVOLVIMENTO</string>
+    <string name="text_senioridade">SENIORIDADE</string>
+    <string name="text_procurar">PROCURAR</string>
     <string name="text_cadastro">Cadastro</string>
+    <string name="text_email">Email</string>
+    <string name="text_senha">Senha</string>
+    <string name="text_conf_senha">Confirmação de senha</string>
+    <string name="text_nome">Nome</string>
+    <string name="text_cpf">CPF</string>
+    <string name="text_cnpj">CNPJ</string>
+    <string name="text_telefone">Telefone</string>
+    <string name="text_estado">Estado</string>
+    <string name="text_cidade">Cidade</string>
+    <string name="text_cep">CEP</string>
+    <string name="text_bairro">Bairro</string>
+    <string name="text_lagradouro">Lagradouro</string>
+    <string name="text_numero">Número</string>
+    <string name="text_cadastrar">Cadastrar</string>
+
 
     <string-array name="Teste">
         <item>Java</item>
@@ -12,5 +32,5 @@
         <item>Perl</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Olá fragmento em branco</string>
 </resources>
