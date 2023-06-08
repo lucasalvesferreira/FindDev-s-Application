@@ -1,4 +1,4 @@
-package com.example.finddev.App.model.dtos
+package com.example.finddev.App.model
 
 import java.io.Serializable
 

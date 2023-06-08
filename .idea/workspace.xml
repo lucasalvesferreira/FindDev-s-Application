@@ -4,14 +4,58 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7fb518e-ddf5-4da1-97fd-2a4a8ffd0d36" name="Changes" comment="" />
+    <list default="true" id="b7fb518e-ddf5-4da1-97fd-2a4a8ffd0d36" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/ApiVagas.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/enums/FuncaoDev.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/enums/SenioridadeDev.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/model/dtos/CandidaturaResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/model/dtos/VagaRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/model/dtos/VagaResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/sharedpreferences/SaveIdUsuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ActivityCadastroEmpresa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ActivityCadastroEmpresa.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/ApiDesenvolvedor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/ApiDesenvolvedor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/ApiUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/ApiUsuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/Apis.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/api/Apis.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/model/VagaModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/App/model/VagaModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/BuscaVagaDev.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/BuscaVagaDev.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/JobsEncerradosDev.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/JobsEncerradosDev.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ListaBuscaVagasDev.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ListaBuscaVagasDev.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ModalVaga.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/ModalVaga.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/PerfilCompleto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/PerfilCompleto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/PublicacaoDeVagas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/PublicacaoDeVagas.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/app/src/main/java/com/example/finddev/VagaFragment.kt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Pqw33CfUKcQuXHd6P9RFiBOaUk" />
   <component name="ProjectViewState">
@@ -19,11 +63,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -35,5 +83,16 @@
       <updated>1684197716995</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

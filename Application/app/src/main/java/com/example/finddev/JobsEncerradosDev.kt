@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finddev.App.model.dtos.Vaga
+import com.example.finddev.App.model.Vaga
 
 class JobsEncerradosDev : AppCompatActivity() {
 
