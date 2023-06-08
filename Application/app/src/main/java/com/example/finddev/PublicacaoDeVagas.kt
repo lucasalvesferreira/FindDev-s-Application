@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.dtos.VagaRequest
+import com.example.finddev.App.model.dtos.VagaResponse
+import com.example.finddev.App.sharedpreferences.getId
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PublicacaoDeVagas : AppCompatActivity() {
     private lateinit var etTitulo: EditText
@@ -34,8 +37,8 @@ class PublicacaoDeVagas : AppCompatActivity() {
     }
 
     private fun spinners() {
-        val senioridadeArray = arrayOf("Junior", "Pleno", "Senior")
-        val frenteArray = arrayOf("Front End", "Back End", "Devops")
+        val senioridadeArray = arrayOf("JUNIOR", "PLENO", "SENIOR")
+        val frenteArray = arrayOf("FRONTEND", "BACKEND", "FULLSTACK")
 
         val adapterSenioridade = ArrayAdapter(this, android.R.layout.simple_spinner_item, senioridadeArray)
         adapterSenioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -45,28 +48,6 @@ class PublicacaoDeVagas : AppCompatActivity() {
 
         spinnerSenioridade.adapter = adapterSenioridade
         spinnerFrente.adapter = adapterFrente
-
-        spinnerSenioridade.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = senioridadeArray[position]
-                // Lógica para tratar a seleção do primeiro spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
-
-        spinnerFrente.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = frenteArray[position]
-                // Lógica para tratar a seleção do segundo spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
     }
 
     private fun publicarVaga() {
@@ -75,16 +56,41 @@ class PublicacaoDeVagas : AppCompatActivity() {
         val frenteDesenvolvimento = spinnerFrente.selectedItem.toString()
         val descricao = etDescricao.text.toString()
 
-        // Lógica para publicar a vaga com os dados obtidos
+        val vagaRequest = VagaRequest(
+            getId(applicationContext),
+            titulo,
+            descricao,
+            frenteDesenvolvimento,
+            senioridade
+        )
 
-        // Exemplo de impressão dos dados:
-        println("Título: $titulo")
-        println("Senioridade: $senioridade")
-        println("Frente de Desenvolvimento: $frenteDesenvolvimento")
-        println("Descrição: $descricao")
+        val apiVagas = Apis.getApiVagas()
+        val chamadaPost = apiVagas.createVaga(vagaRequest)
+
+        chamadaPost.enqueue(object : Callback<VagaResponse> {
+            override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
+                if (response.isSuccessful) {
+                    println("vaga criada com sucesso")
+                    voltarMenu()
+                } else {
+                    Toast.makeText(
+                        baseContext, "Ops, algo deu errado!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<VagaResponse>, t: Throwable) {
+                Toast.makeText(
+                    baseContext, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
     }
 
-    fun voltarMenu(componente: View) {
+    fun voltarMenu() {
         val menuIntent = Intent(this, posLoginEmpresa::class.java)
         startActivity(menuIntent)
     }

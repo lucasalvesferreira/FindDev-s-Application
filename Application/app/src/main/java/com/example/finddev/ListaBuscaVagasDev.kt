@@ -1,6 +1,5 @@
 package com.example.finddev
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finddev.App.model.dtos.Vaga
-import com.example.finddev.ModalVaga
-
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.dtos.VagaResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 interface OnItemClickListener {
-    fun onItemClick(vaga: Vaga)
+    fun onItemClick(vaga: VagaResponse)
 }
 
 class ListaBuscaVagasDev : AppCompatActivity() {
@@ -31,56 +33,10 @@ class ListaBuscaVagasDev : AppCompatActivity() {
         recyclerViewVagas.layoutManager = LinearLayoutManager(this)
 
         // Obtém a lista de vagas compatíveis
-        val vagasCompativeis = getVagasCompativeis()
+        val frenteDesenvolvimentoSelecionada = intent.getStringExtra("frenteDesenvolvimento").toString()
+        val senioridadeSelecionada = intent.getStringExtra("senioridade").toString()
 
-        // Configura o adapter com a lista de vagas
-        vagasAdapter = VagasAdapter(vagasCompativeis, object : OnItemClickListener {
-            override fun onItemClick(vaga: Vaga) {
-                val modalVaga = ModalVaga.newInstance(
-                    vaga.titulo,
-                    vaga.subtitulo,
-                    vaga.valor,
-                    vaga.frenteDesenvolvimento,
-                    vaga.senioridade,
-                    vaga.descricao
-                )
-
-                // Abra o modal utilizando o FragmentManager
-                modalVaga.show(supportFragmentManager, "modal_vaga")
-            }
-        })
-        recyclerViewVagas.adapter = vagasAdapter
-    }
-
-    private fun getVagasCompativeis(): List<Vaga> {
-        val frenteDesenvolvimentoSelecionada = intent.getStringExtra("frenteDesenvolvimento")
-        val senioridadeSelecionada = intent.getStringExtra("senioridade")
-
-        // Faz a lógica para filtrar as vagas compatíveis com os critérios selecionados
-        val vagasCompativeis = mutableListOf<Vaga>()
-        val listaVagas = getListaVagas() // Obtém todas as vagas
-
-        // Filtra as vagas com base nos critérios selecionados
-        for (vaga in listaVagas) {
-            if (vaga.frenteDesenvolvimento == frenteDesenvolvimentoSelecionada &&
-                vaga.senioridade == senioridadeSelecionada
-            ) {
-                vagasCompativeis.add(vaga)
-            }
-        }
-
-        return vagasCompativeis
-    }
-
-    // Método para obter a lista de vagas (substitua com seus dados reais)
-    private fun getListaVagas(): List<Vaga> {
-        // Simule uma lista de vagas
-        val vagas = mutableListOf<Vaga>()
-        vagas.add(Vaga(2,1, "título 1", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
-        vagas.add(Vaga(1,2, "título 2", "Subtítulo 2", "Valor: R\$ 2.000", "BACKEND", "PLENO","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
-        vagas.add(Vaga(11,3, "título 3", "Subtítulo 3", "Valor: R$ 3.000", "FULLSTACK", "SENIOR","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
-        // Adicione mais vagas se necessário
-        return vagas
+        buscarVagasFiltradas(frenteDesenvolvimentoSelecionada, senioridadeSelecionada)
     }
 
     // Classe do ViewHolder para o item da lista
@@ -94,7 +50,7 @@ class ListaBuscaVagasDev : AppCompatActivity() {
     }
 
     // Adaptador para o RecyclerView
-    private inner class VagasAdapter(private val listaVagas: List<Vaga>, private val listener: OnItemClickListener) :
+    private inner class VagasAdapter(private val listaVagas: List<VagaResponse>, private val listener: OnItemClickListener) :
         RecyclerView.Adapter<VagaViewHolder>(), View.OnClickListener {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VagaViewHolder {
@@ -106,9 +62,8 @@ class ListaBuscaVagasDev : AppCompatActivity() {
             val vaga = listaVagas[position]
             holder.imgVaga.setImageResource(R.mipmap.logo) // Defina a imagem correta para cada vaga
             holder.txtTitulo.text = vaga.titulo
-            holder.txtSubtitulo.text = vaga.subtitulo
-            holder.txtValor.text = vaga.valor
-            holder.txtFrenteDesenvolvimento.text = vaga.frenteDesenvolvimento
+            holder.txtSubtitulo.text = vaga.descricao
+            holder.txtFrenteDesenvolvimento.text = vaga.funcao
             holder.txtSenioridade.text = vaga.senioridade
 
             // Define o clique no item da lista
@@ -121,8 +76,50 @@ class ListaBuscaVagasDev : AppCompatActivity() {
         }
 
         override fun onClick(view: View) {
-            val vaga = view.tag as Vaga
+            val vaga = view.tag as VagaResponse
             listener.onItemClick(vaga)
         }
+    }
+
+    private fun buscarVagasFiltradas(funcao: String, senioridade: String) {
+        val apiVagas = Apis.getApiVagas()
+        val chamadaGet = apiVagas.getVagaFiltrada(funcao, senioridade)
+
+        chamadaGet.enqueue(object : Callback<List<VagaResponse>> {
+            override fun onResponse(
+                call: Call<List<VagaResponse>>,
+                response: Response<List<VagaResponse>>
+            ) {
+                if (response.isSuccessful) {
+                    vagasAdapter = VagasAdapter(response.body()!!, object : OnItemClickListener {
+                        override fun onItemClick(vaga: VagaResponse) {
+                            val modalVaga = ModalVaga.newInstance(
+                                vaga.titulo,
+                                vaga.descricao,
+                                vaga.funcao,
+                                vaga.senioridade
+                            )
+
+                            // Abra o modal utilizando o FragmentManager
+                            modalVaga.show(supportFragmentManager, "modal_vaga")
+                        }
+                    })
+                    recyclerViewVagas.adapter = vagasAdapter
+                } else {
+                    Toast.makeText(
+                        baseContext, "Ops, algo deu errado!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<List<VagaResponse>>, t: Throwable) {
+                Toast.makeText(
+                    baseContext, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
     }
 }

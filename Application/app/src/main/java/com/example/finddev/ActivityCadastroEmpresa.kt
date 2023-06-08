@@ -1,8 +1,6 @@
 package com.example.finddev
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -13,23 +11,15 @@ import com.example.finddev.App.model.UsuarioModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 import java.util.regex.Pattern
 
 class ActivityCadastroEmpresa : AppCompatActivity() {
-
-    private lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_empresa)
-
-        sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
     }
 
     fun cadastroEmpresa(componente: View){
-        val UUID = UUID.randomUUID().toString()
-
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
@@ -53,8 +43,6 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
         val bairro = findViewById<EditText>(R.id.et_bairro)
 
         val endereco = findViewById<EditText>(R.id.et_logradouro)
-
-        val numero = findViewById<EditText>(R.id.et_numero)
 
         val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
 
@@ -142,14 +130,6 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
             validado = false
         }
 
-        if (numero.text.isEmpty()) {
-            numero.error = "Campo obrigatório"
-            validado = false
-        }else if (!numeroPattern.matcher(numero.text).matches()) {
-            numero.error = "Por favor, digite apenas números no campo de número "
-            validado = false
-        }
-
 //        else if (numero == null || numero.text.toInt() > 0) {
 //            numero.error = "Por favor, digite um número residencial válido." // TODO esta dando erro
 //            validado = false
@@ -157,7 +137,6 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         if (validado) {
             val company = UsuarioModel(
-                id = UUID,
                 nome = nome.text.toString(),
                 email = email.text.toString(),
                 senha = senha.text.toString(),
@@ -167,11 +146,10 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                 endereco = endereco.text.toString(),
                 telefone = telefone.text.toString(),
                 cnpj = cnpj.text.toString(),
-
-                )
+            )
 
             val apiEmpresa = Apis.getApiEmpresa()
-            val chamadaPost = apiEmpresa.createDeveloper(company)
+            val chamadaPost = apiEmpresa.createEmpresa(company)
 
 //            var idResponse = findViewById<TextView>(R.id.id_response) TODO colocar na tela de cadastro campo para aparecer mensagem de erro
             chamadaPost.enqueue(object : Callback<UsuarioModel> {
@@ -179,17 +157,12 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                     call: Call<UsuarioModel>,
                     response: Response<UsuarioModel>
                 ) {
-                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
-                        val findCompany = response.body()
-                        // Armazena o UUID da empresa no SharedPreferences
-                        sharedPreferences.edit().putString("UUID_EMPRESA", findCompany?.id).apply()
-                        val logar = Intent(applicationContext, cadastroStep3::class.java)
-                        startActivity(logar)
+                    if (response.isSuccessful) {
+                        val intent = Intent(applicationContext, cadastroStep3::class.java)
+                        startActivity(intent)
                     } else {
-                        var code = response.code()
-//                        idResponse.text = "Erro ao cadastrar"+ "${code}"
                         Toast.makeText(
-                            baseContext, "Ops, algo deu errado!",
+                            baseContext, "Ops, algo deu errado! response: $response",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -203,7 +176,6 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
-
 
         }
 
