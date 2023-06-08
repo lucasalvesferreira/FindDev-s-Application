@@ -25,15 +25,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/setavoltar"
-                android:id="@+id/setaVoltar"
-                android:layout_centerVertical="true"
-                android:onClick="voltarMenu"
-            />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:src="@mipmap/logo"
                 android:minHeight="75dp"
                 android:minWidth="75dp"
@@ -166,6 +157,7 @@
                     android:gravity="center"
                     >
                     <Button
+                        android:id="@+id/btn_publicar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Publicar"

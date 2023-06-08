@@ -36,23 +36,14 @@
             android:name=".PerfilDev"
             android:exported="false" />
         <activity
-            android:name=".VagaFragment"
-            android:exported="true" />
-        <activity
             android:name=".BuscaVagaDev"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".posLoginEmpresa"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".posLoginDev"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ActivityCadastroStep3"
             android:exported="true" />
