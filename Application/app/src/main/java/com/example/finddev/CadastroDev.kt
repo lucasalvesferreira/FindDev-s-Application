@@ -14,6 +14,7 @@ import retrofit2.Response
 import java.util.regex.Pattern
 
 class CadastroDev : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_dev)

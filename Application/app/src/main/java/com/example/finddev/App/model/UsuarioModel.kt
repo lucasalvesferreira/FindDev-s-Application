@@ -4,7 +4,7 @@ import com.example.finddev.App.enums.Planos
 import java.util.UUID
 
 data class UsuarioModel(
-    val id: UUID? = null,
+    val id: String? = null,
     val nome:String,
     val email:String,
     val senha:String,

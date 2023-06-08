@@ -1,6 +1,8 @@
 package com.example.finddev
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -11,15 +13,23 @@ import com.example.finddev.App.model.UsuarioModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 import java.util.regex.Pattern
 
 class ActivityCadastroEmpresa : AppCompatActivity() {
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_empresa)
+
+        sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
     }
 
     fun cadastroEmpresa(componente: View){
+        val UUID = UUID.randomUUID().toString()
+
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
@@ -147,6 +157,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         if (validado) {
             val company = UsuarioModel(
+                id = UUID,
                 nome = nome.text.toString(),
                 email = email.text.toString(),
                 senha = senha.text.toString(),
@@ -170,7 +181,9 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
                         val findCompany = response.body()
-                        val logar = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        // Armazena o UUID da empresa no SharedPreferences
+                        sharedPreferences.edit().putString("UUID_EMPRESA", findCompany?.id).apply()
+                        val logar = Intent(applicationContext, cadastroStep3::class.java)
                         startActivity(logar)
                     } else {
                         var code = response.code()

@@ -1,5 +1,6 @@
 package com.example.finddev
 
+import com.example.finddev.ModalConfirmacaoCandidatura
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,6 @@ class ModalVaga : DialogFragment() {
                 putString("senioridade", senioridade)
                 putString("descricao", descricao)
             }
-
             val fragment = ModalVaga()
             fragment.arguments = args
             return fragment
@@ -66,8 +66,13 @@ class ModalVaga : DialogFragment() {
         // Configurar o botão "Candidatar-se"
         view.findViewById<Button>(R.id.btnCandidatar).setOnClickListener {
             // Lógica para lidar com o clique do botão "Candidatar-se"
-            // Implemente aqui a ação desejada
+
+            // Exibir o ModalConfirmacaoCandidatura
+            val confirmacaoCandidatura = ModalConfirmacaoCandidatura()
+            confirmacaoCandidatura.show(parentFragmentManager, "ModalConfirmacaoCandidatura")
+
             dismiss() // Fechar o modal após o clique no botão
         }
     }
+
 }

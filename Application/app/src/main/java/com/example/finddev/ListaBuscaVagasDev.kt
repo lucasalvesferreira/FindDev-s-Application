@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finddev.App.model.dtos.Vaga
+import com.example.finddev.ModalVaga
+
 
 interface OnItemClickListener {
     fun onItemClick(vaga: Vaga)
@@ -74,9 +76,9 @@ class ListaBuscaVagasDev : AppCompatActivity() {
     private fun getListaVagas(): List<Vaga> {
         // Simule uma lista de vagas
         val vagas = mutableListOf<Vaga>()
-        vagas.add(Vaga(2,1, "título 1", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Teste"))
-        vagas.add(Vaga(1,2, "título 2", "Subtítulo 2", "Valor: R\$ 2.000", "BACKEND", "PLENO","Testr"))
-        vagas.add(Vaga(11,3, "título 3", "Subtítulo 3", "Valor: R$ 3.000", "FULLSTACK", "SENIOR","Teste"))
+        vagas.add(Vaga(2,1, "título 1", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
+        vagas.add(Vaga(1,2, "título 2", "Subtítulo 2", "Valor: R\$ 2.000", "BACKEND", "PLENO","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
+        vagas.add(Vaga(11,3, "título 3", "Subtítulo 3", "Valor: R$ 3.000", "FULLSTACK", "SENIOR","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc nec neque gravida dictum vitae ac urna. Suspendisse mattis suscipit ultrices. In in eleifend metus, sed convallis justo. Aenean congue metus vel diam placerat vestibulum. Mauris eu ligula sit amet ligula interdum sodales faucibus quis est. In tellus risus, vestibulum sed leo accumsan, aliquet scelerisque justo. Vivamus vitae auctor diam. In vulputate venenatis ante. Mauris suscipit vel lectus ut tristique."))
         // Adicione mais vagas se necessário
         return vagas
     }
