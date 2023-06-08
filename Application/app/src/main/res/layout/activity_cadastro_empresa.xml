@@ -287,7 +287,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Endereço"
+                        android:text="Logradouro"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -299,6 +299,29 @@
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
                         android:id="@+id/et_logradouro"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <androidx.constraintlayout.utils.widget.MotionLabel
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/white"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:inputType="number"
+                        android:background="@drawable/borda_input_cadastro"
+                        style="@style/input_cadastro"
+                        android:id="@+id/et_numero"
                         />
                 </LinearLayout>
 

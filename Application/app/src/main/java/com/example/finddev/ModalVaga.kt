@@ -7,21 +7,26 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.R
 
 class ModalVaga : DialogFragment() {
 
     companion object {
         fun newInstance(
             titulo: String,
-            descricao: String,
-            funcao: String,
-            senioridade: String
+            subtitulo: String,
+            valor: String,
+            frenteDesenvolvimento: String,
+            senioridade: String,
+            descricao: String
         ): ModalVaga {
             val args = Bundle().apply {
                 putString("titulo", titulo)
-                putString("subtitulo", descricao)
-                putString("frenteDesenvolvimento", funcao)
+                putString("subtitulo", subtitulo)
+                putString("valor", valor)
+                putString("frenteDesenvolvimento", frenteDesenvolvimento)
                 putString("senioridade", senioridade)
+                putString("descricao", descricao)
             }
 
             val fragment = ModalVaga()

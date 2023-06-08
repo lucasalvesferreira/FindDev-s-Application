@@ -7,5 +7,8 @@ import retrofit2.http.POST
 
 interface ApiEmpresa {
     @POST("empresa")
-    fun createEmpresa(@Body usuarioModel: UsuarioModel): Call<UsuarioModel>
+    fun createDeveloper(
+        @Body usuarioModel: UsuarioModel): Call<UsuarioModel>
+
+
 }

@@ -44,6 +44,8 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         val endereco = findViewById<EditText>(R.id.et_logradouro)
 
+        val numero = findViewById<EditText>(R.id.et_numero)
+
         val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
@@ -130,6 +132,14 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
             validado = false
         }
 
+        if (numero.text.isEmpty()) {
+            numero.error = "Campo obrigatório"
+            validado = false
+        }else if (!numeroPattern.matcher(numero.text).matches()) {
+            numero.error = "Por favor, digite apenas números no campo de número "
+            validado = false
+        }
+
 //        else if (numero == null || numero.text.toInt() > 0) {
 //            numero.error = "Por favor, digite um número residencial válido." // TODO esta dando erro
 //            validado = false
@@ -146,10 +156,11 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                 endereco = endereco.text.toString(),
                 telefone = telefone.text.toString(),
                 cnpj = cnpj.text.toString(),
-            )
+
+                )
 
             val apiEmpresa = Apis.getApiEmpresa()
-            val chamadaPost = apiEmpresa.createEmpresa(company)
+            val chamadaPost = apiEmpresa.createDeveloper(company)
 
 //            var idResponse = findViewById<TextView>(R.id.id_response) TODO colocar na tela de cadastro campo para aparecer mensagem de erro
             chamadaPost.enqueue(object : Callback<UsuarioModel> {
@@ -157,12 +168,15 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                     call: Call<UsuarioModel>,
                     response: Response<UsuarioModel>
                 ) {
-                    if (response.isSuccessful) {
-                        val intent = Intent(applicationContext, cadastroStep3::class.java)
-                        startActivity(intent)
+                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                        val findCompany = response.body()
+                        val logar = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        startActivity(logar)
                     } else {
+                        var code = response.code()
+//                        idResponse.text = "Erro ao cadastrar"+ "${code}"
                         Toast.makeText(
-                            baseContext, "Ops, algo deu errado! response: $response",
+                            baseContext, "Ops, algo deu errado!",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -176,6 +190,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
+
 
         }
 

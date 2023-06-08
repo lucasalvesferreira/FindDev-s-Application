@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
-import com.example.finddev.App.sharedpreferences.getId
-import com.example.finddev.App.sharedpreferences.saveId
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -66,15 +64,14 @@ class MainActivity : AppCompatActivity() {
                     response: Response<UsuarioModel>
                 ) {
                     if (response.isSuccessful) {
-                        saveId(applicationContext, response.body()?.id.toString())
-
-                        response.body()?.cnpj?.let {
-                            startActivity(Intent(applicationContext, posLoginEmpresa::class.java))
-                        } ?: startActivity(Intent(applicationContext, posLoginDev::class.java))
+                        val usuarios = response.body()
+                        val logou = Intent(applicationContext, posLoginDev ::class.java)
+                        startActivity(logou) // TODO mudar quando criar tela de login
                     }else {
-                        val code = response.code()
+                        var code = response.code()
                         Log.d("TAG", "Erro ao logar : Status = "+ "${code}")
                         idResponse_main.text = "Usuario e senha não encontrados!"
+
                     }
                 }
 
@@ -89,4 +86,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
