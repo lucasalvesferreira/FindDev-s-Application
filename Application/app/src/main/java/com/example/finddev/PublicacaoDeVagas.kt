@@ -1,74 +1,95 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.dtos.VagaRequest
+import com.example.finddev.App.model.dtos.VagaResponse
+import com.example.finddev.App.sharedpreferences.getId
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PublicacaoDeVagas : AppCompatActivity() {
+    private lateinit var etTitulo: EditText
+    private lateinit var spinnerSenioridade: Spinner
+    private lateinit var spinnerFrente: Spinner
+    private lateinit var etDescricao: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_publicacao_de_vagas)
+
+        etTitulo = findViewById(R.id.et_titulo)
+        spinnerSenioridade = findViewById(R.id.sp_senioridade)
+        spinnerFrente = findViewById(R.id.sp_frente)
+        etDescricao = findViewById(R.id.et_descricao)
+
         spinners()
+
+        val btnPublicar: Button = findViewById(R.id.btn_publicar)
+        btnPublicar.setOnClickListener {
+            publicarVaga()
+        }
     }
 
-    fun spinners() {
-        val senioridadeArray = arrayOf("Junior", "Pleno", "Senior")
-        val frenteArray = arrayOf("Front End", "Back End", "Devops")
-
-        var spinnerSenioridade: Spinner = findViewById(R.id.sp_senioridade)
-        var spinnerFrente: Spinner = findViewById(R.id.sp_frente)
+    private fun spinners() {
+        val senioridadeArray = arrayOf("JUNIOR", "PLENO", "SENIOR")
+        val frenteArray = arrayOf("FRONTEND", "BACKEND", "FULLSTACK")
 
         val adapterSenioridade = ArrayAdapter(this, android.R.layout.simple_spinner_item, senioridadeArray)
         adapterSenioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        val adapterfrente = ArrayAdapter(this, android.R.layout.simple_spinner_item, frenteArray)
-        adapterfrente.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val adapterFrente = ArrayAdapter(this, android.R.layout.simple_spinner_item, frenteArray)
+        adapterFrente.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spinnerSenioridade.adapter = adapterSenioridade
-        spinnerFrente.adapter = adapterfrente
-
-
-        spinnerSenioridade.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val selectedItem = senioridadeArray[position]
-                // Lógica para tratar a seleção do primeiro spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
-
-        spinnerFrente.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val selectedItem = frenteArray[position]
-                // Lógica para tratar a seleção do segundo spinner
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Lógica para tratamento quando nada é selecionado
-            }
-        }
-
+        spinnerFrente.adapter = adapterFrente
     }
 
-    fun voltarMenu(componente: View){
-        val Menu = Intent(applicationContext, posLoginEmpresa::class.java)
-        startActivity(Menu)
+    private fun publicarVaga() {
+        val titulo = etTitulo.text.toString()
+        val senioridade = spinnerSenioridade.selectedItem.toString()
+        val frenteDesenvolvimento = spinnerFrente.selectedItem.toString()
+        val descricao = etDescricao.text.toString()
+
+        val vagaRequest = VagaRequest(
+            getId(applicationContext),
+            titulo,
+            descricao,
+            frenteDesenvolvimento,
+            senioridade
+        )
+
+        val apiVagas = Apis.getApiVagas()
+        val chamadaPost = apiVagas.createVaga(vagaRequest)
+
+        chamadaPost.enqueue(object : Callback<VagaResponse> {
+            override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
+                if (response.isSuccessful) {
+                    voltarMenu()
+                } else {
+                    Toast.makeText(
+                        baseContext, "Ops, algo deu errado!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<VagaResponse>, t: Throwable) {
+                Toast.makeText(
+                    baseContext, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
+    }
+
+    fun voltarMenu() {
+        val menuIntent = Intent(this, posLoginEmpresa::class.java)
+        startActivity(menuIntent)
     }
 }

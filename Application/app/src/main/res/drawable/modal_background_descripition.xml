@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/preto_2" /> <!-- Cor de fundo do card -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/roxa" /> <!-- Cor roxa da borda -->
+    <corners android:radius="8dp" />
+    <padding
+        android:left="0dp"
+        android:top="0dp"
+        android:right="4dp"
+        android:bottom="0dp" />
+</shape>

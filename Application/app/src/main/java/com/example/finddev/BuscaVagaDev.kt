@@ -1,12 +1,12 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.*
-import androidx.fragment.app.commit
-import com.example.finddev.App.model.dtos.VagaModel
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 
 class BuscaVagaDev : AppCompatActivity() {
 
