@@ -1,7 +1,5 @@
 package com.example.finddev.App.model.dtos
 
-import com.example.finddev.App.enums.FuncaoDev
-import com.example.finddev.App.enums.SenioridadeDev
 import com.example.finddev.App.model.UsuarioModel
 
 data class VagaResponse(

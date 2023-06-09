@@ -1,10 +1,9 @@
 package com.example.finddev
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.dtos.VagaRequest
 import com.example.finddev.App.model.dtos.VagaResponse
@@ -70,7 +69,6 @@ class PublicacaoDeVagas : AppCompatActivity() {
         chamadaPost.enqueue(object : Callback<VagaResponse> {
             override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
                 if (response.isSuccessful) {
-                    println("vaga criada com sucesso")
                     voltarMenu()
                 } else {
                     Toast.makeText(
