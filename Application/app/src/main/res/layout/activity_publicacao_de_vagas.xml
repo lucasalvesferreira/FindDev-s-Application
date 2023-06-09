@@ -163,7 +163,6 @@
                         android:text="Publicar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/preto_1"
-                        android:onClick="publicarVaga"
                         />
 
                 </LinearLayout>
