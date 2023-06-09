@@ -86,7 +86,7 @@
                     android:backgroundTint="@color/preto_1"
                     android:paddingHorizontal="25dp"
                     android:paddingVertical="30dp"
-                    android:onClick="Perfil"
+                    android:onClick="perfil"
                     />
             </LinearLayout>
         </LinearLayout>

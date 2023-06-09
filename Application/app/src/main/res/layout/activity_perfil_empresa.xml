@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/edit"
                 android:layout_marginLeft="20dp"
+                android:onClick="telaEditarEmpresa"
             />
 
         </LinearLayout>
@@ -224,7 +225,6 @@
                             android:background="@drawable/botao_cadastro_empresa"
                             android:gravity="center"
                             android:layout_alignParentEnd="true"
-                            android:layout_toStartOf="@+id/botaoVagasAbertas"
                         >
 
                             <Button
