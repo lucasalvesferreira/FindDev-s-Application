@@ -8,143 +8,208 @@
     android:background="#000000"
     tools:context=".PerfilDev">
 
-    <fragment
-        android:id="@+id/header_seta_voltar"
-        android:name="com.example.finddev.HeaderSetaVoltar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_header_seta_voltar" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/preto_1"
+        android:padding="40dp"
+        >
+        <fragment
+            android:id="@+id/header_seta_voltar"
+            android:name="com.example.finddev.HeaderSetaVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_header_seta_voltar"
+            android:layout_marginBottom="30dp"
+            />
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/foto_perfil"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DA"
+                android:textSize="60sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:id="@+id/siglaNome"
+            />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="40dp">
+            android:layout_marginBottom="50dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classificação: "
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="25sp"
+                android:id="@+id/numero_classificacao"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/star"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/edit"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btnEditar"
+                android:onClick="telaEditar"
+            />
+
+        </LinearLayout>
 
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
-                <ImageView
-                    android:id="@+id/imgPerfil"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/logo" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp" />
+                    android:id="@+id/tvNomeCompleto"
+                    android:text="Danilo Amorim"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/resumo"
+                    android:text="Dev | Intern | Backend | C6 Bank"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/edtNome"
-                        android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:hint="Nome"
-                        android:padding="10dp" />
+                        android:text="Biografia"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        />
 
-                    <EditText
-                        android:id="@+id/edtCompetencias"
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:hint="Competências"
-                        android:padding="10dp" />
+                        android:id="@+id/biografia"
+                        android:text=" is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Localização"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvEstado"
+                            android:text="\u25CF  São Paulo"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/montserrat"
+                            />
 
                         <TextView
-                            android:id="@+id/tvBiografiaLabel"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:text="Biografia"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/edtBiografia"
-                            style="@style/input_cadastro"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/borda_input_cadastro"
-                            android:hint="Digite sua biografia"
-                            android:maxLength="2000"
-                            android:maxLines="5"
-                            android:padding="10dp" />
-
+                            android:id="@+id/tvCidade"
+                            android:text="\u25CF  Campinas"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/montserrat"
+                            />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvExperienciaLabel"
-                            android:layout_width="match_parent"
+                        android:layout_marginTop="30dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:text="Experiência"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/edtExperiencia"
-                            style="@style/input_cadastro"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/borda_input_cadastro"
-                            android:hint="Digite suas experiências"
-                            android:maxLength="2000"
-                            android:maxLines="5"
-                            android:padding="10dp" />
-
+                            android:background="@drawable/botao_cadastro_empresa"
+                            android:gravity="center"
+                        >
+                            <Button
+                                android:layout_height="60dp"
+                                android:layout_width="match_parent"
+                                android:text="Avalie seus contratantes"
+                                android:fontFamily="@font/montserrat"
+                                android:onClick="colaboradores"
+                                android:id="@+id/botaoColaboradores"
+                                android:backgroundTint="@color/preto_1"
+                            />
+                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/btnEditar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Editar"
-                    android:textSize="16sp" />
 
             </LinearLayout>
-        </LinearLayout>
 
-    </ScrollView>
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
