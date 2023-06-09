@@ -15,11 +15,32 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".ModalVagaCanceladaEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".ModalVagasPublicadasEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".VagasPublicadasEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".ModalAvaliacaoVagaEncerrada"
+            android:exported="false" />
+        <activity
+            android:name=".ModalVagasEncerradas"
+            android:exported="false" />
+        <activity
             android:name=".EdicaoPerfilEmpresa"
             android:exported="false" />
         <activity
             android:name=".PerfilEmpresa"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".PublicacaoDeVagas"
             android:exported="false" />
@@ -34,29 +55,19 @@
             android:exported="false" />
         <activity
             android:name=".PerfilDev"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".EdicaoPerfilDev"
             android:exported="false" />
-        <activity
-            android:name=".VagaFragment"
-            android:exported="true" />
         <activity
             android:name=".BuscaVagaDev"
             android:exported="true" />
         <activity
             android:name=".posLoginEmpresa"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".posLoginDev"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ActivityCadastroStep3"
             android:exported="true" />

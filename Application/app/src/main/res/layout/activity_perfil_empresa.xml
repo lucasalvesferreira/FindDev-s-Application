@@ -214,7 +214,6 @@
                                 android:backgroundTint="@color/preto_1"
                                 android:text="Vagas em aberto"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="vagasPublicadas"
                                 android:id="@+id/botaoVagasAbertas"
                             />
                         </LinearLayout>

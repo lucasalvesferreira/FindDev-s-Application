@@ -11,25 +11,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finddev.App.model.Vaga
 
-class JobsEncerradosDev : AppCompatActivity() {
+class VagasPublicadasEmpresa : AppCompatActivity() {
 
-    private lateinit var recyclerViewVagas: RecyclerView
+    private lateinit var recyclerViewVagasPublicadas: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jobs_encerrados_dev)
+        setContentView(R.layout.activity_vagas_publicadas_empresa)
 
         // Configurar o RecyclerView
-        recyclerViewVagas = findViewById(R.id.recyclerViewVagas)
-        recyclerViewVagas.layoutManager = LinearLayoutManager(this)
-        recyclerViewVagas.adapter = VagasAdapter(getListaVagas()) // Chame o método getListaVagas() para obter a lista de vagas
+        recyclerViewVagasPublicadas = findViewById(R.id.recyclerViewVagasPublicadas)
+        recyclerViewVagasPublicadas.layoutManager = LinearLayoutManager(this)
+        recyclerViewVagasPublicadas.adapter = VagasAdapter(getListaVagas()) // Chame o método getListaVagas() para obter a lista de vagas
     }
 
     // Método para obter a lista de vagas (substitua com seus dados reais)
     private fun getListaVagas(): List<Vaga> {
         // Simule uma lista de vagas
         val vagas = mutableListOf<Vaga>()
-        vagas.add(Vaga(2, 1, "título 1", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Tet"))
+        vagas.add(Vaga(2, 1, "título 90", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Tet"))
         vagas.add(Vaga(1, 2, "título 2", "Subtítulo 2", "Valor: R\$ 2.000", "BACKEND", "PLENO","Teste"))
         vagas.add(Vaga(11, 3, "título 3", "Subtítulo 3", "Valor: R\$ 3.000", "FULLSTACK", "SENIOR","Teste"))
         // Adicione mais vagas se necessário
@@ -63,8 +63,8 @@ class JobsEncerradosDev : AppCompatActivity() {
 
             // Configurar o clique no item da lista para abrir o ModalVagasEncerradas
             holder.itemView.setOnClickListener {
-                val modalVagasEncerradas = ModalVagasEncerradas.newInstance(vaga) // Crie uma instância do ModalVagasEncerradas e passe a vaga selecionada
-                modalVagasEncerradas.show(supportFragmentManager, "ModalVagasEncerradas") // Exiba o modal
+                val modalVagasPublicadasEmpresa = ModalVagasPublicadasEmpresa.newInstance(vaga) // Crie uma instância do ModalVagasEncerradas e passe a vaga selecionada
+                modalVagasPublicadasEmpresa.show(supportFragmentManager, "modal_vagas_publicadas_empresas") // Exiba o modal
             }
         }
 
