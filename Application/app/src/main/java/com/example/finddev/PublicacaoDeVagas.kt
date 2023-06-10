@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.dtos.VagaRequest
 import com.example.finddev.App.model.dtos.VagaResponse
-import com.example.finddev.App.sharedpreferences.getId
+import com.example.finddev.App.sharedpreferences.getIdUser
+import com.example.finddev.App.sharedpreferences.saveIdVaga
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,7 +57,7 @@ class PublicacaoDeVagas : AppCompatActivity() {
         val descricao = etDescricao.text.toString()
 
         val vagaRequest = VagaRequest(
-            getId(applicationContext),
+            getIdUser(applicationContext),
             titulo,
             descricao,
             frenteDesenvolvimento,
@@ -69,6 +70,7 @@ class PublicacaoDeVagas : AppCompatActivity() {
         chamadaPost.enqueue(object : Callback<VagaResponse> {
             override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
                 if (response.isSuccessful) {
+                    saveIdVaga(applicationContext, response.body()?.id!!)
                     voltarMenu()
                 } else {
                     Toast.makeText(
