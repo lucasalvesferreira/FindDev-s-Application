@@ -17,9 +17,12 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FDAPP/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_cadastro.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/custom_ratingbar.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_cadastro_step3.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_colaboradores.xml" value="0.10260416666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_lista_busca_vagas_dev.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_avaliacao_colaboradores.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_avaliacao_vaga_encerrada.xml" value="0.21241830065359477" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_colaboradores.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_vaga.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_vaga_cancelada_empresa.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_vagas_encerradas.xml" value="0.17552083333333332" />
@@ -30,6 +33,7 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_vaga.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_vagas.xml" value="0.10260416666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga_colaboradores.xml" value="0.10260416666666666" />
       </map>
     </option>
   </component>

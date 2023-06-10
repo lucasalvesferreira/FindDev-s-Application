@@ -29,9 +29,9 @@ class JobsEncerradosDev : AppCompatActivity() {
     private fun getListaVagas(): List<Vaga> {
         // Simule uma lista de vagas
         val vagas = mutableListOf<Vaga>()
-        vagas.add(Vaga(2, 1, "título 1", "Subtítulo 1", "Valor: R\$ 1.000", "FRONTEND", "JUNIOR","Tet"))
-        vagas.add(Vaga(1, 2, "título 2", "Subtítulo 2", "Valor: R\$ 2.000", "BACKEND", "PLENO","Teste"))
-        vagas.add(Vaga(11, 3, "título 3", "Subtítulo 3", "Valor: R\$ 3.000", "FULLSTACK", "SENIOR","Teste"))
+        vagas.add(Vaga(2, 1, "título 1","Subtítulo 1", "FRONTEND", "JUNIOR","Tet"))
+        vagas.add(Vaga(1, 2, "título 2", "Subtítulo 2","BACKEND", "PLENO","Teste"))
+        vagas.add(Vaga(11, 3, "título 3", "Subtítulo 3","FULLSTACK", "SENIOR","Teste"))
         // Adicione mais vagas se necessário
         return vagas
     }

@@ -259,7 +259,6 @@
 
                                 android:text="Colaboradores"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="colaboradores"
                                 android:id="@+id/botaoColaboradores"
                                 android:backgroundTint="@color/preto_1"
                             />

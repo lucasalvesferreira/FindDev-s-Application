@@ -15,8 +15,18 @@ data class Vaga(
     val imagem: Int,
     val titulo: String,
     val subtitulo: String,
-    val valor: String,
     val frenteDesenvolvimento: String,
     val senioridade: String,
     var descricao:String
     )
+
+data class VagaColaboradores(
+    val id:Int,
+    val imagem: Int,
+    val titulo: String,
+    val nome_dev: String? = null,
+    val subtitulo: String? = null,
+    val frenteDesenvolvimento: String,
+    val senioridade: String,
+    var descricao:String
+)

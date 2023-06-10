@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".ModalAvaliacaoColaboradores"
+            android:exported="false" />
+        <activity
+            android:name=".ModalColaboradores"
+            android:exported="false" />
+        <activity
+            android:name=".Colaboradores"
+            android:exported="false" />
+        <activity
             android:name=".ModalVagaCanceladaEmpresa"
             android:exported="false" />
         <activity
@@ -34,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".PerfilEmpresa"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
