@@ -30,3 +30,13 @@ data class VagaColaboradores(
     val senioridade: String,
     var descricao:String
 )
+
+data class VagaCandidato(
+    val id:Int,
+    val imagem: Int,
+    val titulo: String,
+    val nome_dev: String? = null,
+    val frenteDesenvolvimento: String,
+    val senioridade: String,
+    var experiencia:String
+)

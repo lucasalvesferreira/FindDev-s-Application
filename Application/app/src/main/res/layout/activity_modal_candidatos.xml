@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ModalVagasPublicadasEmpresa"
+    tools:context=".ModalCandidatos"
     >
 
     <LinearLayout
@@ -26,7 +26,7 @@
             >
 
             <TextView
-                android:id="@+id/txtModalTitulo"
+                android:id="@+id/txtNomeDev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Título da Vaga"
@@ -34,7 +34,6 @@
                 android:textSize="25sp"
                 android:gravity="center_horizontal"
                 />
-
 
             <TextView
                 android:id="@+id/txtModalSubtitulo"
@@ -46,6 +45,7 @@
                 android:textSize="15sp"
                 android:gravity="center_horizontal"
                 />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,7 +84,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,11 +99,11 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="15sp"
-                    android:text="Detalhes da vaga:"
+                    android:text="Detalhes do candidato:"
                     />
 
                 <TextView
-                    android:id="@+id/txtModalDescricao"
+                    android:id="@+id/txtExperiencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -119,13 +118,14 @@
                 android:gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 >
+
                 <Button
-                    android:id="@+id/btnApagarVaga"
+                    android:id="@+id/btnContratar"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
                     android:background="@drawable/btn_modal_candidatar"
-                    android:text="Apagar Vaga"
+                    android:padding="5dp"
+                    android:text="Contratar"
                     android:textColor="@color/white" />
 
             </LinearLayout>

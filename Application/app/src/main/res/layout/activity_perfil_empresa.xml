@@ -232,7 +232,6 @@
                                 android:backgroundTint="@color/preto_1"
                                 android:text="Contratar"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="contratar"
                                 android:id="@+id/botaoContratar"
 
                             />

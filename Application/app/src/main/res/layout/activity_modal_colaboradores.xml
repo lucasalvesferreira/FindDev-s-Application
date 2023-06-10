@@ -37,11 +37,11 @@
 
 
       <TextView
-          android:id="@+id/txtModalSubtitulo"
+          android:id="@+id/txtNomeDev"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="8dp"
-          android:text="Subtítulo da Vaga"
+          android:text="Nome dev"
           android:textColor="#fff"
           android:textSize="15sp"
           android:gravity="center_horizontal"
@@ -99,7 +99,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:text="DESCRIÇÃO:"
+            android:text="Destalhes da vaga:"
             />
 
         <TextView

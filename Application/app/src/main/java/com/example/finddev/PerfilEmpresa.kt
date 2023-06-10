@@ -10,6 +10,7 @@ class PerfilEmpresa : AppCompatActivity() {
 
     private lateinit var botaoVagasAbertas: Button
     private lateinit var botaoColaboradores: Button
+    private lateinit var botaoContratar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,11 @@ class PerfilEmpresa : AppCompatActivity() {
         botaoColaboradores = findViewById(R.id.botaoColaboradores)
         botaoColaboradores.setOnClickListener {
             val intent = Intent(this, Colaboradores::class.java)
+            startActivity(intent)
+        }
+        botaoContratar = findViewById(R.id.botaoContratar)
+        botaoContratar.setOnClickListener {
+            val intent = Intent(this, Candidatos::class.java)
             startActivity(intent)
         }
     }

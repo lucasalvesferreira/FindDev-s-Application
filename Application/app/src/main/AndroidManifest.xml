@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".ModalCandidatoContratado"
+            android:exported="false" />
+        <activity
+            android:name=".ModalCandidatos"
+            android:exported="false" />
+        <activity
+            android:name=".Candidatos"
+            android:exported="false" />
+        <activity
             android:name=".ModalAvaliacaoColaboradores"
             android:exported="false" />
         <activity

@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_marginBottom="50dp">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Título da Vaga"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 android:textColor="#fff"/>
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Subtítulo da Vaga"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:textColor="#fff"
                 android:layout_marginTop="8dp"/>
 
