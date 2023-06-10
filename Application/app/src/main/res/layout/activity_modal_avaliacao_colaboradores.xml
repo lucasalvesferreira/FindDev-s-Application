@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModalAvaliacaoColaboradores">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#80000000"
+        android:gravity="center"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/modal_background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/txDeuCerto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avaliar empresa"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Conte-nos brevemente como foi sua relação com o desenvolvedor:"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:rating="0"
+                    android:numStars="5"
+                    android:stepSize="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:progressDrawable="@drawable/custom_ratingbar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal"
+                >
+                <EditText
+                    android:background="@drawable/modal_background_descripition"
+                    android:id="@+id/txtModalDescricao"
+                    android:padding="10dp"
+                    android:gravity="top|start"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                >
+                <Button
+                    android:id="@+id/btnAvaliarColaborador"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_modal_candidatar"
+                    android:padding="5dp"
+                    android:text="Avaliar"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

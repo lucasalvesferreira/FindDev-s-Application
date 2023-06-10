@@ -44,7 +44,6 @@ class ListaBuscaVagasDev : AppCompatActivity() {
         val imgVaga: ImageView = itemView.findViewById(R.id.imgVaga)
         val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
         val txtSubtitulo: TextView = itemView.findViewById(R.id.txtSubtitulo)
-        val txtValor: TextView = itemView.findViewById(R.id.txtValor)
         val txtFrenteDesenvolvimento: TextView = itemView.findViewById(R.id.txtFrenteDesenvolvimento)
         val txtSenioridade: TextView = itemView.findViewById(R.id.txtSenioridade)
     }

@@ -214,7 +214,6 @@
                                 android:backgroundTint="@color/preto_1"
                                 android:text="Vagas em aberto"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="vagasPublicadas"
                                 android:id="@+id/botaoVagasAbertas"
                             />
                         </LinearLayout>
@@ -233,7 +232,6 @@
                                 android:backgroundTint="@color/preto_1"
                                 android:text="Contratar"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="contratar"
                                 android:id="@+id/botaoContratar"
 
                             />
@@ -260,7 +258,6 @@
 
                                 android:text="Colaboradores"
                                 android:fontFamily="@font/montserrat"
-                                android:onClick="colaboradores"
                                 android:id="@+id/botaoColaboradores"
                                 android:backgroundTint="@color/preto_1"
                             />
