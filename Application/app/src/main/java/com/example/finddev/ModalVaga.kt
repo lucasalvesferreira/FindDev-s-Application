@@ -1,13 +1,22 @@
 package com.example.finddev
 
-import com.example.finddev.ModalConfirmacaoCandidatura
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.dtos.CandidaturaRequest
+import com.example.finddev.App.model.dtos.CandidaturaResponse
+import com.example.finddev.App.sharedpreferences.getIdVaga
+import com.example.finddev.App.sharedpreferences.getIdUser
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ModalVaga : DialogFragment() {
 
@@ -60,14 +69,51 @@ class ModalVaga : DialogFragment() {
 
         // Configurar o botão "Candidatar-se"
         view.findViewById<Button>(R.id.btnCandidatar).setOnClickListener {
-            // Lógica para lidar com o clique do botão "Candidatar-se"
+            criarCandidatura()
 
-            // Exibir o ModalConfirmacaoCandidatura
             val confirmacaoCandidatura = ModalConfirmacaoCandidatura()
+
             confirmacaoCandidatura.show(parentFragmentManager, "ModalConfirmacaoCandidatura")
 
-            dismiss() // Fechar o modal após o clique no botão
+            dismiss()
         }
     }
 
+    private fun criarCandidatura() {
+        val idDesenvolvedor = getIdUser(context!!)
+        val idVaga = getIdVaga(context!!)
+
+        val candidaturaRequest = CandidaturaRequest(idDesenvolvedor, idVaga)
+
+        val apiCandidatura = Apis.getApiCandidatura()
+        val createCandidatura = apiCandidatura.createCandidatura(candidaturaRequest)
+
+        createCandidatura.enqueue(object : Callback<CandidaturaResponse> {
+            override fun onResponse(
+                call: Call<CandidaturaResponse>,
+                response: Response<CandidaturaResponse>
+            ) {
+                println("body ${response.body()}")
+                println("id dev $idDesenvolvedor - id vaga $idVaga")
+                if (!response.isSuccessful) {
+                    println("error code ${response.code()}")
+//                    context?.let {
+//                        Toast.makeText(
+//                            it,
+//                            "Error code: ${response.code()}",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
+                }
+            }
+
+            override fun onFailure(call: Call<CandidaturaResponse>, t: Throwable) {
+                Toast.makeText(
+                    context, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
+    }
 }

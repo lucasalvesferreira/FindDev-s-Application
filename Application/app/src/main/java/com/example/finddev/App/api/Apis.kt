@@ -37,4 +37,12 @@ object Apis {
             .build()
         return retrofit.create(ApiVagas::class.java)
     }
+
+    fun getApiCandidatura(): ApiCandidatura {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+        return retrofit.create(ApiCandidatura::class.java)
+    }
 }

@@ -11,8 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
-import com.example.finddev.App.sharedpreferences.getId
-import com.example.finddev.App.sharedpreferences.saveId
+import com.example.finddev.App.sharedpreferences.saveIdUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                     response: Response<UsuarioModel>
                 ) {
                     if (response.isSuccessful) {
-                        saveId(applicationContext, response.body()?.id.toString())
+                        saveIdUser(applicationContext, response.body()?.id.toString())
 
                         response.body()?.cnpj?.let {
                             startActivity(Intent(applicationContext, posLoginEmpresa::class.java))
