@@ -1,21 +1,7 @@
 <resources>
     <string name="app_name">FindDev</string>
     <string name="selected_item">Selected item:</string>
-    <string name="frente_desenvolvimento">Frente de Desenvolvimento</string>
-    <string name="senioridade">Senioridade</string>
-    <string name="procurar">Procurar</string>
-    <string-array name="frentes_desenvolvimento">
-        <item>FRONTEND</item>
-        <item>BACKEND</item>
-        <item>FULLSTACK</item>
-        <!-- Adicione mais opções se necessário -->
-    </string-array>
-    <string-array name="senioridades">
-        <item>JUNIOR</item>
-        <item>PLENO</item>
-        <item>SENIOR</item>
-        <!-- Adicione mais opções se necessário -->
-    </string-array>
+    <string name="text_cadastro">Cadastro</string>
 
     <string-array name="Teste">
         <item>Java</item>
