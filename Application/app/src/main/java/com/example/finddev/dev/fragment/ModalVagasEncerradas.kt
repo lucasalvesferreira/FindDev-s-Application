@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.App.model.Vaga
+import com.example.finddev.R
 
 class ModalVagasEncerradas : DialogFragment() {
 

@@ -1,9 +1,9 @@
-package com.example.finddev
+package com.example.finddev.dev
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.example.finddev.R
 
 class EdicaoPerfilDev : AppCompatActivity() {
 

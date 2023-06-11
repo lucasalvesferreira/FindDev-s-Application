@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.R
+import com.example.finddev.empresa.PerfilEmpresa
 
-class ModalCandidatoContratado : DialogFragment() {
+class ModalVagaCanceladaEmpresa : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +18,7 @@ class ModalCandidatoContratado : DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_modal_candidato_contratado, container, false)
+        return inflater.inflate(R.layout.activity_modal_vaga_cancelada_empresa, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,7 +28,7 @@ class ModalCandidatoContratado : DialogFragment() {
         Handler().postDelayed({
             dismiss()
             // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-            val buscaVagaDevIntent = Intent(requireContext(), Candidatos::class.java)
+            val buscaVagaDevIntent = Intent(requireContext(), PerfilEmpresa::class.java)
             startActivity(buscaVagaDevIntent)
         }, 2000)
     }

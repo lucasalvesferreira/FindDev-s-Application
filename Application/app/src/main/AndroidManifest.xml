@@ -15,43 +15,43 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
-            android:name=".ModalCandidatoContratado"
+            android:name=".empresa.fragment.ModalCandidatoContratado"
             android:exported="false" />
         <activity
-            android:name=".ModalCandidatos"
+            android:name=".empresa.fragment.ModalCandidatos"
             android:exported="false" />
         <activity
-            android:name=".Candidatos"
+            android:name=".empresa.Candidatos"
             android:exported="false" />
         <activity
-            android:name=".ModalAvaliacaoColaboradores"
+            android:name=".empresa.fragment.ModalAvaliacaoColaboradores"
             android:exported="false" />
         <activity
-            android:name=".ModalColaboradores"
+            android:name=".empresa.fragment.ModalColaboradores"
             android:exported="false" />
         <activity
-            android:name=".Colaboradores"
+            android:name=".empresa.Colaboradores"
             android:exported="false" />
         <activity
-            android:name=".ModalVagaCanceladaEmpresa"
+            android:name=".empresa.fragment.ModalVagaCanceladaEmpresa"
             android:exported="false" />
         <activity
-            android:name=".ModalVagasPublicadasEmpresa"
+            android:name=".empresa.fragment.ModalVagasPublicadasEmpresa"
             android:exported="false" />
         <activity
-            android:name=".VagasPublicadasEmpresa"
+            android:name=".empresa.VagasPublicadasEmpresa"
             android:exported="false" />
         <activity
-            android:name=".ModalAvaliacaoVagaEncerrada"
+            android:name=".dev.fragment.ModalAvaliacaoVagaEncerrada"
             android:exported="false" />
         <activity
-            android:name=".ModalVagasEncerradas"
+            android:name=".dev.fragment.ModalVagasEncerradas"
             android:exported="false" />
         <activity
-            android:name=".EdicaoPerfilEmpresa"
+            android:name=".empresa.EdicaoPerfilEmpresa"
             android:exported="false" />
         <activity
-            android:name=".PerfilEmpresa"
+            android:name=".empresa.PerfilEmpresa"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,43 +60,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PublicacaoDeVagas"
+            android:name=".empresa.PublicacaoDeVagas"
             android:exported="false" />
         <activity
-            android:name=".ModalVaga"
+            android:name=".dev.fragment.ModalVaga"
             android:exported="false" />
         <activity
-            android:name=".ListaBuscaVagasDev"
+            android:name=".dev.ListaBuscaVagasDev"
             android:exported="false" />
         <activity
-            android:name=".JobsEncerradosDev"
+            android:name=".dev.JobsEncerradosDev"
             android:exported="false" />
         <activity
-            android:name=".PerfilDev"
+            android:name=".dev.PerfilDev"
             android:exported="true" />
         <activity
-            android:name=".EdicaoPerfilDev"
+            android:name=".dev.EdicaoPerfilDev"
             android:exported="false" />
         <activity
-            android:name=".BuscaVagaDev"
+            android:name=".dev.BuscaVagaDev"
             android:exported="true" />
         <activity
-            android:name=".posLoginEmpresa"
+            android:name=".empresa.posLoginEmpresa"
             android:exported="true" />
         <activity
-            android:name=".posLoginDev"
+            android:name=".dev.posLoginDev"
             android:exported="true" />
         <activity
-            android:name=".ActivityCadastroStep3"
+            android:name=".cadastro.ActivityCadastroStep3"
             android:exported="true" />
         <activity
-            android:name=".ActivityCadastroStep1"
+            android:name=".cadastro.ActivityCadastroStep1"
             android:exported="true" />
         <activity
-            android:name=".ActivityCadastroEmpresa"
+            android:name=".empresa.ActivityCadastroEmpresa"
             android:exported="true" />
         <activity
-            android:name=".CadastroDev"
+            android:name=".dev.CadastroDev"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

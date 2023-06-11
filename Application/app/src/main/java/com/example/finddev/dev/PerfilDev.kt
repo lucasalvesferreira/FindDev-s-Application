@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.finddev.R
 
 class PerfilDev : AppCompatActivity() {
     private lateinit var tvNomeCompleto: TextView

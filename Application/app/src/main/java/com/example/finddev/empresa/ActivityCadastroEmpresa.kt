@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
+import com.example.finddev.R
+import com.example.finddev.cadastro.ActivityCadastroStep3
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
