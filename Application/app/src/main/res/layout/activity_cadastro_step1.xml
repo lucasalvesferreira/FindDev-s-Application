@@ -33,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Empresa ou desenvolvedor"
+                android:text="@string/text_emp_dev"
                 android:textSize="24sp"
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/white"
@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Você atuará como desenvolvedor ou como contratante na FindDev?"
+                android:text="@string/text_quetion"
                 android:textSize="21sp"
                 android:fontFamily="@font/montserrat_light"
                 android:textColor="@color/white"
