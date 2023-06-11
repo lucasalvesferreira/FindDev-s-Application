@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".ParabensDesenvolvedorCadastro"
+            android:exported="false" />
+        <activity
             android:name=".ModalCandidatoContratado"
             android:exported="false" />
         <activity
@@ -81,13 +84,13 @@
             android:name=".BuscaVagaDev"
             android:exported="true" />
         <activity
-            android:name=".posLoginEmpresa"
+            android:name=".PosLoginEmpresa"
             android:exported="true" />
         <activity
-            android:name=".posLoginDev"
+            android:name=".PosLoginDev"
             android:exported="true" />
         <activity
-            android:name=".ActivityCadastroStep3"
+            android:name=".ParabensEmpresaCadastro"
             android:exported="true" />
         <activity
             android:name=".ActivityCadastroStep1"
@@ -99,7 +102,7 @@
             android:name=".CadastroDev"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

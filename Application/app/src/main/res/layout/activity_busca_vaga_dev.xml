@@ -1,150 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BuscaVagaDev">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:background="@color/preto_1">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="@color/preto_1"
         android:gravity="center_horizontal"
-        android:padding="40dp"
+        android:orientation="vertical"
+        android:paddingTop="40dp"
         >
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/seta"
-            style="@style/ClickableImageStyle"
-            android:id="@+id/backButton"/>
+
+        <fragment
+            android:id="@+id/header_seta_voltar"
+            android:name="com.example.finddev.HeaderSetaVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_header_seta_voltar" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/box"
-            android:gravity="center"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
             >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/logo"
-                    android:minHeight="85dp"
-                    android:minWidth="75dp"
-                    android:id="@+id/id_logo"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Características de sua vaga"
-            android:textSize="20sp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"
-            android:layout_marginBottom="50dp"
-            />
-        </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center_horizontal"
+                    android:text="Características da sua \nvaga"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:background="@color/preto_2"
+                android:padding="40dp"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="FRENTE DE DESENVOLVIMENTO"
-                        android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
+                        android:text="FRENTE DE DESENVOLVIMENTO"
                         android:textColor="@color/white"
-                        />
+                        android:textSize="15sp" />
                     <Spinner
+                        android:id="@+id/spinnerFrenteDesenvolvimento"
+                        style="@style/SpinnerDev"
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:background="@drawable/borda_busca_vagas_dev"
-                        style="@style/SpinnerDev"
-                        android:theme="@style/SpinnerSelectedItem"
-                        android:id="@+id/spinnerFrenteDesenvolvimento"
                         android:entries="@array/frentes_desenvolvimento"
                         android:prompt="@string/frente_desenvolvimento"
-                        />
+                        android:theme="@style/SpinnerSelectedItem" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SENIORIDADE"
-                        android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
+                        android:text="SENIORIDADE"
                         android:textColor="@color/white"
-                        />
+                        android:textSize="15sp" />
+
                     <Spinner
+                        android:id="@+id/spinnerSenioridade"
+                        style="@style/SpinnerDev"
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
                         android:background="@drawable/borda_busca_vagas_dev"
-                        style="@style/SpinnerDev"
-                        android:theme="@style/SpinnerSelectedItem"
                         android:entries="@array/senioridades"
-                        android:id="@+id/spinnerSenioridade"
-                        />
+                        android:prompt="@string/senioridade"
+                        android:theme="@style/SpinnerSelectedItem" />
                 </LinearLayout>
 
 
                 <LinearLayout
+                    android:id="@+id/procurar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:id="@+id/procurar"
-                    >
+                    android:gravity="center">
+
                     <Button
                         android:id="@+id/btnProcurar"
                         android:layout_width="150dp"
                         android:layout_height="65dp"
-                        android:text="@string/procurar"
-                        android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/roxo_claro"
-                        />
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/procurar" />
                 </LinearLayout>
-
             </LinearLayout>
 
+        </LinearLayout>
 
     </LinearLayout>
 
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

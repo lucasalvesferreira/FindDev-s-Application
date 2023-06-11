@@ -16,10 +16,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
     }
 
     fun logar(componente: View){
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val senha = findViewById<EditText>(R.id.et_senha)
 
-        val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
+        val cadastroStep3 = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
 
@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
                         saveIdUser(applicationContext, response.body()?.id.toString())
 
                         response.body()?.cnpj?.let {
-                            startActivity(Intent(applicationContext, posLoginEmpresa::class.java))
-                        } ?: startActivity(Intent(applicationContext, posLoginDev::class.java))
+                            startActivity(Intent(applicationContext, PosLoginEmpresa::class.java))
+                        } ?: startActivity(Intent(applicationContext, PosLoginDev::class.java))
                     }else {
                         val code = response.code()
                         Log.d("TAG", "Erro ao logar : Status = "+ "${code}")

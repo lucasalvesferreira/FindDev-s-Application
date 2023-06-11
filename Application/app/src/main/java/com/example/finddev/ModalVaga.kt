@@ -1,6 +1,5 @@
 package com.example.finddev
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +11,8 @@ import androidx.fragment.app.DialogFragment
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.dtos.CandidaturaRequest
 import com.example.finddev.App.model.dtos.CandidaturaResponse
-import com.example.finddev.App.sharedpreferences.getIdVaga
 import com.example.finddev.App.sharedpreferences.getIdUser
+import com.example.finddev.App.sharedpreferences.getIdVaga
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,9 +28,10 @@ class ModalVaga : DialogFragment() {
         ): ModalVaga {
             val args = Bundle().apply {
                 putString("titulo", titulo)
-                putString("subtitulo", descricao)
+                putString("subtitulo", descricao) //vai ser o nome da empresa
                 putString("frenteDesenvolvimento", funcao)
                 putString("senioridade", senioridade)
+                putString("descricao", descricao)
             }
             val fragment = ModalVaga()
             fragment.arguments = args
@@ -46,6 +46,7 @@ class ModalVaga : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_vaga, container, false)
+        dialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,7 +55,6 @@ class ModalVaga : DialogFragment() {
         // Obter os dados da vaga do bundle
         val titulo = arguments?.getString("titulo")
         val subtitulo = arguments?.getString("subtitulo")
-        val valor = arguments?.getString("valor")
         val frenteDesenvolvimento = arguments?.getString("frenteDesenvolvimento")
         val senioridade = arguments?.getString("senioridade")
         val descricao = arguments?.getString("descricao")
@@ -62,7 +62,6 @@ class ModalVaga : DialogFragment() {
         // Configurar os dados nos elementos do modal
         view.findViewById<TextView>(R.id.txtModalTitulo).text = titulo
         view.findViewById<TextView>(R.id.txtModalSubtitulo).text = subtitulo
-        view.findViewById<TextView>(R.id.txtModalValor).text = valor
         view.findViewById<TextView>(R.id.txtModalFrenteDesenvolvimento).text = frenteDesenvolvimento
         view.findViewById<TextView>(R.id.txtModalSenioridade).text = senioridade
         view.findViewById<TextView>(R.id.txtModalDescricao).text = descricao

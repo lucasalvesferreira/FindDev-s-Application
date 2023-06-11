@@ -4,90 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".posLoginDev">
+    tools:context=".PosLoginDev">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@color/preto_1"
-        android:padding="40dp"
+        android:orientation="vertical"
         >
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             >
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 android:minWidth="200dp"
                 android:minHeight="75dp"
-                android:src="@mipmap/logofrase"
-                android:layout_marginBottom="40dp"
-                />
-
+                android:src="@mipmap/logofrase" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escolha uma opção:"
-                android:textSize="24sp"
                 android:fontFamily="@font/montserrat_bold"
+                android:text="Escolha uma opção:"
                 android:textColor="@color/white"
-                />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:orientation="vertical"
-            android:gravity="center"
+            android:layout_height="match_parent"
+            android:padding="40dp"
+            android:background="@color/preto_2"
+            android:layout_marginTop="20dp"
             >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botao_cadastro_empresa"
-                android:gravity="center"
-                android:layout_marginBottom="30dp"
-                >
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Encontre o job ideal"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:backgroundTint="@color/preto_1"
-                    android:paddingHorizontal="25dp"
-                    android:paddingVertical="30dp"
-                    android:onClick="Encontre"
-                    />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botao_cadastro_desenvolvedor"
+                android:layout_height="450dp"
                 android:gravity="center"
+                android:orientation="vertical"
                 >
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Perfil e estatísticas"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:backgroundTint="@color/preto_1"
-                    android:paddingHorizontal="25dp"
-                    android:paddingVertical="30dp"
-                    android:onClick="perfil"
-                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/botao_pos_login_dev_job"
+                    android:gravity="center"
+                    android:paddingHorizontal="50dp"
+                    android:paddingVertical="10dp">
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/preto_1"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:onClick="Encontre"
+                        android:text="Encontre o \njob ideal"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botao_pos_login_dev_perfil"
+                    android:gravity="center"
+                    android:paddingHorizontal="50dp"
+                    android:paddingVertical="10dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/preto_1"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:onClick="perfil"
+                        android:text="Perfil e \nestatísticas"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

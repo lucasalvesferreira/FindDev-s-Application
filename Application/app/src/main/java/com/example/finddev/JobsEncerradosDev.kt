@@ -49,7 +49,7 @@ class JobsEncerradosDev : AppCompatActivity() {
     private inner class VagasAdapter(private val listaVagas: List<Vaga>) : RecyclerView.Adapter<VagaViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VagaViewHolder {
-            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaga, parent, false)
+            val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaga_jobs_encerrados, parent, false)
             return VagaViewHolder(itemView)
         }
 

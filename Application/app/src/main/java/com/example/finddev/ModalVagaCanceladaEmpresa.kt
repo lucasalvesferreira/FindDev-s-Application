@@ -17,6 +17,7 @@ class ModalVagaCanceladaEmpresa : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_vaga_cancelada_empresa, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

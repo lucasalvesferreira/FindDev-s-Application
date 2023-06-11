@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:background="#80000000"
         android:gravity="center"
-        android:padding="15dp"
+        android:padding="20dp"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/modal_background"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="15dp"
             android:gravity="center"
             >
 
@@ -28,7 +28,7 @@
                 android:id="@+id/txDeuCerto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Avaliar empresa"
+                android:text="Avaliar desenvolvedor"
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textColor="@color/white"

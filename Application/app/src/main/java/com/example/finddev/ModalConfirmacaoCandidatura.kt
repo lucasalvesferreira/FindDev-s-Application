@@ -7,13 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.finddev.BuscaVagaDev
-import com.example.finddev.R
 
 class ModalConfirmacaoCandidatura : DialogFragment() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.ModalVagaStyle)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_confirmacao_candidatura, container, false)
+        dialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

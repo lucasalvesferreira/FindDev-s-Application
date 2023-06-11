@@ -37,13 +37,13 @@ class PublicacaoDeVagas : AppCompatActivity() {
     }
 
     private fun spinners() {
-        val senioridadeArray = arrayOf("JUNIOR", "PLENO", "SENIOR")
-        val frenteArray = arrayOf("FRONTEND", "BACKEND", "FULLSTACK")
+        val senioridadeArray = arrayOf("Selecione...","JUNIOR", "PLENO", "SENIOR")
+        val frenteArray = arrayOf("Selecione...","FRONTEND", "BACKEND", "FULLSTACK")
 
-        val adapterSenioridade = ArrayAdapter(this, android.R.layout.simple_spinner_item, senioridadeArray)
+        val adapterSenioridade = ArrayAdapter(this,R.layout.spinner_item, senioridadeArray)
         adapterSenioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        val adapterFrente = ArrayAdapter(this, android.R.layout.simple_spinner_item, frenteArray)
+        val adapterFrente = ArrayAdapter(this,R.layout.spinner_item, frenteArray)
         adapterFrente.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spinnerSenioridade.adapter = adapterSenioridade
@@ -91,7 +91,7 @@ class PublicacaoDeVagas : AppCompatActivity() {
     }
 
     fun voltarMenu() {
-        val menuIntent = Intent(this, posLoginEmpresa::class.java)
+        val menuIntent = Intent(this, PosLoginEmpresa::class.java)
         startActivity(menuIntent)
     }
 }

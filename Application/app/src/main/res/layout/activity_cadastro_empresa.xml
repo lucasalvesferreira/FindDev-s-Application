@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="@color/preto_1"
-        android:padding="40dp"
+        android:paddingTop="40dp"
         >
 
         <fragment
@@ -20,29 +20,31 @@
             android:layout_height="wrap_content"
             class="com.example.finddev.HeaderLogin"
             tools:layout="@layout/fragment_header_login"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/fragment_header_cadastro_empresa"
         />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastro"
+            android:textSize="40sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            />
+
         <ScrollView
             android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
             >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="40dp"
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cadastro"
-                    android:textSize="40sp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="50dp"
-                />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -160,6 +162,7 @@
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
                         android:id="@+id/et_cnpj"
+                        android:hint="00.000.000/0000-00"
                         />
                 </LinearLayout>
 
@@ -179,11 +182,12 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="50sp"
-                        android:hint=""
                         android:inputType="phone"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
                         android:id="@+id/et_telefone"
+                        android:hint="(00) 00000-0000"
+
                         />
                 </LinearLayout>
 
@@ -206,6 +210,7 @@
                         android:inputType="text"
                         android:background="@drawable/borda_input_cadastro"
                         style="@style/input_cadastro"
+                        android:hint="00000-000"
                         android:id="@+id/et_cep"
                         />
                 </LinearLayout>

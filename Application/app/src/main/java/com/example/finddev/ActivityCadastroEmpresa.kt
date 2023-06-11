@@ -44,7 +44,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         val endereco = findViewById<EditText>(R.id.et_logradouro)
 
-        val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
+        val cadastroStep3 = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
         val namePattern = Pattern.compile("^[\\p{L} .'-]+\$")

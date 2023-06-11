@@ -47,9 +47,9 @@ class HeaderLogin : Fragment() {
         val btLogin = view.findViewById<Button>(R.id.bt_login)
         btLogin.setOnClickListener {
 
-            // (activity as MainActivity).testeLoko()
+            // (activity as Login).testeLoko()
 
-            val login = Intent(it.context, MainActivity::class.java)
+            val login = Intent(it.context, Login::class.java)
             startActivity(login)
         }
     }

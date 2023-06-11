@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/box"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
     >
         <LinearLayout
             android:layout_width="wrap_content"
@@ -38,7 +40,6 @@
                 android:background="@drawable/botao_cadastro"
                 android:gravity="center"
                 android:id="@+id/header_login"
-
                 >
                 <Button
                     android:layout_width="match_parent"

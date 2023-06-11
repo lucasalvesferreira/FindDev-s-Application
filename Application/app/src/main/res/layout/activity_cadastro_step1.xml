@@ -9,95 +9,106 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:background="@color/preto_1"
-        android:padding="40dp"
-    >
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="40dp">
+
         <fragment
+            android:id="@+id/fragment_header_cadastro_step_1"
+            class="com.example.finddev.HeaderLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.finddev.HeaderLogin"
-            tools:layout="@layout/fragment_header_login"
             android:layout_marginBottom="40dp"
-            android:id="@+id/fragment_header_cadastro_step_1"
-        />
+            tools:layout="@layout/fragment_header_login" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-        >
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Empresa ou desenvolvedor"
-                android:textSize="24sp"
+                android:layout_marginBottom="30dp"
                 android:fontFamily="@font/montserrat_bold"
+                android:gravity="center_horizontal"
+                android:text="Empresa ou desenvolvedor"
                 android:textColor="@color/white"
-                android:layout_marginBottom="50dp"
-            />
+                android:textSize="25sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Você atuará como desenvolvedor ou como contratante na FindDev?"
-                android:textSize="21sp"
-                android:fontFamily="@font/montserrat_light"
-                android:textColor="@color/white"
-                android:layout_marginBottom="50dp"
-                android:textAlignment="center"
-            />
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-        >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botao_cadastro_empresa"
-                android:gravity="center"
-                android:layout_marginBottom="30dp"
+            android:layout_height="match_parent"
+            android:background="@color/preto_2"
             >
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="EMPRESA"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:backgroundTint="@color/preto_1"
-                    android:paddingHorizontal="70dp"
-                    android:paddingVertical="30dp"
-                    android:onClick="cadastroEmpresa"
-                />
-            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botao_cadastro_desenvolvedor"
-                android:gravity="center"
-
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="40dp"
                 >
-                <Button
+
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="DESENVOLVEDOR "
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:backgroundTint="@color/preto_1"
-                    android:paddingHorizontal="25dp"
-                    android:paddingVertical="30dp"
-                    android:onClick="cadastroDev"
-                />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="Você atuará como contratante ou como desenvolvedor na FindDev?"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/botao_cadastro_empresa"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/preto_1"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:onClick="cadastroEmpresa"
+                        android:paddingHorizontal="50dp"
+                        android:paddingVertical="20dp"
+                        android:text="EMPRESA"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botao_cadastro_desenvolvedor"
+                    android:gravity="center"
+
+                    >
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/preto_1"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:onClick="cadastroDev"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="20dp"
+                        android:text="DESENVOLVEDOR "
+                        android:textSize="15sp" />
+                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

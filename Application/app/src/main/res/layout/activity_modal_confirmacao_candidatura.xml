@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="#80000000"
         android:gravity="center_vertical"
-        android:padding="15dp"
+        android:padding="20dp"
         tools:ignore="MissingConstraints">
 
     <LinearLayout
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/modal_background_congratulations"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="40dp"
         android:gravity="center"
         >
 
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Parabens!"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
             android:layout_margin="10dp"
             android:gravity="center"
             android:text="Candidatura realizada com sucesso!"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:textStyle="bold" />
 

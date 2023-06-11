@@ -9,77 +9,73 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:background="@color/preto_1"
-        android:padding="40dp"
-    >
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
         <fragment
             android:id="@+id/header_seta_voltar"
             android:name="com.example.finddev.HeaderSetaVoltar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_header_seta_voltar"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
-        />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_header_seta_voltar" />
 
         <LinearLayout
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:background="@drawable/foto_perfil"
-            android:gravity="center"
             android:layout_marginBottom="25dp"
-        >
+            android:background="@drawable/foto_perfil"
+            android:gravity="center">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XT"
-                android:textSize="60sp"
-                android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_bold"
-            />
+                android:text="XT"
+                android:textColor="@color/white"
+                android:textSize="60sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            >
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
                 android:text="Classificação: "
                 android:textColor="@color/white"
-                android:fontFamily="@font/montserrat"
-                android:textSize="25sp"
-                />
+                android:textStyle="bold"
+                android:textSize="25sp" />
 
             <TextView
+                android:id="@+id/numero_classificacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/montserrat"
                 android:text="4.5"
                 android:textColor="@color/white"
-                android:fontFamily="@font/montserrat"
-                android:textSize="25sp"
-                android:id="@+id/numero_classificacao"
-                android:layout_marginRight="10dp"
-                />
+                android:textSize="25sp" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/star"
-                />
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:src="@mipmap/star" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/edit"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:onClick="telaEditarEmpresa"
-            />
+                android:src="@mipmap/edit" />
 
         </LinearLayout>
 
@@ -87,182 +83,180 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-        >
+            android:background="@color/preto_2">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-            >
+                android:padding="40dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/nomeEmpresa"
-                    android:text="X-Team"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/montserrat_bold"
-                />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/resumo"
-                    android:text="High-performing software engineers for the world's most ambitious."
-                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="X-Team"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/resumo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                />
+                    android:text="High-performing software engineers for the world's most ambitious."
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_marginTop="30dp"
-                >
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
                         android:text="Biografia"
-                        android:textSize="25sp"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/montserrat_bold"
-                    />
+                        android:textSize="25sp" />
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/biografia"
-                        android:text="Since 2006, X-Team has provided high-performing, on-demand teams of software developers for the world's leading brands. We are leaders in the remote work movement, and believe in building a world where ok."
-                        android:textSize="18sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/montserrat"
-                    />
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Localização"
-                        android:textSize="25sp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Since 2006, X-Team has provided high-performing, on-demand teams of software developers for the world's leading brands. We are leaders in the remote work movement, and believe in building a world where ok."
                         android:textColor="@color/white"
-                        android:fontFamily="@font/montserrat_bold"
-                    />
+                        android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                            >
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/estado"
-                                    android:text="\u25CF  São Paulo"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat"
-                                />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/cidade"
-                                    android:text="\u25CF  Campinas"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat"
-                                />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/bairro"
-                                    android:text="\u25CF  Chácara Santo Antônio"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat"
-                                />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Localização"
+                            android:textColor="@color/white"
+                            android:textSize="25sp" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/endereco"
-                                    android:text="\u25CF  Rua Alexandre Dumas, 2051"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat"
-                                />
-                            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:id="@+id/estado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="\u25CF  São Paulo"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/cidade"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="\u25CF  Campinas"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/bairro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="\u25CF  Chácara Santo Antônio"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/endereco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="\u25CF  Rua Alexandre Dumas, 2051"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <RelativeLayout
+                        android:id="@+id/relativeLayoutButtons"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:id="@+id/relativeLayoutButtons"
-                    >
+                        android:layout_marginTop="50dp">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/botao_cadastro_empresa"
-                            android:gravity="center"
-                        >
+                            android:gravity="center">
+
                             <Button
-                                android:layout_height="80dp"
-                                android:layout_width="130dp"
-                                android:backgroundTint="@color/preto_1"
-                                android:text="Vagas em aberto"
-                                android:fontFamily="@font/montserrat"
                                 android:id="@+id/botaoVagasAbertas"
-                            />
+                                android:layout_width="130dp"
+                                android:layout_height="80dp"
+                                android:backgroundTint="@color/preto_1"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Vagas em \naberto" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/botao_cadastro_empresa"
-                            android:gravity="center"
                             android:layout_alignParentEnd="true"
-                        >
+                            android:background="@drawable/botao_cadastro_empresa"
+                            android:gravity="center">
 
                             <Button
-                                android:layout_height="80dp"
-                                android:layout_width="140dp"
-                                android:backgroundTint="@color/preto_1"
-                                android:text="Contratar"
-                                android:fontFamily="@font/montserrat"
                                 android:id="@+id/botaoContratar"
+                                android:layout_width="140dp"
+                                android:layout_height="80dp"
+                                android:backgroundTint="@color/preto_1"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Contratar"
 
-                            />
+                                />
 
                         </LinearLayout>
                     </RelativeLayout>
-                    
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_marginTop="30dp"
-                    >
+                        android:layout_marginTop="20dp"
+                        android:gravity="center">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/botao_cadastro_empresa"
-                            android:gravity="center"
+                            android:gravity="center">
 
-                        >
                             <Button
-                                android:layout_height="80dp"
-                                android:layout_width="180dp"
-
-                                android:text="Colaboradores"
-                                android:fontFamily="@font/montserrat"
                                 android:id="@+id/botaoColaboradores"
+                                android:layout_width="180dp"
+                                android:layout_height="80dp"
                                 android:backgroundTint="@color/preto_1"
-                            />
+                                android:fontFamily="@font/montserrat"
+                                android:text="Colaboradores" />
                         </LinearLayout>
                     </LinearLayout>
+
 
                 </LinearLayout>
 

@@ -1,19 +1,21 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">FindDev</string>
     <string name="selected_item">Selected item:</string>
     <string name="frente_desenvolvimento">Frente de Desenvolvimento</string>
     <string name="senioridade">Senioridade</string>
     <string name="procurar">Procurar</string>
     <string-array name="frentes_desenvolvimento">
-        <item>FRONTEND</item>
-        <item>BACKEND</item>
-        <item>FULLSTACK</item>
+        <item>Selecione...</item>
+        <item android:textColor="@android:color/white">FRONTEND</item>
+        <item android:textColor="@android:color/white">BACKEND</item>
+        <item android:textColor="@android:color/white">FULLSTACK</item>
         <!-- Adicione mais opções se necessário -->
     </string-array>
     <string-array name="senioridades">
-        <item>JUNIOR</item>
-        <item>PLENO</item>
-        <item>SENIOR</item>
+        <item>Selecione...</item>
+        <item android:textColor="@android:color/white">JUNIOR</item>
+        <item android:textColor="@android:color/white">PLENO</item>
+        <item android:textColor="@android:color/white">SENIOR</item>
         <!-- Adicione mais opções se necessário -->
     </string-array>
 

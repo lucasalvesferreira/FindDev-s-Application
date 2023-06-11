@@ -39,7 +39,7 @@ class CadastroDev : AppCompatActivity() {
 
         val cidade = findViewById<EditText>(R.id.et_cidade)
 
-        val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
+        val cadastroStep3 = Intent(applicationContext, ParabensDesenvolvedorCadastro::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
         val namePattern = Pattern.compile("^[\\p{L} .'-]+\$")
@@ -131,7 +131,7 @@ class CadastroDev : AppCompatActivity() {
                 override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
                     if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
                         val findDev = response.body()
-                        val logar = Intent(applicationContext, ActivityCadastroStep3::class.java)
+                        val logar = Intent(applicationContext, cadastroStep3::class.java)
                         startActivity(logar)
                     } else {
                         var code = response.code()
