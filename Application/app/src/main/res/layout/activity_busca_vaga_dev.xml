@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Características de sua vaga"
+            android:text="@string/text_caracteristicas_vaga"
             android:textSize="20sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
@@ -106,7 +106,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SENIORIDADE"
+                        android:text="@string/senioridade"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"

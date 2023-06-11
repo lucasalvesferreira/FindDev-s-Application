@@ -98,7 +98,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/borda_input_cadastro"
-                            android:hint="Digite sua biografia"
+                            android:hint="@string/text_biografia"
                             android:maxLength="2000"
                             android:maxLines="5"
                             android:padding="10dp" />

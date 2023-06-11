@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_modal_candidatar"
                     android:padding="10dp"
-                    android:text="Candidatar-se"
+                    android:text="@string/text_candidatar"
                     android:textColor="@color/white" />
 
             </LinearLayout>

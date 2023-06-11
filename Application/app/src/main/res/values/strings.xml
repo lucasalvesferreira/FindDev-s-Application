@@ -21,6 +21,27 @@
     <string name="text_lagradouro">Lagradouro</string>
     <string name="text_numero">Número</string>
     <string name="text_cadastrar">Cadastrar</string>
+    <string name="text_frent_dev">FRENTE DE DESENVOLVIMENTO</string>
+    <string name="text_cadastro_succes">Seu cadastro foi realizado com sucesso!</string>
+    <string name="text_jobs_encerrados">Aqui estão seus jobs encerrados</string>
+    <string name="text_find_jobs">Aqui estão seus jobs encontrados</string>
+    <string name="text_title_vaga">Título da Vaga</string>
+    <string name="text_candidatar">Candidatar-se</string>
+    <string name="text_avalie_contratantes">Avalie seus contratantes</string>
+    <string name="text_biografia">Digite sua biografia</string>
+    <string name="text_experiencias">Digite suas experiências</string>
+    <string name="text_edit">EDITAR</string>
+    <string name="text_classificacao">Classificação:</string>
+    <string name="text_biografia_somente">Biografia</string>
+    <string name="text_localizacao">Localização</string>
+    <string name="text_vagas_em_aberto">Vagas em aberto</string>
+    <string name="text_contratar">Contratar</string>
+    <string name="text_colaboradores">Colaboradores</string>
+    <string name="text_escolha_uma_opcao">Escolha uma opção:</string>
+    <string name="text_detalhes_vaga">Detalhes da vaga</string>
+    <string name="text_title">Título</string>
+    <string name="text_descricao">Descrição</string>
+    <string name="text_pub">Publicar</string>
 
 
     <string-array name="Teste">

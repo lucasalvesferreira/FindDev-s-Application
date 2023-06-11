@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="@string/text_login"
             android:textSize="40sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
@@ -54,7 +54,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
+                        android:text="@string/text_email"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -79,7 +79,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Senha"
+                        android:text="@string/text_senha"
                         android:textSize="15sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -105,7 +105,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Entrar"
+                        android:text="@string/text_enter"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/preto_1"
                         android:onClick="logar"

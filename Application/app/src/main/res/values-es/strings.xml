@@ -15,6 +15,7 @@
     <string name="text_cpf">CPF</string>
     <string name="text_telefone">Teléfono</string>
     <string name="text_estado">Estado</string>
+    <string name="text_login">LOGIN</string>
     <string name="hello_blank_fragment">" Hola fragmento en blanco"</string>
     <string name="text_cidade">Ciudad</string>
     <string name="text_cadastrar">Registrar</string>
@@ -23,4 +24,25 @@
     <string name="text_bairro">Vecindario</string>
     <string name="text_lagradouro">Lugar público</string>
     <string name="text_numero">Número</string>
+    <string name="text_frent_dev">FRENTE DE DESARROLLO</string>
+    <string name="text_cadastro_succes">¡Su registro se realizó correctamente!</string>
+    <string name="text_jobs_encerrados">Aquí están sus trabajos cerrados</string>
+    <string name="text_find_jobs">Aquí están sus trabajos encontrados</string>
+    <string name="text_title_vaga">Título profesional</string>
+    <string name="text_candidatar">solicitar</string>
+    <string name="text_avalie_contratantes">Califique a sus contratistas</string>
+    <string name="text_biografia">Introduce tu biografía</string>
+    <string name="text_experiencias">Ingresa tus experiencias</string>
+    <string name="text_edit">PARA EDITAR</string>
+    <string name="text_classificacao">Clasificación:</string>
+    <string name="text_biografia_somente">Biografía</string>
+    <string name="text_localizacao">Ubicación</string>
+    <string name="text_vagas_em_aberto">vacantes abiertas</string>
+    <string name="text_contratar">Contratar</string>
+    <string name="text_colaboradores">Colaboradores</string>
+    <string name="text_escolha_uma_opcao">Elige una opcion:</string>
+    <string name="text_detalhes_vaga">detalles de la vacante</string>
+    <string name="text_title">Título</string>
+    <string name="text_descricao">Descripción</string>
+    <string name="text_pub">Publicar</string>
 </resources>

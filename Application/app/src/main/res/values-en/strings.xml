@@ -23,4 +23,25 @@
     <string name="text_bairro">Neighborhood</string>
     <string name="text_lagradouro">Public place</string>
     <string name="text_numero">Number</string>
+    <string name="text_frent_dev">DEVELOPMENT FRONT</string>
+    <string name="text_cadastro_succes">Your registration was successful!</string>
+    <string name="text_jobs_encerrados">Here are your closed jobs</string>
+    <string name="text_find_jobs">Here are your found jobs</string>
+    <string name="text_title_vaga">Job Title</string>
+    <string name="text_candidatar">apply for</string>
+    <string name="text_avalie_contratantes">Rate your contractors</string>
+    <string name="text_biografia">Enter your biography</string>
+    <string name="text_experiencias">Enter your experiences</string>
+    <string name="text_edit">TO EDIT</string>
+    <string name="text_classificacao">Classification:</string>
+    <string name="text_biografia_somente">Biography</string>
+    <string name="text_localizacao">Location</string>
+    <string name="text_vagas_em_aberto">open vacancies</string>
+    <string name="text_contratar">To hire</string>
+    <string name="text_colaboradores">Collaborators</string>
+    <string name="text_escolha_uma_opcao">Choose an option:</string>
+    <string name="text_detalhes_vaga">vacancy details</string>
+    <string name="text_title">Title</string>
+    <string name="text_descricao">Description</string>
+    <string name="text_pub">Publish</string>
 </resources>

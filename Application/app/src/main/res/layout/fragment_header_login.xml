@@ -41,7 +41,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Login"
+                    android:text="@string/text_login"
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@color/preto_1"
                     android:id="@+id/bt_login"

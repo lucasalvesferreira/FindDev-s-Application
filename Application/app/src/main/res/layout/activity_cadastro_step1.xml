@@ -69,7 +69,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="EMPRESA"
+                    android:text="@string/text_company"
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="18sp"
                     android:backgroundTint="@color/preto_1"
@@ -89,7 +89,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="DESENVOLVEDOR "
+                    android:text="@string/text_dev"
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="18sp"
                     android:backgroundTint="@color/preto_1"
