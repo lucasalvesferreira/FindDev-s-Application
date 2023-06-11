@@ -1,9 +1,10 @@
-package com.example.finddev
+package com.example.finddev.dev
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.finddev.R
 
 class posLoginDev : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

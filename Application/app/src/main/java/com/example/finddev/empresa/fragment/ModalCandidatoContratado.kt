@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.finddev.BuscaVagaDev
 import com.example.finddev.R
+import com.example.finddev.empresa.Candidatos
 
-class ModalConfirmacaoCandidatura : DialogFragment() {
+class ModalCandidatoContratado : DialogFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.ModalVagaStyle)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_modal_confirmacao_candidatura, container, false)
+        return inflater.inflate(R.layout.activity_modal_candidato_contratado, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,8 +28,8 @@ class ModalConfirmacaoCandidatura : DialogFragment() {
         Handler().postDelayed({
             dismiss()
             // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-            val buscaVagaDevIntent = Intent(requireContext(), BuscaVagaDev::class.java)
+            val buscaVagaDevIntent = Intent(requireContext(), Candidatos::class.java)
             startActivity(buscaVagaDevIntent)
-        }, 1000)
+        }, 2000)
     }
 }

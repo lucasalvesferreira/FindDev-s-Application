@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.R
+import com.example.finddev.empresa.Colaboradores
 
 class ModalAvaliacaoColaboradores : DialogFragment() {
 

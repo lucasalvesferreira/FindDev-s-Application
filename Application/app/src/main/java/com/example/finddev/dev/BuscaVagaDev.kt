@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.finddev.R
 
 class BuscaVagaDev : AppCompatActivity() {
 
