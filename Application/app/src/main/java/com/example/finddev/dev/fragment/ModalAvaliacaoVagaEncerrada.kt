@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +10,10 @@ import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.R
+import com.example.finddev.dev.JobsEncerradosDev
 
-class ModalAvaliacaoColaboradores : DialogFragment() {
+class ModalAvaliacaoVagaEncerrada : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,7 @@ class ModalAvaliacaoColaboradores : DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_modal_avaliacao_colaboradores, container, false)
+        return inflater.inflate(R.layout.activity_modal_avaliacao_vaga_encerrada, container, false)
         dialog?.setCanceledOnTouchOutside(true)
     }
 
@@ -28,7 +30,7 @@ class ModalAvaliacaoColaboradores : DialogFragment() {
         val ratingBar: RatingBar = view.findViewById(R.id.ratingBar)
 
         // Configurar o clique no botão "Avaliar"
-        view.findViewById<Button>(R.id.btnAvaliarColaborador).setOnClickListener {
+        view.findViewById<Button>(R.id.btnAvaliar).setOnClickListener {
             val rating = ratingBar.rating
             val comentario = "Adicione o código para obter o comentário do usuário aqui"
 
@@ -43,7 +45,7 @@ class ModalAvaliacaoColaboradores : DialogFragment() {
                     dismiss()
 
                     // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-                    val buscaVagaDevIntent = Intent(requireContext(), Colaboradores::class.java)
+                    val buscaVagaDevIntent = Intent(requireContext(), PerfilDev::class.java)
                     startActivity(buscaVagaDevIntent)
                 }, 1000) // Tempo em milissegundos
             } else {

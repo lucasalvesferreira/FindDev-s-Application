@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finddev.App.model.VagaColaboradores
+import com.example.finddev.R
+import com.example.finddev.empresa.fragment.ModalColaboradores
 
 class Colaboradores : AppCompatActivity() {
 

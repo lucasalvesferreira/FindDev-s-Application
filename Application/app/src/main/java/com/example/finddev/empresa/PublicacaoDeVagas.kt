@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.empresa
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import com.example.finddev.App.model.dtos.VagaRequest
 import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.App.sharedpreferences.getIdUser
 import com.example.finddev.App.sharedpreferences.saveIdVaga
+import com.example.finddev.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

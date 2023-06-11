@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,18 +8,21 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
+import com.example.finddev.R
+import com.example.finddev.cadastro.ActivityCadastroStep3
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.regex.Pattern
 
-class ActivityCadastroEmpresa : AppCompatActivity() {
+class CadastroDev : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_empresa)
+        setContentView(R.layout.activity_cadastro_dev)
     }
 
-    fun cadastroEmpresa(componente: View){
+    fun cadastrarDev(componente: View){
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
@@ -32,23 +35,16 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         val telefone = findViewById<EditText>(R.id.et_telefone)
 
-        val cnpj = findViewById<EditText>(R.id.et_cnpj)
-
-        val cep = findViewById<EditText>(R.id.et_cep)
+        val cpf = findViewById<EditText>(R.id.et_cpf)
 
         val estado = findViewById<EditText>(R.id.et_estado)
 
         val cidade = findViewById<EditText>(R.id.et_cidade)
 
-        val bairro = findViewById<EditText>(R.id.et_bairro)
-
-        val endereco = findViewById<EditText>(R.id.et_logradouro)
-
-        val cadastroStep3 = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
+        val cadastroStep3 = Intent(applicationContext, ParabensDesenvolvedorCadastro::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
         val namePattern = Pattern.compile("^[\\p{L} .'-]+\$")
-        val cepPattern = Pattern.compile("[0-9]+")
         val numeroPattern = Pattern.compile("[0-9]+")
 
         if (email.text.toString().isEmpty()) {
@@ -94,19 +90,14 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
             telefone.error = "Por favor, digite um número de telefone válido com o formato (DD)NNNNN-NNNN e 11 dígitos."
         }
 
-        if (cnpj.text.isEmpty()) {
-            cnpj.error = "Campo obrigatório"
+        if (cpf.text.isEmpty()) {
+            cpf.error = "Campo obrigatório"
             validado = false
-        }
-
-        if (cep.text.isEmpty()) {
-            cep.error = "Campo obrigatório"
+        }else if (!numeroPattern.matcher(cpf.text).matches()) {
+            cpf.error = "Por favor, digite apenas números no campo de CPF."
             validado = false
-        }else if(!cepPattern.matcher(cep.text).matches()){
-            cep.error = "Por favor, digite apenas números no campo de CEP"
-            validado = false
-        }else if(cep.text.length != 8){
-            cep.error = "Por favor, digite um CEP válido com 8 dígitos"
+        }else if (cpf.text.length != 11) {
+            cpf.error = "Por favor, digite um CPF válido com 11 dígitos."
             validado = false
         }
 
@@ -120,49 +111,35 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
             validado = false
         }
 
-        if (bairro.text.isEmpty()) {
-            bairro.error = "Campo obrigatório"
-            validado = false
-        }
-
-        if (endereco.text.isEmpty()) {
-            endereco.error = "Campo obrigatório"
-            validado = false
-        }
-
-//        else if (numero == null || numero.text.toInt() > 0) {
-//            numero.error = "Por favor, digite um número residencial válido." // TODO esta dando erro
-//            validado = false
-//        }
 
         if (validado) {
-            val company = UsuarioModel(
+            val dev = UsuarioModel(
                 nome = nome.text.toString(),
                 email = email.text.toString(),
                 senha = senha.text.toString(),
                 estado = estado.text.toString(),
                 cidade = cidade.text.toString(),
-                bairro = bairro.text.toString(),
-                endereco = endereco.text.toString(),
                 telefone = telefone.text.toString(),
-                cnpj = cnpj.text.toString(),
+                cpf = cpf.text.toString()
             )
 
-            val apiEmpresa = Apis.getApiEmpresa()
-            val chamadaPost = apiEmpresa.createEmpresa(company)
+            val apiDesenvolvedores = Apis.getApiDesenvolvedor()
+            val chamadaPost = apiDesenvolvedores.createDeveloper(dev)
 
-//            var idResponse = findViewById<TextView>(R.id.id_response) TODO colocar na tela de cadastro campo para aparecer mensagem de erro
+
             chamadaPost.enqueue(object : Callback<UsuarioModel> {
-                override fun onResponse(
-                    call: Call<UsuarioModel>,
-                    response: Response<UsuarioModel>
-                ) {
-                    if (response.isSuccessful) {
-                        val intent = Intent(applicationContext, cadastroStep3::class.java)
-                        startActivity(intent)
+
+
+                override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
+                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                        val findDev = response.body()
+                        val logar = Intent(applicationContext, cadastroStep3::class.java)
+                        startActivity(logar)
                     } else {
+                        var code = response.code()
+//                        idResponse.text = "Erro ao cadastrar"+ "${code}"
                         Toast.makeText(
-                            baseContext, "Ops, algo deu errado! response: $response",
+                            baseContext, "Ops, algo deu errado!",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -177,9 +154,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                 }
             })
 
+
         }
-
-
-
     }
 }

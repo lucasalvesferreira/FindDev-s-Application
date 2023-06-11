@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +13,7 @@ import com.example.finddev.App.model.dtos.CandidaturaRequest
 import com.example.finddev.App.model.dtos.CandidaturaResponse
 import com.example.finddev.App.sharedpreferences.getIdUser
 import com.example.finddev.App.sharedpreferences.getIdVaga
+import com.example.finddev.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

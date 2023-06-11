@@ -1,4 +1,4 @@
-package com.example.finddev
+package com.example.finddev.dev.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,22 +7,23 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.example.finddev.App.model.VagaColaboradores
+import com.example.finddev.App.model.Vaga
+import com.example.finddev.R
 
-class ModalColaboradores : DialogFragment() {
+class ModalVagasEncerradas : DialogFragment() {
 
     companion object {
         fun newInstance(
-            vaga: VagaColaboradores
-        ): ModalColaboradores {
+            vaga: Vaga
+        ): ModalVagasEncerradas {
             val args = Bundle().apply {
                 putString("titulo", vaga.titulo)
-                putString("nomeDev", vaga.nome_dev)
+                putString("subtitulo", vaga.subtitulo)
                 putString("frenteDesenvolvimento", vaga.frenteDesenvolvimento)
                 putString("senioridade", vaga.senioridade)
                 putString("descricao", vaga.descricao)
             }
-            val fragment = ModalColaboradores()
+            val fragment = ModalVagasEncerradas()
             fragment.arguments = args
             return fragment
         }
@@ -34,7 +35,7 @@ class ModalColaboradores : DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.activity_modal_colaboradores, container, false)
+        return inflater.inflate(R.layout.activity_modal_vagas_encerradas, container, false)
         dialog?.setCanceledOnTouchOutside(true)
     }
 
@@ -43,25 +44,25 @@ class ModalColaboradores : DialogFragment() {
 
         // Obter os dados da vaga do bundle
         val titulo = arguments?.getString("titulo")
-        val nomeDev = arguments?.getString("nomeDev")
+        val subtitulo = arguments?.getString("subtitulo")
         val frenteDesenvolvimento = arguments?.getString("frenteDesenvolvimento")
         val senioridade = arguments?.getString("senioridade")
         val descricao = arguments?.getString("descricao")
 
         // Configurar os dados nos elementos do modal
         view.findViewById<TextView>(R.id.txtModalTitulo).text = titulo
-        view.findViewById<TextView>(R.id.txtNomeDev).text = nomeDev
+        view.findViewById<TextView>(R.id.txtModalSubtitulo).text = subtitulo
         view.findViewById<TextView>(R.id.txtModalFrenteDesenvolvimento).text = frenteDesenvolvimento
         view.findViewById<TextView>(R.id.txtModalSenioridade).text = senioridade
         view.findViewById<TextView>(R.id.txtModalDescricao).text = descricao
 
         // Configurar o botão "Candidatar-se"
-        view.findViewById<Button>(R.id.btnEncerrarContrato).setOnClickListener {
+        view.findViewById<Button>(R.id.btnAvaliar).setOnClickListener {
             // Lógica para lidar com o clique do botão "Candidatar-se"
 
             // Exibir o ModalAvaliacaoVagaEncerrada
-            val modalAvaliacaoColaboradores = ModalAvaliacaoColaboradores()
-            modalAvaliacaoColaboradores.show(parentFragmentManager, "modal_avaliacao_colaboradores")
+            val modalAvaliacaoVagaEncerrada = ModalAvaliacaoVagaEncerrada()
+            modalAvaliacaoVagaEncerrada.show(parentFragmentManager, "modal_avaliacao_vaga_encerrada")
 
             dismiss() // Fechar o modal após o clique no botão
         }

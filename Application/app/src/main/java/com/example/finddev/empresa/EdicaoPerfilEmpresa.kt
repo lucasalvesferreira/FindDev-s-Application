@@ -1,7 +1,8 @@
-package com.example.finddev
+package com.example.finddev.empresa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.finddev.R
 
 class EdicaoPerfilEmpresa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
