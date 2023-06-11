@@ -37,7 +37,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cadastro"
+                    android:text="@string/text_cadastro"
                     android:textSize="40sp"
                     android:fontFamily="@font/montserrat_bold"
                     android:textColor="@color/white"
@@ -52,7 +52,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
+                        android:text="@string/text_email"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -76,7 +76,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Senha"
+                        android:text="@string/text_senha"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -100,7 +100,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Confirmação de senha"
+                        android:text="@string/text_conf_senha"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -125,7 +125,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nome"
+                        android:text="@string/text_nome"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -149,7 +149,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CPF"
+                        android:text="@string/text_cpf"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -172,7 +172,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Telefone"
+                        android:text="@string/text_telefone"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -196,7 +196,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Estado"
+                        android:text="@string/text_estado"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -219,7 +219,7 @@
                     <androidx.constraintlayout.utils.widget.MotionLabel
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cidade"
+                        android:text="@string/text_cidade"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_light"
                         android:textColor="@color/white"
@@ -243,7 +243,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Cadastrar"
+                        android:text="@string/text_cadastrar"
                         android:fontFamily="@font/montserrat"
                         android:backgroundTint="@color/preto_1"
                         android:onClick="cadastrarDev"
