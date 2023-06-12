@@ -34,7 +34,7 @@ class BuscaVagaDev : AppCompatActivity() {
         val frenteDesenvolvimentoAdapter = ArrayAdapter.createFromResource(
             this,
             R.array.frentes_desenvolvimento,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
         )
         frenteDesenvolvimentoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerFrenteDesenvolvimento.adapter = frenteDesenvolvimentoAdapter
@@ -42,7 +42,7 @@ class BuscaVagaDev : AppCompatActivity() {
         val senioridadeAdapter = ArrayAdapter.createFromResource(
             this,
             R.array.senioridades,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item
         )
         senioridadeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerSenioridade.adapter = senioridadeAdapter

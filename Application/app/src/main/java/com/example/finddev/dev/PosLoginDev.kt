@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.R
 
-class posLoginDev : AppCompatActivity() {
+class PosLoginDev : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pos_login_dev)

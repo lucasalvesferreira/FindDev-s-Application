@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,108 +11,112 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:background="@color/preto_1"
-        android:padding="40dp"
-    >
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="40dp">
+
         <fragment
             android:id="@+id/header_seta_voltar"
             android:name="com.example.finddev.HeaderSetaVoltar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_header_seta_voltar"
-            android:layout_marginBottom="30dp"
-        />
-
+            tools:layout="@layout/fragment_header_seta_voltar" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-        >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvBiografiaLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Biografia"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                />
-
-                <EditText
-                    android:id="@+id/edtBiografia"
-                    style="@style/input_cadastro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borda_input_cadastro"
-                    android:hint="Digite sua biografia"
-                    android:maxLength="500"
-                    android:maxLines="5"
-                    android:inputType="textMultiLine"
-                    android:padding="20dp"
-                />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvExperienciaLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Subtitulo"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                />
-
-                <EditText
-                    android:id="@+id/edtExperiencia"
-                    style="@style/input_cadastro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borda_input_cadastro"
-                    android:hint="Digite suas experiências"
-                    android:maxLength="78"
-                    android:maxLines="2"
-                    android:padding="20dp"
-                    android:inputType="textMultiLine" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botao_cadastro_empresa"
-                android:gravity="center"
-                android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:padding="40dp"
+            android:background="@color/preto_2"
             >
-                <Button
-                    android:id="@+id/btnEditar"
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Editar"
-                    android:textSize="16sp"
-                    android:backgroundTint="@color/preto_1"
-                    android:onClick="editarPerfil"
-                />
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBiografiaLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Biografia"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edtBiografia"
+                        style="@style/input_cadastro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borda_input_cadastro"
+                        android:hint="Digite sua biografia"
+                        android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:maxLines="5"
+                        android:padding="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvResumoLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Subtitulo"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edtResumo"
+                        style="@style/input_cadastro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borda_input_cadastro"
+                        android:hint="Digite suas experiências"
+                        android:inputType="textMultiLine"
+                        android:maxLength="78"
+                        android:maxLines="2"
+                        android:padding="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botao_cadastro_empresa"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/preto_1"
+                        android:onClick="editarPerfil"
+                        android:padding="10dp"
+                        android:text="Editar"
+                        android:textSize="16sp" />
+                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

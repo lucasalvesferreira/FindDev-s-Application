@@ -1,12 +1,12 @@
 package com.example.finddev.cadastro
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.finddev.dev.CadastroDev
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.R
-import com.example.finddev.empresa.ActivityCadastroEmpresa
+import com.example.finddev.dev.CadastroDev
+import com.example.finddev.empresa.CadastroEmpresa
 
 class ActivityCadastroStep1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +15,7 @@ class ActivityCadastroStep1 : AppCompatActivity() {
     }
 
     fun cadastroEmpresa(componente: View){
-        val telaCadastroEmpresa = Intent(applicationContext, ActivityCadastroEmpresa::class.java)
+        val telaCadastroEmpresa = Intent(applicationContext, CadastroEmpresa::class.java)
 
         startActivity(telaCadastroEmpresa)
     }

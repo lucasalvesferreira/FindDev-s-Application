@@ -1,12 +1,13 @@
 package com.example.finddev
 
+
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,9 +48,9 @@ class HeaderLogin : Fragment() {
         val btLogin = view.findViewById<Button>(R.id.bt_login)
         btLogin.setOnClickListener {
 
-            // (activity as MainActivity).testeLoko()
+            // (activity as Login).testeLoko()
 
-            val login = Intent(it.context, MainActivity::class.java)
+            val login = Intent(it.context, Login::class.java)
             startActivity(login)
         }
     }

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.empresa.Candidatos
+import com.example.finddev.empresa.PerfilEmpresa
 
 class ModalCandidatoContratado : DialogFragment() {
 
@@ -19,6 +19,7 @@ class ModalCandidatoContratado : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_candidato_contratado, container, false)
+        dialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class ModalCandidatoContratado : DialogFragment() {
         Handler().postDelayed({
             dismiss()
             // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-            val buscaVagaDevIntent = Intent(requireContext(), Candidatos::class.java)
+            val buscaVagaDevIntent = Intent(requireContext(), PerfilEmpresa::class.java)
             startActivity(buscaVagaDevIntent)
         }, 2000)
     }

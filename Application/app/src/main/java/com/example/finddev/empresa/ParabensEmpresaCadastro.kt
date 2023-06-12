@@ -1,10 +1,11 @@
-package com.example.finddev.cadastro
+package com.example.finddev.empresa
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.R
 
-class ActivityCadastroStep3 : AppCompatActivity() {
+
+class ParabensEmpresaCadastro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_step3)

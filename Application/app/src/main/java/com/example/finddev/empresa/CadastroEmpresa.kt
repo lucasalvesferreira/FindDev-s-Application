@@ -9,13 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.R
-import com.example.finddev.cadastro.ActivityCadastroStep3
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.regex.Pattern
 
-class ActivityCadastroEmpresa : AppCompatActivity() {
+class CadastroEmpresa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_empresa)
@@ -46,7 +45,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
         val endereco = findViewById<EditText>(R.id.et_logradouro)
 
-        val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
+        val cadastroStep3 = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
 
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
         val namePattern = Pattern.compile("^[\\p{L} .'-]+\$")
@@ -160,9 +159,10 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                     response: Response<UsuarioModel>
                 ) {
                     if (response.isSuccessful) {
-                        val intent = Intent(applicationContext, cadastroStep3::class.java)
+                        val intent = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
                         startActivity(intent)
                     } else {
+                        println(response.body())
                         Toast.makeText(
                             baseContext, "Ops, algo deu errado! response: $response",
                             Toast.LENGTH_SHORT

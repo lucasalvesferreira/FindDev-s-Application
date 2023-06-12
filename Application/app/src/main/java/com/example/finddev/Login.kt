@@ -1,5 +1,6 @@
 package com.example.finddev
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,29 +13,24 @@ import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
 import com.example.finddev.App.sharedpreferences.saveIdUser
-import com.example.finddev.cadastro.ActivityCadastroStep3
-import com.example.finddev.dev.posLoginDev
-import com.example.finddev.empresa.posLoginEmpresa
+import com.example.finddev.dev.PerfilDev
+import com.example.finddev.empresa.PerfilEmpresa
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
     }
 
-    fun logar(componente: View){
+    fun logar(componente: View) {
         println("Entrou")
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
-
         val senha = findViewById<EditText>(R.id.et_senha)
-
-        val cadastroStep3 = Intent(applicationContext, ActivityCadastroStep3::class.java)
-
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
 
         if (email.text.toString().isEmpty()) {
@@ -48,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         if (senha.text.isEmpty()) {
             senha.error = "Campo obrigatório"
             validado = false
-        }else if(senha.text.length < 6){
+        } else if (senha.text.length < 6) {
             senha.error = "A senha deve ter pelo menos 6 caracteres."
             validado = false
         }
@@ -70,13 +66,27 @@ class MainActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         saveIdUser(applicationContext, response.body()?.id.toString())
 
-                        response.body()?.cnpj?.let {
-                            startActivity(Intent(applicationContext, posLoginEmpresa::class.java))
-                        } ?: startActivity(Intent(applicationContext, posLoginDev::class.java))
-                    }else {
+                        val usuario = response.body()
+                        usuario?.cpf?.let {
+                            val intent = Intent(applicationContext, PerfilDev::class.java)
+                            intent.putExtra("nomeDev", usuario.nome)
+                            intent.putExtra("estado", usuario.estado)
+                            intent.putExtra("cidade", usuario.cidade)
+                            startActivity(intent)
+                        } ?: run {
+                            val intent = Intent(applicationContext, PerfilEmpresa::class.java)
+                            intent.putExtra("nomeEmpresa", usuario?.nome)
+                            intent.putExtra("estado", usuario?.estado)
+                            intent.putExtra("cidade", usuario?.cidade)
+                            intent.putExtra("bairro", usuario?.bairro)
+                            intent.putExtra("endereco", usuario?.endereco)
+                            startActivity(intent)
+                        }
+
+                    } else {
                         val code = response.code()
-                        Log.d("TAG", "Erro ao logar : Status = "+ "${code}")
-                        idResponse_main.text = "Usuario e senha não encontrados!"
+                        Log.d("TAG", "Erro ao logar: Status = $code")
+                        idResponse_main.text = "Usuário e senha não encontrados!"
                     }
                 }
 
@@ -89,6 +99,5 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
-
     }
 }

@@ -11,7 +11,7 @@ import android.widget.RatingBar
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.dev.JobsEncerradosDev
+import com.example.finddev.dev.PerfilDev
 
 class ModalAvaliacaoVagaEncerrada : DialogFragment() {
 
@@ -22,6 +22,7 @@ class ModalAvaliacaoVagaEncerrada : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_avaliacao_vaga_encerrada, container, false)
+        dialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,7 +45,7 @@ class ModalAvaliacaoVagaEncerrada : DialogFragment() {
                     dismiss()
 
                     // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-                    val buscaVagaDevIntent = Intent(requireContext(), JobsEncerradosDev::class.java)
+                    val buscaVagaDevIntent = Intent(requireContext(), PerfilDev::class.java)
                     startActivity(buscaVagaDevIntent)
                 }, 1000) // Tempo em milissegundos
             } else {

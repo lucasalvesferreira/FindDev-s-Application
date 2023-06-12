@@ -12,8 +12,14 @@ import com.example.finddev.dev.BuscaVagaDev
 
 class ModalConfirmacaoCandidatura : DialogFragment() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.ModalVagaStyle)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.activity_modal_confirmacao_candidatura, container, false)
+        dialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
