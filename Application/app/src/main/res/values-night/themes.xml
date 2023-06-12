@@ -13,5 +13,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
+        <item name="fontFamily">@font/montserrat</item>
     </style>
 </resources>
