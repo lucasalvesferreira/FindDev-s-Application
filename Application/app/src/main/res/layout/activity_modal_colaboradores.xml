@@ -47,6 +47,28 @@
           android:gravity="center_horizontal"
           />
 
+      <TextView
+          android:id="@+id/txtEmailDev"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="Email dev"
+          android:textColor="#fff"
+          android:textSize="15sp"
+          android:gravity="center_horizontal"
+          />
+
+      <TextView
+          android:id="@+id/txtTelefoneDev"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="Telefone dev"
+          android:textColor="#fff"
+          android:textSize="15sp"
+          android:gravity="center_horizontal"
+          />
+
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"

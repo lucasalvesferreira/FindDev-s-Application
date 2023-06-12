@@ -97,13 +97,6 @@ class ModalVaga : DialogFragment() {
                 println("id dev $idDesenvolvedor - id vaga $idVaga")
                 if (!response.isSuccessful) {
                     println("error code ${response.code()}")
-//                    context?.let {
-//                        Toast.makeText(
-//                            it,
-//                            "Error code: ${response.code()}",
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    }
                 }
             }
 

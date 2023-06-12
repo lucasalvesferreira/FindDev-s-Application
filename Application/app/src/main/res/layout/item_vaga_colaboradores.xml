@@ -43,7 +43,7 @@
                 android:id="@+id/txtNomeDev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Subtítulo da Vaga"
+                android:text="Nome do desenvolvedor"
                 android:textSize="10sp"
                 android:textColor="#fff"
                 android:layout_marginTop="8dp"/>

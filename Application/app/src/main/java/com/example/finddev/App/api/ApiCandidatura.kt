@@ -8,6 +8,6 @@ import retrofit2.http.POST
 
 interface ApiCandidatura {
 
-    @POST("/candidaturas")
+    @POST("candidaturas")
     fun createCandidatura(@Body candidatura: CandidaturaRequest): Call<CandidaturaResponse>
 }

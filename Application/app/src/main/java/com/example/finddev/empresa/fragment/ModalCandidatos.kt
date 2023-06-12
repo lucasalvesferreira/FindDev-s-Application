@@ -6,10 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
+import com.example.finddev.App.model.dtos.ContratacaoRequest
 import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.R
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
 
 class ModalCandidatos : DialogFragment() {
 
@@ -18,11 +25,14 @@ class ModalCandidatos : DialogFragment() {
             vaga: VagaResponse
         ): ModalCandidatos {
             val args = Bundle().apply {
-                // TODO falar com o grupo sobre campos de funcao e senioridade do dev no cadastro
-                putString("nomeDev", "")
-                putString("frenteDesenvolvimento", "")
-                putString("senioridade", "")
-                putString("experiencia", "")
+                putString("idVaga", vaga.id.toString())
+                putString("idDev", vaga.desenvolvedor?.id)
+                putString("tituloVaga", vaga.titulo)
+                putString("funcaoVaga", vaga.funcao)
+                putString("senioridadeVaga", vaga.senioridade)
+                putString("nomeDev", vaga.desenvolvedor?.nome)
+                putString("emailDev", vaga.desenvolvedor?.email)
+                putString("telefoneDev", vaga.desenvolvedor?.telefone)
             }
             val fragment = ModalCandidatos()
             fragment.arguments = args
@@ -44,20 +54,25 @@ class ModalCandidatos : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Obter os dados da vaga do bundle
+        val tituloVaga = arguments?.getString("tituloVaga")
+        val funcaoVaga = arguments?.getString("funcaoVaga")
+        val senioridadeVaga = arguments?.getString("senioridadeVaga")
         val nomeDev = arguments?.getString("nomeDev")
-        val frenteDesenvolvimento = arguments?.getString("frenteDesenvolvimento")
-        val senioridade = arguments?.getString("senioridade")
-        val experiencia = arguments?.getString("experiencia")
+        val emailDev = arguments?.getString("emailDev")
+        val telefoneDev = arguments?.getString("telefoneDev")
 
         // Configurar os dados nos elementos do modal
-        view.findViewById<TextView>(R.id.txtNomeDev).text = nomeDev
-        view.findViewById<TextView>(R.id.txtModalFrenteDesenvolvimento).text = frenteDesenvolvimento
-        view.findViewById<TextView>(R.id.txtModalSenioridade).text = senioridade
-        view.findViewById<TextView>(R.id.txtExperiencia).text = experiencia
+        view.findViewById<TextView>(R.id.txtTituloVaga).text = tituloVaga
+        view.findViewById<TextView>(R.id.txtFuncaoVaga).text = funcaoVaga
+        view.findViewById<TextView>(R.id.txtSenioridadeVaga).text = senioridadeVaga
+        view.findViewById<TextView>(R.id.txtNomeCandidato).text = nomeDev
+        view.findViewById<TextView>(R.id.txtEmailCandidato).text = emailDev
+        view.findViewById<TextView>(R.id.txtTelefoneCandidato).text = telefoneDev
 
         // Configurar o botão "Candidatar-se"
         view.findViewById<Button>(R.id.btnContratar).setOnClickListener {
             // Lógica para lidar com o clique do botão "Candidatar-se"
+            contratar()
 
             // Exibir o ModalAvaliacaoVagaEncerrada
             val modalCandidatoContratado = ModalCandidatoContratado()
@@ -65,5 +80,30 @@ class ModalCandidatos : DialogFragment() {
 
             dismiss() // Fechar o modal após o clique no botão
         }
+    }
+
+    private fun contratar() {
+        val apiVagas = Apis.getApiVagas()
+        val request = ContratacaoRequest(
+            arguments?.getString("idVaga")?.toInt()!!,
+            UUID.fromString(arguments?.getString("idDev"))
+        )
+        val patchMethod = apiVagas.contratar(request)
+
+        patchMethod.enqueue(object : Callback<VagaResponse> {
+            override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
+                if (!response.isSuccessful) {
+                    println("status code: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<VagaResponse>, t: Throwable) {
+                Toast.makeText(
+                    context, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
     }
 }

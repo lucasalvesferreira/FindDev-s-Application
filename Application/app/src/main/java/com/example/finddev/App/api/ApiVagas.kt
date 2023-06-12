@@ -1,10 +1,12 @@
 package com.example.finddev.App.api
 
+import com.example.finddev.App.model.dtos.ContratacaoRequest
 import com.example.finddev.App.model.dtos.VagaRequest
 import com.example.finddev.App.model.dtos.VagaResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
 import java.util.UUID
@@ -22,4 +24,7 @@ interface ApiVagas {
 
     @GET("vagas/empresa/{idEmpresa}")
     fun getVagasEmpresa(@Path("idEmpresa") idEmpresa: UUID): Call<List<VagaResponse>>
+
+    @PATCH("vagas/contratacao")
+    fun contratar(@Body contratacaoRequest: ContratacaoRequest): Call<VagaResponse>
 }

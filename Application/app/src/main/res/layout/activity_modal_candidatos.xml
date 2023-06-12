@@ -26,7 +26,7 @@
             >
 
             <TextView
-                android:id="@+id/txtNomeDev"
+                android:id="@+id/txtTituloVaga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Título da Vaga"
@@ -43,7 +43,7 @@
                 android:layout_marginBottom="20dp"
                 >
                 <TextView
-                    android:id="@+id/txtModalFrenteDesenvolvimento"
+                    android:id="@+id/txtFuncaoVaga"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="60dp"
@@ -57,7 +57,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/txtModalSenioridade"
+                    android:id="@+id/txtSenioridadeVaga"
                     android:layout_width="0dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginRight="5dp"
@@ -81,24 +81,40 @@
                 >
 
                 <TextView
-                    android:id="@+id/txtTituloDescricao"
+                    android:id="@+id/txtDetalhesCandidato"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="15sp"
-                    android:text="Detalhes do candidato:"
+                    android:text="Detalhes do candidato"
                     />
 
                 <TextView
-                    android:id="@+id/txtExperiencia"
+                    android:id="@+id/txtNomeCandidato"
+                    android:text="Nome: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtEmailCandidato"
+                    android:text="Email: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtTelefoneCandidato"
+                    android:text="Telefone: "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
