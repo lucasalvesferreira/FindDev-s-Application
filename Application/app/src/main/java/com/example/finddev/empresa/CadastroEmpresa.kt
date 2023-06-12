@@ -162,7 +162,7 @@ class CadastroEmpresa : AppCompatActivity() {
                         val intent = Intent(applicationContext, ParabensEmpresaCadastro::class.java)
                         startActivity(intent)
                     } else {
-                        println(response.body())
+                        println("status code ${response.code()}")
                         Toast.makeText(
                             baseContext, "Ops, algo deu errado! response: $response",
                             Toast.LENGTH_SHORT

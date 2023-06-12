@@ -29,7 +29,7 @@ class ModalVaga : DialogFragment() {
         ): ModalVaga {
             val args = Bundle().apply {
                 putString("titulo", titulo)
-                putString("subtitulo", descricao) //vai ser o nome da empresa
+                putString("subtitulo", descricao)
                 putString("frenteDesenvolvimento", funcao)
                 putString("senioridade", senioridade)
                 putString("descricao", descricao)

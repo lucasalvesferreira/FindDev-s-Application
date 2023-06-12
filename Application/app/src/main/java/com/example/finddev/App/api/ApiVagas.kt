@@ -7,6 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import java.util.UUID
 
 interface ApiVagas {
 
@@ -18,4 +19,7 @@ interface ApiVagas {
         @Path("funcao") funcao: String,
         @Path("senioridade") senioridade: String
     ): Call<List<VagaResponse>>
+
+    @GET("vagas/empresa/{idEmpresa}")
+    fun getVagasEmpresa(@Path("idEmpresa") idEmpresa: UUID): Call<List<VagaResponse>>
 }

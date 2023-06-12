@@ -6,12 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finddev.App.model.Vaga
+import com.example.finddev.App.api.Apis
+import com.example.finddev.App.model.dtos.VagaResponse
+import com.example.finddev.App.sharedpreferences.getIdUser
 import com.example.finddev.R
 import com.example.finddev.empresa.fragment.ModalVagasPublicadasEmpresa
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
 
 class VagasPublicadasEmpresa : AppCompatActivity() {
 
@@ -24,31 +31,20 @@ class VagasPublicadasEmpresa : AppCompatActivity() {
         // Configurar o RecyclerView
         recyclerViewVagasPublicadas = findViewById(R.id.recyclerViewVagasPublicadas)
         recyclerViewVagasPublicadas.layoutManager = LinearLayoutManager(this)
-        recyclerViewVagasPublicadas.adapter = VagasAdapter(getListaVagas()) // Chame o método getListaVagas() para obter a lista de vagas
-    }
 
-    // Método para obter a lista de vagas (substitua com seus dados reais)
-    private fun getListaVagas(): List<Vaga> {
-        // Simule uma lista de vagas
-        val vagas = mutableListOf<Vaga>()
-        vagas.add(Vaga(2, 1, "título 90", "Subtítulo 1", "FRONTEND", "JUNIOR","Tet"))
-        vagas.add(Vaga(1, 2, "título 2", "Subtítulo 2","BACKEND", "PLENO","Teste"))
-        vagas.add(Vaga(11, 3, "título 3", "Subtítulo 3","FULLSTACK", "SENIOR","Teste"))
-        // Adicione mais vagas se necessário
-        return vagas
+        getListaVagas()
     }
 
     // Classe do ViewHolder para o item da lista
     private class VagaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgVaga: ImageView = itemView.findViewById(R.id.imgVaga)
         val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
-        val txtSubtitulo: TextView = itemView.findViewById(R.id.txtSubtitulo)
         val txtFrenteDesenvolvimento: TextView = itemView.findViewById(R.id.txtFrenteDesenvolvimento)
         val txtSenioridade: TextView = itemView.findViewById(R.id.txtSenioridade)
     }
 
     // Adaptador para o RecyclerView
-    private inner class VagasAdapter(private val listaVagas: List<Vaga>) : RecyclerView.Adapter<VagaViewHolder>() {
+    private inner class VagasAdapter(private val listaVagas: List<VagaResponse>) : RecyclerView.Adapter<VagaViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VagaViewHolder {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaga, parent, false)
@@ -59,8 +55,7 @@ class VagasPublicadasEmpresa : AppCompatActivity() {
             val vaga = listaVagas[position]
             holder.imgVaga.setImageResource(R.mipmap.logo) // Defina a imagem correta para cada vaga
             holder.txtTitulo.text = vaga.titulo
-            holder.txtSubtitulo.text = vaga.subtitulo
-            holder.txtFrenteDesenvolvimento.text = vaga.frenteDesenvolvimento
+            holder.txtFrenteDesenvolvimento.text = vaga.funcao
             holder.txtSenioridade.text = vaga.senioridade
 
             // Configurar o clique no item da lista para abrir o ModalVagasEncerradas
@@ -73,5 +68,33 @@ class VagasPublicadasEmpresa : AppCompatActivity() {
         override fun getItemCount(): Int {
             return listaVagas.size
         }
+    }
+
+    private fun getListaVagas() {
+        val apiVagas = Apis.getApiVagas()
+        val getMethod = apiVagas.getVagasEmpresa(UUID.fromString(getIdUser(applicationContext)))
+
+        getMethod.enqueue(object : Callback<List<VagaResponse>> {
+            override fun onResponse(
+                call: Call<List<VagaResponse>>,
+                response: Response<List<VagaResponse>>
+            ) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        recyclerViewVagasPublicadas.adapter = VagasAdapter(it)
+                    }
+                } else {
+                    println("status code ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<VagaResponse>>, t: Throwable) {
+                Toast.makeText(
+                    baseContext, "Erro na API: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                t.printStackTrace()
+            }
+        })
     }
 }

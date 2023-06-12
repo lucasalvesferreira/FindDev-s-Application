@@ -5,52 +5,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Apis {
     val BASE_URL = "http://44.214.40.119:8080/api/v1/"
+    val retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(BASE_URL)
+        .build()
 
-    fun getApiUsuario(): ApiUsuario {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiUsuario::class.java)
-    }
+    fun getApiUsuario(): ApiUsuario = retrofit.create(ApiUsuario::class.java)
 
-    fun getApiDesenvolvedor(): ApiDesenvolvedor {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiDesenvolvedor::class.java)
-    }
+    fun getApiDesenvolvedor(): ApiDesenvolvedor = retrofit.create(ApiDesenvolvedor::class.java)
 
-    fun getApiEmpresa(): ApiEmpresa {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiEmpresa::class.java)
-    }
+    fun getApiEmpresa(): ApiEmpresa = retrofit.create(ApiEmpresa::class.java)
 
-    fun getApiVagas(): ApiVagas {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiVagas::class.java)
-    }
+    fun getApiVagas(): ApiVagas = retrofit.create(ApiVagas::class.java)
 
-    fun getApiCandidatura(): ApiCandidatura {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiCandidatura::class.java)
-    }
+    fun getApiCandidatura(): ApiCandidatura = retrofit.create(ApiCandidatura::class.java)
 
-    fun getApiPerfilDev(): ApiDesenvolvedor {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-        return retrofit.create(ApiDesenvolvedor::class.java)
-    }
+    fun getApiAvaliacao(): ApiAvaliacao = retrofit.create(ApiAvaliacao::class.java)
 }

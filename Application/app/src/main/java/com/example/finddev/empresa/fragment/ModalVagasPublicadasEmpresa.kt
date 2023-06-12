@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.example.finddev.App.model.Vaga
+import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.R
 
 class ModalVagasPublicadasEmpresa : DialogFragment() {
 
     companion object {
         fun newInstance(
-            vaga: Vaga
+            vaga: VagaResponse
         ): ModalVagasPublicadasEmpresa {
             val args = Bundle().apply {
                 putString("titulo", vaga.titulo)
-                putString("subtitulo", vaga.subtitulo)
-                putString("frenteDesenvolvimento", vaga.frenteDesenvolvimento)
+                putString("subtitulo", vaga.descricao)
+                putString("frenteDesenvolvimento", vaga.funcao)
                 putString("senioridade", vaga.senioridade)
                 putString("descricao", vaga.descricao)
             }

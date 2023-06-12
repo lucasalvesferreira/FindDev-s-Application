@@ -14,7 +14,9 @@ import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
 import com.example.finddev.App.sharedpreferences.saveIdUser
 import com.example.finddev.dev.PerfilDev
+import com.example.finddev.dev.PosLoginDev
 import com.example.finddev.empresa.PerfilEmpresa
+import com.example.finddev.empresa.PosLoginEmpresa
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,7 +74,9 @@ class Login : AppCompatActivity() {
                             intent.putExtra("nomeDev", usuario.nome)
                             intent.putExtra("estado", usuario.estado)
                             intent.putExtra("cidade", usuario.cidade)
-                            startActivity(intent)
+                            intent.putExtra("titulo", usuario.perfil?.titulo)
+                            intent.putExtra("descricao", usuario.perfil?.descricao)
+                            startActivity(Intent(applicationContext, PosLoginDev::class.java))
                         } ?: run {
                             val intent = Intent(applicationContext, PerfilEmpresa::class.java)
                             intent.putExtra("nomeEmpresa", usuario?.nome)
@@ -80,9 +84,10 @@ class Login : AppCompatActivity() {
                             intent.putExtra("cidade", usuario?.cidade)
                             intent.putExtra("bairro", usuario?.bairro)
                             intent.putExtra("endereco", usuario?.endereco)
-                            startActivity(intent)
+                            intent.putExtra("titulo", usuario?.perfil?.titulo)
+                            intent.putExtra("descricao", usuario?.perfil?.descricao)
+                            startActivity(Intent(applicationContext, PosLoginEmpresa::class.java))
                         }
-
                     } else {
                         val code = response.code()
                         Log.d("TAG", "Erro ao logar: Status = $code")

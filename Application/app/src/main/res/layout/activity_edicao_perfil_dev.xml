@@ -47,21 +47,21 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvBiografiaLabel"
+                        android:id="@+id/tvTituloLabelDev"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="Biografia"
+                        android:text="Título"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
                     <EditText
-                        android:id="@+id/edtBiografia"
+                        android:id="@+id/edtTituloDev"
                         style="@style/input_cadastro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/borda_input_cadastro"
-                        android:hint="Digite sua biografia"
+                        android:hint="Digite um título"
                         android:inputType="textMultiLine"
                         android:maxLength="500"
                         android:maxLines="5"
@@ -76,21 +76,21 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvResumoLabel"
+                        android:id="@+id/tvBiografiaLabelDev"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="Subtitulo"
+                        android:text="Biografia"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
                     <EditText
-                        android:id="@+id/edtResumo"
+                        android:id="@+id/edtBiografiaDev"
                         style="@style/input_cadastro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/borda_input_cadastro"
-                        android:hint="Digite suas experiências"
+                        android:hint="Digite sua biografia"
                         android:inputType="textMultiLine"
                         android:maxLength="78"
                         android:maxLines="2"

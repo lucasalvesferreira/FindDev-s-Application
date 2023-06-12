@@ -6,30 +6,32 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
-import com.example.finddev.App.model.dtos.PerfilDevRequest
-import com.example.finddev.App.model.dtos.PerfilDevResponse
+import com.example.finddev.App.model.UsuarioModel
+import com.example.finddev.App.model.dtos.PerfilRequest
+import com.example.finddev.App.sharedpreferences.getIdUser
 import com.example.finddev.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class EdicaoPerfilDev : AppCompatActivity() {
 
+    private lateinit var edtTitulo: EditText
     private lateinit var edtBiografia: EditText
-    private lateinit var edtExperiencia: EditText
     private lateinit var btnEditar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edicao_perfil_dev)
 
-        edtBiografia = findViewById(R.id.edtBiografia)
-        edtExperiencia = findViewById(R.id.edtExperiencia)
+        edtTitulo = findViewById(R.id.edtTituloDev)
+        edtBiografia = findViewById(R.id.edtBiografiaDev)
         btnEditar = findViewById(R.id.btnEditar)
 
         btnEditar.setOnClickListener {
-            val biografia = edtBiografia.text.toString().trim()
-            val experiencia = edtExperiencia.text.toString().trim()
+            val biografia = edtTitulo.text.toString().trim()
+            val experiencia = edtBiografia.text.toString().trim()
 
             if (biografia.isEmpty() || experiencia.isEmpty()) {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
@@ -40,13 +42,13 @@ class EdicaoPerfilDev : AppCompatActivity() {
     }
 
     private fun atualizarPerfil(biografia: String, experiencia: String) {
-        val idUsuario = "idDoUsuario" // Substitua "idDoUsuario" pelo ID do usuário atual
+        val idUsuario = UUID.fromString(getIdUser(applicationContext))
 
-        val request = PerfilDevRequest(biografia, experiencia)
-        val call = Apis.getApiPerfilDev().atualizarPerfil(idUsuario, request)
+        val request = PerfilRequest(idUsuario, biografia, experiencia)
+        val call = Apis.getApiUsuario().atualizarPerfil(request)
 
-        call.enqueue(object : Callback<PerfilDevResponse> {
-            override fun onResponse(call: Call<PerfilDevResponse>, response: Response<PerfilDevResponse>) {
+        call.enqueue(object : Callback<UsuarioModel> {
+            override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@EdicaoPerfilDev, "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show()
                     finish() // Fecha a tela de edição após o sucesso
@@ -55,7 +57,7 @@ class EdicaoPerfilDev : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<PerfilDevResponse>, t: Throwable) {
+            override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                 Toast.makeText(this@EdicaoPerfilDev, "Erro de conexão", Toast.LENGTH_SHORT).show()
             }
         })

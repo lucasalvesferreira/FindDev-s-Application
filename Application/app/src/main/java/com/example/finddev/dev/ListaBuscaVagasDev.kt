@@ -45,7 +45,6 @@ class ListaBuscaVagasDev : AppCompatActivity() {
     private class VagaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgVaga: ImageView = itemView.findViewById(R.id.imgVaga)
         val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
-        val txtSubtitulo: TextView = itemView.findViewById(R.id.txtSubtitulo)
         val txtFrenteDesenvolvimento: TextView = itemView.findViewById(R.id.txtFrenteDesenvolvimento)
         val txtSenioridade: TextView = itemView.findViewById(R.id.txtSenioridade)
     }
@@ -63,7 +62,6 @@ class ListaBuscaVagasDev : AppCompatActivity() {
             val vaga = listaVagas[position]
             holder.imgVaga.setImageResource(R.mipmap.logo) // Defina a imagem correta para cada vaga
             holder.txtTitulo.text = vaga.titulo
-            holder.txtSubtitulo.text = vaga.descricao
             holder.txtFrenteDesenvolvimento.text = vaga.funcao
             holder.txtSenioridade.text = vaga.senioridade
 

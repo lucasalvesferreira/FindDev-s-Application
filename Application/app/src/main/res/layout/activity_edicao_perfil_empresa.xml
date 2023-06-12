@@ -47,6 +47,35 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvTituloLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Título"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edtTitulo"
+                        style="@style/input_cadastro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borda_input_cadastro"
+                        android:hint="Digite seu título"
+                        android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:maxLines="5"
+                        android:padding="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
                         android:id="@+id/tvBiografiaLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -62,35 +91,6 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/borda_input_cadastro"
                         android:hint="Digite sua biografia"
-                        android:inputType="textMultiLine"
-                        android:maxLength="500"
-                        android:maxLines="5"
-                        android:padding="20dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvExperienciaLabel"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:text="Subtitulo"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <EditText
-                        android:id="@+id/edtExperiencia"
-                        style="@style/input_cadastro"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/borda_input_cadastro"
-                        android:hint="Digite suas experiências"
                         android:inputType="textMultiLine"
                         android:maxLength="78"
                         android:maxLines="2"
@@ -110,7 +110,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/preto_1"
-                        android:onClick="editarPerfil"
                         android:padding="10dp"
                         android:text="Editar"
                         android:textSize="16sp" />

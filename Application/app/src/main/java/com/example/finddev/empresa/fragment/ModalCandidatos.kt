@@ -7,20 +7,22 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.example.finddev.App.model.VagaCandidato
+import com.example.finddev.App.model.UsuarioModel
+import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.R
 
 class ModalCandidatos : DialogFragment() {
 
     companion object {
         fun newInstance(
-            vaga: VagaCandidato
+            vaga: VagaResponse
         ): ModalCandidatos {
             val args = Bundle().apply {
-                putString("nomeDev", vaga.nome_dev)
-                putString("frenteDesenvolvimento", vaga.frenteDesenvolvimento)
-                putString("senioridade", vaga.senioridade)
-                putString("experiencia", vaga.experiencia)
+                // TODO falar com o grupo sobre campos de funcao e senioridade do dev no cadastro
+                putString("nomeDev", "")
+                putString("frenteDesenvolvimento", "")
+                putString("senioridade", "")
+                putString("experiencia", "")
             }
             val fragment = ModalCandidatos()
             fragment.arguments = args

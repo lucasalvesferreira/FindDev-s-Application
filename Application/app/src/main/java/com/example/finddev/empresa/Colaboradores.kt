@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finddev.App.model.VagaColaboradores
+import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.R
 import com.example.finddev.empresa.fragment.ModalColaboradores
 
@@ -24,18 +24,7 @@ class Colaboradores : AppCompatActivity() {
         // Configurar o RecyclerView
         recyclerViewVagasColaboradores = findViewById(R.id.recyclerViewVagasColaboradores)
         recyclerViewVagasColaboradores.layoutManager = LinearLayoutManager(this)
-        recyclerViewVagasColaboradores.adapter = VagasAdapter(getListaVagas()) // Chame o método getListaVagas() para obter a lista de vagas
-    }
-
-    // Método para obter a lista de vagas (substitua com seus dados reais)
-    private fun getListaVagas(): List<VagaColaboradores> {
-        // Simule uma lista de vagas
-        val vagas = mutableListOf<VagaColaboradores>()
-        vagas.add(VagaColaboradores(2, 1, "título 1","Carlos" ,"Subtítulo 1", "FRONTEND", "JUNIOR","Tet"))
-        vagas.add(VagaColaboradores(1, 2, "título 2", "Danilo","Subtítulo 2","BACKEND", "PLENO","Teste"))
-        vagas.add(VagaColaboradores(11, 3, "título 3", "Paulo","Subtítulo 3","FULLSTACK", "SENIOR","Teste"))
-        // Adicione mais vagas se necessário
-        return vagas
+        recyclerViewVagasColaboradores.adapter = VagasAdapter(emptyList()) // Chame o método getListaVagas() para obter a lista de vagas
     }
 
     // Classe do ViewHolder para o item da lista
@@ -46,7 +35,7 @@ class Colaboradores : AppCompatActivity() {
     }
 
     // Adaptador para o RecyclerView
-    private inner class VagasAdapter(private val listaVagas: List<VagaColaboradores>) : RecyclerView.Adapter<VagaViewHolder>() {
+    private inner class VagasAdapter(private val listaVagas: List<VagaResponse>) : RecyclerView.Adapter<VagaViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VagaViewHolder {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaga_colaboradores, parent, false)
@@ -57,7 +46,7 @@ class Colaboradores : AppCompatActivity() {
             val vaga = listaVagas[position]
             holder.imgVaga.setImageResource(R.mipmap.logo) // Defina a imagem correta para cada vaga
             holder.txtTitulo.text = vaga.titulo
-            holder.txtNomeDev.text = vaga.nome_dev
+            holder.txtNomeDev.text = "" // TODO RECUPERAR NOME DEV
 
             // Configurar o clique no item da lista para abrir o ModalVagasEncerradas
             holder.itemView.setOnClickListener {
