@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.empresa.Candidatos
+import com.example.finddev.empresa.PerfilEmpresa
 
 class ModalCandidatoContratado : DialogFragment() {
 

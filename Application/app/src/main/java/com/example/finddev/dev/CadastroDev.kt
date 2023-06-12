@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.R
-import com.example.finddev.cadastro.ActivityCadastroStep3
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -133,7 +132,7 @@ class CadastroDev : AppCompatActivity() {
                 override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
                     if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
                         val findDev = response.body()
-                        val logar = Intent(applicationContext, cadastroStep3::class.java)
+                        val logar = Intent(applicationContext, ParabensDesenvolvedorCadastro::class.java)
                         startActivity(logar)
                     } else {
                         var code = response.code()

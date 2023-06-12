@@ -92,7 +92,7 @@
                 android:padding="40dp">
 
                 <TextView
-                    android:id="@+id/nomeEmpresa"
+                    android:id="@+id/tvNomeEmpresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
@@ -102,7 +102,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/resumo"
+                    android:id="@+id/tvResumo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
@@ -127,7 +127,7 @@
 
 
                     <TextView
-                        android:id="@+id/biografia"
+                        android:id="@+id/tvBiografia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
@@ -157,7 +157,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/estado"
+                                android:id="@+id/tvEstado"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat"
@@ -166,7 +166,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/cidade"
+                                android:id="@+id/tvCidade"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat"
@@ -175,7 +175,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/bairro"
+                                android:id="@+id/tvBairro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat"
@@ -184,7 +184,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/endereco"
+                                android:id="@+id/tvEndereco"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat"

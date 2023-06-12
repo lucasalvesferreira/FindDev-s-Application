@@ -11,7 +11,7 @@ import android.widget.RatingBar
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.dev.JobsEncerradosDev
+import com.example.finddev.dev.PerfilDev
 
 class ModalAvaliacaoVagaEncerrada : DialogFragment() {
 

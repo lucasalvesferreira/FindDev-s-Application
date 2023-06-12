@@ -45,4 +45,12 @@ object Apis {
             .build()
         return retrofit.create(ApiCandidatura::class.java)
     }
+
+    fun getApiPerfilDev(): ApiDesenvolvedor {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+        return retrofit.create(ApiDesenvolvedor::class.java)
+    }
 }

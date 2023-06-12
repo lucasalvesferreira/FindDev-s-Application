@@ -69,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="redirecionarPerfil"
+                        android:onClick="redirecionarCriacaoVagas"
                         android:text="Publicar\nvaga"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -87,7 +87,7 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="redirecionarCriacaoVagas"
+                        android:onClick="redirecionarPerfil"
                         android:text="Perfil e \nestatísticas"
                         android:textSize="15sp" />
                 </LinearLayout>
