@@ -84,7 +84,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:inputType="textMultiLine"
+                    />
             </LinearLayout>
 
             <LinearLayout

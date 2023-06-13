@@ -1,7 +1,5 @@
 package com.example.finddev
 
-
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,8 +11,10 @@ import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.LoginModel
 import com.example.finddev.App.sharedpreferences.saveIdUser
-import com.example.finddev.dev.PerfilDev
-import com.example.finddev.empresa.PerfilEmpresa
+import com.example.finddev.dev.PerfilDevFragment
+import com.example.finddev.dev.PosLoginDevFragment
+import com.example.finddev.empresa.PerfilEmpresaFragment
+import com.example.finddev.empresa.PosLoginEmpresaFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -68,19 +68,37 @@ class Login : AppCompatActivity() {
 
                         val usuario = response.body()
                         usuario?.cpf?.let {
-                            val intent = Intent(applicationContext, PerfilDev::class.java)
-                            intent.putExtra("nomeDev", usuario.nome)
-                            intent.putExtra("estado", usuario.estado)
-                            intent.putExtra("cidade", usuario.cidade)
-                            startActivity(intent)
+                            val perfilDevFragment = PerfilDevFragment()
+                            val bundle = Bundle()
+                            bundle.putString("nomeDev", usuario.nome)
+                            bundle.putString("estado", usuario.estado)
+                            bundle.putString("cidade", usuario.cidade)
+                            perfilDevFragment.arguments = bundle
+
+                            val posLoginDevFragment = PosLoginDevFragment()
+                            posLoginDevFragment.arguments = bundle
+
+                            supportFragmentManager.beginTransaction()
+                                .replace(android.R.id.content, posLoginDevFragment)
+                                .addToBackStack(null)
+                                .commit()
                         } ?: run {
-                            val intent = Intent(applicationContext, PerfilEmpresa::class.java)
-                            intent.putExtra("nomeEmpresa", usuario?.nome)
-                            intent.putExtra("estado", usuario?.estado)
-                            intent.putExtra("cidade", usuario?.cidade)
-                            intent.putExtra("bairro", usuario?.bairro)
-                            intent.putExtra("endereco", usuario?.endereco)
-                            startActivity(intent)
+                            val perfilEmpresaFragment = PerfilEmpresaFragment()
+                            val bundle = Bundle()
+                            bundle.putString("nomeEmpresa", usuario?.nome)
+                            bundle.putString("estado", usuario?.estado)
+                            bundle.putString("cidade", usuario?.cidade)
+                            bundle.putString("bairro", usuario?.bairro)
+                            bundle.putString("endereco", usuario?.endereco)
+                            perfilEmpresaFragment.arguments = bundle
+
+                            val posLoginEmpresaFragment = PosLoginEmpresaFragment()
+                            posLoginEmpresaFragment.arguments = bundle
+
+                            supportFragmentManager.beginTransaction()
+                                .replace(android.R.id.content, posLoginEmpresaFragment)
+                                .addToBackStack(null)
+                                .commit()
                         }
 
                     } else {

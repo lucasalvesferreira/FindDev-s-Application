@@ -24,7 +24,7 @@ class EdicaoPerfilDev : AppCompatActivity() {
         setContentView(R.layout.activity_edicao_perfil_dev)
 
         edtBiografia = findViewById(R.id.edtBiografia)
-        edtExperiencia = findViewById(R.id.edtExperiencia)
+        edtExperiencia = findViewById(R.id.edtResumo)
         btnEditar = findViewById(R.id.btnEditar)
 
         btnEditar.setOnClickListener {

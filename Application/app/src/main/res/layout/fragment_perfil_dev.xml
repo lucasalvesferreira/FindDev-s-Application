@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".dev.PerfilDev">
+    tools:context=".dev.PerfilDevFragment">
 
 
     <LinearLayout
@@ -75,7 +75,7 @@
                 />
 
             <ImageView
-                android:id="@+id/btnEditar"
+                android:id="@+id/btnEditarPerfilDev"
                 android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"

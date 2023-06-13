@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".empresa.PosLoginEmpresa">
-
+    tools:context=".dev.PosLoginDevFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,6 @@
         android:background="@color/preto_1"
         android:orientation="vertical"
         >
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,16 +60,18 @@
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/botao_pos_login_dev_job"
                     android:gravity="center"
-                    android:paddingHorizontal="63dp"
+                    android:paddingHorizontal="50dp"
                     android:paddingVertical="10dp">
+
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="redirecionarCriacaoVagas"
-                        android:text="Publicar\nvaga"
+                        android:onClick="Encontre"
+                        android:id="@+id/btnEncontre"
+                        android:text="Encontre o \njob ideal"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -87,7 +88,8 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="redirecionarPerfil"
+                        android:onClick="perfil"
+                        android:id="@+id/btnPerfil"
                         android:text="Perfil e \nestatísticas"
                         android:textSize="15sp" />
                 </LinearLayout>

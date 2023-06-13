@@ -1,6 +1,5 @@
 package com.example.finddev.empresa.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -8,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.empresa.PerfilEmpresa
+import com.example.finddev.empresa.PerfilEmpresaFragment
 
 class ModalVagaCanceladaEmpresa : DialogFragment() {
 
@@ -28,9 +27,10 @@ class ModalVagaCanceladaEmpresa : DialogFragment() {
         // Fechar o modal após 1 segundo
         Handler().postDelayed({
             dismiss()
-            // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-            val buscaVagaDevIntent = Intent(requireContext(), PerfilEmpresa::class.java)
-            startActivity(buscaVagaDevIntent)
-        }, 2000)
+            val perfilEmpresaFragment = PerfilEmpresaFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(android.R.id.content, perfilEmpresaFragment)
+                .commit()
+        }, 4000)
     }
 }

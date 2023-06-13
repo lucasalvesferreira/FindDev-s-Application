@@ -1,6 +1,5 @@
 package com.example.finddev.empresa
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -72,7 +71,7 @@ class PublicacaoDeVagas : AppCompatActivity() {
             override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
                 if (response.isSuccessful) {
                     saveIdVaga(applicationContext, response.body()?.id!!)
-                    voltarMenu()
+//                    voltarMenu()
                 } else {
                     Toast.makeText(
                         baseContext, "Ops, algo deu errado!",
@@ -91,8 +90,8 @@ class PublicacaoDeVagas : AppCompatActivity() {
         })
     }
 
-    fun voltarMenu() {
-        val menuIntent = Intent(this, PosLoginEmpresa::class.java)
-        startActivity(menuIntent)
-    }
+//    fun voltarMenu() {
+//        val menuIntent = Intent(this, PosLoginEmpresa::class.java)
+//        startActivity(menuIntent)
+//    }
 }

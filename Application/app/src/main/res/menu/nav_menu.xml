@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Perfil" />
+
+        <item
+            android:id="@+id/nav_procurar"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="Buscar Vaga" />
+
+        <item
+            android:id="@+id/nav_avaliar"
+            android:icon="@drawable/ic_baseline_star_rate_24"
+            android:title="Avaliar Contratante" />
+
+
+    </group>
+
+    <item
+        android:title="Conta">
+
+        <menu>
+            <item
+                android:id="@+id/nav_log_out"
+                android:icon="@drawable/ic_outline_exit_24"
+                android:title="Sair" />
+
+        </menu>
+
+    </item>
+
+
+</menu>

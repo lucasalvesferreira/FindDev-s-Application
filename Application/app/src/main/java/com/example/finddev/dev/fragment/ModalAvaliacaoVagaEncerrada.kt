@@ -1,6 +1,5 @@
 package com.example.finddev.dev.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import android.widget.RatingBar
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.dev.PerfilDev
 
 class ModalAvaliacaoVagaEncerrada : DialogFragment() {
 
@@ -40,14 +38,10 @@ class ModalAvaliacaoVagaEncerrada : DialogFragment() {
                 // Exemplo de exibição da avaliação e do comentário
                 Toast.makeText(requireContext(), "Avaliação: $rating estrela(s)\nComentário: $comentario", Toast.LENGTH_SHORT).show()
 
-                // Fechar o modal após um breve atraso
+                // Fechar o modal após 1 segundo
                 Handler().postDelayed({
                     dismiss()
-
-                    // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-                    val buscaVagaDevIntent = Intent(requireContext(), PerfilDev::class.java)
-                    startActivity(buscaVagaDevIntent)
-                }, 1000) // Tempo em milissegundos
+                }, 2000)
             } else {
                 Toast.makeText(requireContext(), "Por favor, selecione uma avaliação", Toast.LENGTH_SHORT).show()
             }

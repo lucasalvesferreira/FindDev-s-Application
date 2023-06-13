@@ -144,7 +144,7 @@
                             android:hint="Conte mais detalhes sobre a vaga.."
                             android:background="@drawable/borda_input_cadastro"
                             android:gravity="top|start"
-                            android:inputType="text"
+                            android:inputType="textMultiLine"
                             android:padding="10dp" />
                     </LinearLayout>
 
@@ -166,7 +166,8 @@
                                 android:layout_height="match_parent"
                                 android:backgroundTint="@color/preto_1"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Publicar" />
+                                android:text="Publicar"
+                                android:onClick="publicarVaga"/>
 
                         </LinearLayout>
                     </LinearLayout>
