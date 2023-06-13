@@ -54,31 +54,31 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
         val numeroPattern = Pattern.compile("[0-9]+")
 
         if (email.text.toString().isEmpty()) {
-            email.error = "Campo obrigatório"
+            email.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         } else if (!emailRegex.matches(email.text.toString())) {
-            email.error = "Email inválido"
+            email.error = getString(R.string.text_email_invalido)
             validado = false
         }
 
         if (senha.text.isEmpty()) {
-            senha.error = "Campo obrigatório"
+            senha.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(senha.text.length < 6){
-            senha.error = "A senha deve ter pelo menos 6 caracteres."
+            senha.error = getString(R.string.text_senha_seis_digitos)
             validado = false
         }
 
         if (confirmacao.text.isEmpty()) {
-            confirmacao.error = "Campo obrigatório"
+            confirmacao.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(confirmacao.text == senha.text){
-            confirmacao.error = "A senha deve ser igual a confirmação de senha"
+            confirmacao.error = getString(R.string.text_deve_ser_igual)
             validado = false
         }
 
         if (nome.text.isEmpty()) {
-            nome.error = "Campo obrigatório"
+            nome.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 //        else if(
@@ -90,53 +90,53 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 //        }
 
         if (telefone.text.isEmpty()) {
-            telefone.error = "Campo obrigatório"
+            telefone.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if (telefone.text.length != 11) {
-            telefone.error = "Por favor, digite um número de telefone válido com o formato (DD)NNNNN-NNNN e 11 dígitos."
+            telefone.error = getString(R.string.text_tel_valido)
         }
 
         if (cnpj.text.isEmpty()) {
-            cnpj.error = "Campo obrigatório"
+            cnpj.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (cep.text.isEmpty()) {
-            cep.error = "Campo obrigatório"
+            cep.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(!cepPattern.matcher(cep.text).matches()){
-            cep.error = "Por favor, digite apenas números no campo de CEP"
+            cep.error = getString(R.string.text_somente_numeros)
             validado = false
         }else if(cep.text.length != 8){
-            cep.error = "Por favor, digite um CEP válido com 8 dígitos"
+            cep.error = getString(R.string.text_oito_digitos)
             validado = false
         }
 
         if (estado.text.isEmpty()) {
-            estado.error = "Campo obrigatório"
+            estado.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (cidade.text.isEmpty()) {
-            cidade.error = "Campo obrigatório"
+            cidade.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (bairro.text.isEmpty()) {
-            bairro.error = "Campo obrigatório"
+            bairro.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (endereco.text.isEmpty()) {
-            endereco.error = "Campo obrigatório"
+            endereco.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (numero.text.isEmpty()) {
-            numero.error = "Campo obrigatório"
+            numero.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if (!numeroPattern.matcher(numero.text).matches()) {
-            numero.error = "Por favor, digite apenas números no campo de número "
+            numero.error = getString(R.string.text_somente_numeros_numero)
             validado = false
         }
 
@@ -176,7 +176,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
                         var code = response.code()
 //                        idResponse.text = "Erro ao cadastrar"+ "${code}"
                         Toast.makeText(
-                            baseContext, "Ops, algo deu errado!",
+                            baseContext, getString(R.string.text_ops),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -184,7 +184,7 @@ class ActivityCadastroEmpresa : AppCompatActivity() {
 
                 override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                     Toast.makeText(
-                        baseContext, "Erro na API: ${t.message}",
+                        baseContext, getString(R.string.text_erro_api) + "${t.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     t.printStackTrace()

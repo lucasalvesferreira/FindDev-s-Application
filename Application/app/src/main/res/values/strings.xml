@@ -42,7 +42,20 @@
     <string name="text_title">Título</string>
     <string name="text_descricao">Descrição</string>
     <string name="text_pub">Publicar</string>
-
+    <string name="text_email_invalido">Email inválido</string>
+    <string name="text_senha_seis_digitos">A senha deve ter pelo menos 6 caracteres.</string>
+    <string name="text_deve_ser_igual">A senha deve ser igual a confirmação de senha.</string>
+    <string name="text_tel_valido">Por favor, digite um número de telefone válido com o formato (DD)NNNNN-NNNN e 11 dígitos.</string>
+    <string name="text_somente_numeros">Por favor, digite apenas números no campo de CEP</string>
+    <string name="text_oito_digitos">Por favor, digite um CEP válido com 8 dígitos</string>
+    <string name="text_somente_numeros_numero">Por favor, digite apenas números no campo de número</string>
+    <string name="text_ops">Ops, algo deu errado!</string>
+    <string name="text_erro_api">Erro na API:</string>
+    <string name="text_somente_numeros_cpf">Por favor, digite apenas números no campo de CPF.</string>
+    <string name="text_somente_onze_cpf">Por favor, digite um CPF válido com 11 dígitos.</string>
+    <string name="text_entrou">Entrou</string>
+    <string name="text_user_nao_encontrado">Usuario e senha não encontrados!</string>
+    <string name="text_erro_logar">Erro ao logar : Status = </string>
 
     <string-array name="Teste">
         <item>Java</item>
@@ -54,4 +67,5 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="text_login">LOGIN</string>
 </resources>

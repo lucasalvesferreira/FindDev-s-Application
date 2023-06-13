@@ -15,6 +15,7 @@
     <string name="text_cpf">CPF</string>
     <string name="text_telefone">Phone</string>
     <string name="text_estado">Estate</string>
+    <string name="text_senha_seis_digitos">The password must be at least 6 characters long.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_cidade">City</string>
     <string name="text_cadastrar">Register</string>
@@ -44,4 +45,18 @@
     <string name="text_title">Title</string>
     <string name="text_descricao">Description</string>
     <string name="text_pub">Publish</string>
+    <string name="text_login">LOGIN</string>
+    <string name="text_email_invalido">invalid email</string>
+    <string name="text_deve_ser_igual">The password must match the confirmation password.</string>
+    <string name="text_tel_valido">Please enter a valid phone number in the format (DD)NNNNN-NNNN and 11 digits.</string>
+    <string name="text_somente_numeros">Please only enter numbers in the zip code field</string>
+    <string name="text_oito_digitos">Please enter a valid 8 digit zip code</string>
+    <string name="text_somente_numeros_numero">Please only enter numbers in the number field</string>
+    <string name="text_ops">Oops, something went wrong!</string>
+    <string name="text_erro_api">API error:</string>
+    <string name="text_somente_numeros_cpf">" Please enter only numbers in the CPF field."</string>
+    <string name="text_somente_onze_cpf">Please enter a valid 11-digit CPF.</string>
+    <string name="text_entrou">Came in</string>
+    <string name="text_user_nao_encontrado">User and password not found!</string>
+    <string name="text_erro_logar">Error logging in : Status =</string>
 </resources>

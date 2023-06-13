@@ -45,31 +45,31 @@ class CadastroDev : AppCompatActivity() {
         val numeroPattern = Pattern.compile("[0-9]+")
 
         if (email.text.toString().isEmpty()) {
-            email.error = "Campo obrigatório"
+            email.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         } else if (!emailRegex.matches(email.text.toString())) {
-            email.error = "Email inválido"
+            email.error = getString(R.string.text_email_invalido)
             validado = false
         }
 
         if (senha.text.isEmpty()) {
-            senha.error = "Campo obrigatório"
+            senha.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(senha.text.length < 6){
-            senha.error = "A senha deve ter pelo menos 6 caracteres."
+            senha.error = getString(R.string.text_senha_seis_digitos)
             validado = false
         }
 
         if (confirmacao.text.isEmpty()) {
-            confirmacao.error = "Campo obrigatório"
+            confirmacao.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(confirmacao.text == senha.text){
-            confirmacao.error = "A senha deve ser igual a confirmação de senha"
+            confirmacao.error = getString(R.string.text_deve_ser_igual)
             validado = false
         }
 
         if (nome.text.isEmpty()) {
-            nome.error = "Campo obrigatório"
+            nome.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 //        else if(
@@ -81,30 +81,30 @@ class CadastroDev : AppCompatActivity() {
 //        }
 
         if (telefone.text.isEmpty()) {
-            telefone.error = "Campo obrigatório"
+            telefone.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if (telefone.text.length != 11) {
-            telefone.error = "Por favor, digite um número de telefone válido com o formato (DD)NNNNN-NNNN e 11 dígitos."
+            telefone.error = getString(R.string.text_tel_valido)
         }
 
         if (cpf.text.isEmpty()) {
-            cpf.error = "Campo obrigatório"
+            cpf.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if (!numeroPattern.matcher(cpf.text).matches()) {
-            cpf.error = "Por favor, digite apenas números no campo de CPF."
+            cpf.error = getString(R.string.text_somente_numeros_cpf)
             validado = false
         }else if (cpf.text.length != 11) {
-            cpf.error = "Por favor, digite um CPF válido com 11 dígitos."
+            cpf.error = getString(R.string.text_somente_onze_cpf)
             validado = false
         }
 
         if (estado.text.isEmpty()) {
-            estado.error = "Campo obrigatório"
+            estado.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
         if (cidade.text.isEmpty()) {
-            cidade.error = "Campo obrigatório"
+            cidade.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }
 
@@ -136,7 +136,7 @@ class CadastroDev : AppCompatActivity() {
                         var code = response.code()
 //                        idResponse.text = "Erro ao cadastrar"+ "${code}"
                         Toast.makeText(
-                            baseContext, "Ops, algo deu errado!",
+                            baseContext, getString(R.string.text_ops),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -144,7 +144,7 @@ class CadastroDev : AppCompatActivity() {
 
                 override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                     Toast.makeText(
-                        baseContext, "Erro na API: ${t.message}",
+                        baseContext, getString(R.string.text_erro_api) + "${t.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     t.printStackTrace()

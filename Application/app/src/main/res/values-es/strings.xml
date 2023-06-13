@@ -16,6 +16,9 @@
     <string name="text_telefone">Teléfono</string>
     <string name="text_estado">Estado</string>
     <string name="text_login">LOGIN</string>
+    <string name="text_senha_seis_digitos">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="text_senha_seis_digitos">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="text_senha_seis_digitos">La contraseña debe tener al menos 6 caracteres.</string>
     <string name="hello_blank_fragment">" Hola fragmento en blanco"</string>
     <string name="text_cidade">Ciudad</string>
     <string name="text_cadastrar">Registrar</string>
@@ -45,4 +48,17 @@
     <string name="text_title">Título</string>
     <string name="text_descricao">Descripción</string>
     <string name="text_pub">Publicar</string>
+    <string name="text_email_invalido">email inválido</string>
+    <string name="text_deve_ser_igual">La contraseña debe coincidir con la contraseña de confirmación</string>
+    <string name="text_tel_valido">Ingrese un número de teléfono válido con el formato (DD)NNNNN-NNNN y 11 dígitos.</string>
+    <string name="text_somente_numeros">Ingrese solo números en el campo de código postal</string>
+    <string name="text_oito_digitos">Ingrese un código postal válido de 8 dígitos</string>
+    <string name="text_somente_numeros_numero">Ingrese solo números en el campo de número</string>
+    <string name="text_ops">¡Huy! Algo salió mal!</string>
+    <string name="text_erro_api">Error de API:</string>
+    <string name="text_somente_numeros_cpf">Ingrese solo números en el campo CPF.</string>
+    <string name="text_somente_onze_cpf">Ingrese un CPF válido de 11 dígitos.</string>
+    <string name="text_entrou">Llegó en</string>
+    <string name="text_user_nao_encontrado">¡Usuario y contraseña no encontrados!</string>
+    <string name="text_erro_logar">Error al iniciar sesión: Estado =</string>
 </resources>

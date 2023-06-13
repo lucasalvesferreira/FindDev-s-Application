@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun logar(componente: View){
-        println("Entrou")
+        println(getString(R.string.text_entrou))
         var validado = true
 
         val email = findViewById<EditText>(R.id.et_email)
@@ -34,18 +34,18 @@ class MainActivity : AppCompatActivity() {
         val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
 
         if (email.text.toString().isEmpty()) {
-            email.error = "Campo obrigatório"
+            email.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         } else if (!emailRegex.matches(email.text.toString())) {
-            email.error = "Email inválido"
+            email.error = getString(R.string.text_email_invalido)
             validado = false
         }
 
         if (senha.text.isEmpty()) {
-            senha.error = "Campo obrigatório"
+            senha.error = getString(R.string.text_campo_obrigatorio)
             validado = false
         }else if(senha.text.length < 6){
-            senha.error = "A senha deve ter pelo menos 6 caracteres."
+            senha.error = getString(R.string.text_senha_seis_digitos)
             validado = false
         }
 
@@ -69,15 +69,15 @@ class MainActivity : AppCompatActivity() {
                         startActivity(logou) // TODO mudar quando criar tela de login
                     }else {
                         var code = response.code()
-                        Log.d("TAG", "Erro ao logar : Status = "+ "${code}")
-                        idResponse_main.text = "Usuario e senha não encontrados!"
+                        Log.d("TAG", getString(R.string.text_erro_logar) + "${code}")
+                        idResponse_main.text = getString(R.string.text_user_nao_encontrado)
 
                     }
                 }
 
                 override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                     Toast.makeText(
-                        baseContext, "Erro na API: ${t.message}",
+                        baseContext, getString(R.string.text_erro_api) + "${t.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     t.printStackTrace()
