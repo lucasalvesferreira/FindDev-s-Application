@@ -31,7 +31,10 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/card_border.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/card_border_jobs_encerrados.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/custom_ratingbar.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/drawer_border.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/foto_perfil.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/header_bkg.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/modal_background.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/drawable/modal_background_congratulations.xml" value="0.1" />
@@ -48,6 +51,7 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_edicao_perfil_empresa.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_jobs_encerrados_dev.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_lista_busca_vagas_dev.xml" value="0.10208333333333333" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_login.xml" value="0.1398148148148148" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_avaliacao_colaboradores.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_modal_avaliacao_vaga_encerrada.xml" value="0.16666666666666666" />
@@ -62,27 +66,36 @@
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_parabens_desenvolvedor_cadastro.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_dev.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_perfil_empresa.xml" value="0.17037037037037037" />
-        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_dev.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_dev.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_pos_login_empresa.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_publicacao_de_vagas.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_vagas.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/activity_vagas_publicadas_empresa.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/botao_voltar.xml" value="0.10740740740740741" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_busca_vaga_dev.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_cadastro.xml" value="0.10740740740740741" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_login.xml" value="0.10740740740740741" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_header_seta_voltar.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_home_fagment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_perfil_dev.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_perfil_devs.xml" value="0.14407866609662248" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_pos_login_empresa.xml" value="0.1422541156606163" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_vaga.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/fragment_vagas.xml" value="0.10260416666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga_candidatos.xml" value="0.1" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga_colaboradores.xml" value="0.10260416666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/item_vaga_jobs_encerrados.xml" value="0.1" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/nav_drawer.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/nav_header.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/spinner_item.xml" value="0.10208333333333333" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/layout/toolbar.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/carlos.h.felix/Desktop/FindDev-s-Application/Application/app/src/main/res/menu/nav_menu.xml" value="0.22" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

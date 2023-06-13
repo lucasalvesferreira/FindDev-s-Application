@@ -92,6 +92,35 @@
                         android:background="@drawable/borda_input_cadastro"
                         android:hint="Digite sua biografia"
                         android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:maxLines="5"
+                        android:padding="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvExperienciaLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Subtitulo"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/edtExperienciaEmpresa"
+                        style="@style/input_cadastro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borda_input_cadastro"
+                        android:hint="Digite suas experiências"
+                        android:inputType="textMultiLine"
                         android:maxLength="78"
                         android:maxLines="2"
                         android:padding="20dp" />

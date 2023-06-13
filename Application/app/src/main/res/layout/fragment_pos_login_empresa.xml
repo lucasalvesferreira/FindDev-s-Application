@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dev.PosLoginDev">
+    tools:context=".empresa.PosLoginEmpresaFragment">
 
 
     <LinearLayout
@@ -61,17 +61,17 @@
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/botao_pos_login_dev_job"
                     android:gravity="center"
-                    android:paddingHorizontal="50dp"
+                    android:paddingHorizontal="63dp"
                     android:paddingVertical="10dp">
 
-
                     <Button
+                        android:id="@+id/btnCriarVagas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="Encontre"
-                        android:text="Encontre o \njob ideal"
+                        android:onClick="redirecionarCriacaoVagas"
+                        android:text="Publicar\nvaga"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -84,11 +84,12 @@
                     android:paddingVertical="10dp">
 
                     <Button
+                        android:id="@+id/perfilEmpresa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/preto_1"
                         android:fontFamily="@font/montserrat_bold"
-                        android:onClick="perfil"
+                        android:onClick="redirecionarPerfil"
                         android:text="Perfil e \nestatísticas"
                         android:textSize="15sp" />
                 </LinearLayout>

@@ -1,6 +1,5 @@
 package com.example.finddev.dev.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -8,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.finddev.R
-import com.example.finddev.dev.BuscaVagaDev
+import com.example.finddev.dev.BuscaVagaDevFragment
 
 class ModalConfirmacaoCandidatura : DialogFragment() {
 
@@ -28,9 +27,10 @@ class ModalConfirmacaoCandidatura : DialogFragment() {
         // Fechar o modal após 1 segundo
         Handler().postDelayed({
             dismiss()
-            // Navegar para a tela "buscaVagaDev" após o fechamento do modal
-            val buscaVagaDevIntent = Intent(requireContext(), BuscaVagaDev::class.java)
-            startActivity(buscaVagaDevIntent)
-        }, 1000)
+            val buscaVagaDevFragment = BuscaVagaDevFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(android.R.id.content, buscaVagaDevFragment)
+                .commit()
+        }, 4000)
     }
 }

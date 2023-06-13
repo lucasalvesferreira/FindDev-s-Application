@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FindDev"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".dev.ParabensDesenvolvedorCadastro"
             android:exported="true" />
         <activity
@@ -54,8 +57,8 @@
             android:name=".empresa.EdicaoPerfilEmpresa"
             android:exported="false" />
         <activity
-            android:name=".empresa.PerfilEmpresa"
-            android:exported="true"/>
+            android:name=".empresa.PerfilEmpresaFragment"
+            android:exported="true" />
         <activity
             android:name=".empresa.PublicacaoDeVagas"
             android:exported="false" />
@@ -66,22 +69,22 @@
             android:name=".dev.ListaBuscaVagasDev"
             android:exported="false" />
         <activity
-            android:name=".dev.JobsEncerradosDev"
+            android:name=".dev.JobsEncerradosDevFragment"
             android:exported="false" />
         <activity
-            android:name=".dev.PerfilDev"
+            android:name=".dev.PerfilDevFragment"
             android:exported="true" />
         <activity
             android:name=".dev.EdicaoPerfilDev"
             android:exported="false" />
         <activity
-            android:name=".dev.BuscaVagaDev"
+            android:name=".dev.BuscaVagaDevFragment"
             android:exported="true" />
         <activity
-            android:name=".empresa.PosLoginEmpresa"
+            android:name=".empresa.PosLoginEmpresaFragment"
             android:exported="true" />
         <activity
-            android:name=".dev.PosLoginDev"
+            android:name=".dev.PosLoginDevFragment"
             android:exported="true" />
         <activity
             android:name=".empresa.ParabensEmpresaCadastro"
