@@ -1,15 +1,13 @@
 package com.example.finddev.empresa
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.finddev.App.api.Apis
 import com.example.finddev.App.model.UsuarioModel
 import com.example.finddev.App.model.dtos.PerfilRequest
-import com.example.finddev.App.model.dtos.VagaResponse
 import com.example.finddev.App.sharedpreferences.getIdUser
 import com.example.finddev.R
 import retrofit2.Call
@@ -41,33 +39,28 @@ class EdicaoPerfilEmpresa : AppCompatActivity() {
         putMethod.enqueue(object : Callback<UsuarioModel> {
             override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
                 if (response.isSuccessful) {
-                    val estado = intent.getStringExtra("estado")
-                    val cidade = intent.getStringExtra("cidade")
-                    val bairro = intent.getStringExtra("bairro")
-                    val endereco = intent.getStringExtra("endereco")
-                    val nome = intent.getStringExtra("nome")
-
-                    val intent = Intent(applicationContext, PerfilEmpresa::class.java)
-                    intent.putExtra("estado", estado)
-                    intent.putExtra("cidade", cidade)
-                    intent.putExtra("bairro", bairro)
-                    intent.putExtra("endereco", endereco)
-                    intent.putExtra("nomeEmpresa", nome)
-                    intent.putExtra("titulo", titulo)
-                    intent.putExtra("descricao", descricao)
-
-                    startActivity(intent)
+                    Toast.makeText(
+                        this@EdicaoPerfilEmpresa,
+                        "Perfil atualizado com sucesso",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    finish()
                 } else {
-                    println("status code: ${response.code()}")
+                    println("status code ${response.code()}")
+                    Toast.makeText(
+                        this@EdicaoPerfilEmpresa,
+                        "Erro ao atualizar o perfil",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
             override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                 Toast.makeText(
-                    baseContext, "Erro na API: ${t.message}",
+                    this@EdicaoPerfilEmpresa,
+                    "Erro de conexão",
                     Toast.LENGTH_SHORT
                 ).show()
-                t.printStackTrace()
             }
         })
     }

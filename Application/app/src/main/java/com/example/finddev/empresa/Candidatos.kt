@@ -1,10 +1,13 @@
 package com.example.finddev.empresa
 
+import android.content.res.Resources
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,9 +40,8 @@ class Candidatos : AppCompatActivity() {
 
     // Classe do ViewHolder para o item da lista
     private class VagaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgVaga: ImageView = itemView.findViewById(R.id.imgVaga)
         val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
-        val txtNomeDev: TextView = itemView.findViewById(R.id.txtNomeDev)
+        val containerNomesDev = itemView.findViewById<LinearLayout>(R.id.containerNomesDev)
     }
 
     // Adaptador para o RecyclerView
@@ -52,14 +54,26 @@ class Candidatos : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: VagaViewHolder, position: Int) {
             val vaga = listaVagas[position]
-            holder.imgVaga.setImageResource(R.mipmap.logo) // Defina a imagem correta para cada vaga
             holder.txtTitulo.text = vaga.titulo
-            holder.txtNomeDev.text = vaga.desenvolvedor?.nome
 
-            // Configurar o clique no item da lista para abrir o ModalVagasEncerradas
-            holder.itemView.setOnClickListener {
-                val modalCandidatos = ModalCandidatos.newInstance(vaga) // Crie uma instância do ModalVagasEncerradas e passe a vaga selecionada
-                modalCandidatos.show(supportFragmentManager, "ModalCandidatos") // Exiba o modal
+            // Limpa as visualizações de nome do desenvolvedor
+            holder.containerNomesDev.removeAllViews()
+
+            // Itera sobre as candidaturas e exibe o nome do desenvolvedor para cada uma
+            for (candidatura in vaga.candidaturas) {
+                val nomeDev = candidatura.desenvolvedor.nome
+
+                val textView = TextView(holder.itemView.context)
+                textView.text = nomeDev
+                textView.textSize = 10 * Resources.getSystem().displayMetrics.scaledDensity
+                textView.setTextColor(Color.parseColor("#fff"))
+
+                holder.containerNomesDev.addView(textView)
+
+                holder.itemView.setOnClickListener {
+                    val modalCandidatos = ModalCandidatos.newInstance(vaga, candidatura.desenvolvedor)
+                    modalCandidatos.show(supportFragmentManager, "ModalCandidatos")
+                }
             }
         }
 

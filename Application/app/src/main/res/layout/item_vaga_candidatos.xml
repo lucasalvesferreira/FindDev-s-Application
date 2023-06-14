@@ -25,6 +25,34 @@
             android:src="@mipmap/logo" />
 
 
+<!--        <LinearLayout-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtTitulo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Título da Vaga"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textColor="#fff"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtNomeDev"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Nome dev"-->
+<!--                android:textSize="10sp"-->
+<!--                android:textColor="#fff"-->
+<!--                android:layout_marginTop="8dp"/>-->
+
+
+<!--        </LinearLayout>-->
+
+        <!-- item_vaga_candidatos.xml -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,17 +67,17 @@
                 android:textSize="15sp"
                 android:textColor="#fff"/>
 
-            <TextView
-                android:id="@+id/txtNomeDev"
+            <LinearLayout
+                android:id="@+id/containerNomesDev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nome dev"
-                android:textSize="10sp"
-                android:textColor="#fff"
-                android:layout_marginTop="8dp"/>
-
+                android:orientation="vertical"
+                android:padding="8dp">
+                <!-- Aqui é onde os nomes dos desenvolvedores serão adicionados dinamicamente -->
+            </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 

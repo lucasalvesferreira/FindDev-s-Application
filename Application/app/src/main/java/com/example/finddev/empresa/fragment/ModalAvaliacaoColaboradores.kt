@@ -53,4 +53,8 @@ class ModalAvaliacaoColaboradores : DialogFragment() {
             }
         }
     }
+
+    private fun avaliarColaborador() {
+
+    }
 }

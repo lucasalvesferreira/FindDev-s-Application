@@ -108,7 +108,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/resumo"
+                    android:id="@+id/tituloPerfilDev"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
@@ -197,7 +197,7 @@
                         android:gravity="center">
 
                         <Button
-                            android:id="@+id/botaoColaboradores"
+                            android:id="@+id/botaoContratantes"
                             android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:backgroundTint="@color/preto_2"

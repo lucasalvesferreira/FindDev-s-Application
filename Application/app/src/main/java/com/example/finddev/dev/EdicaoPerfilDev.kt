@@ -25,24 +25,15 @@ class EdicaoPerfilDev : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edicao_perfil_dev)
 
-        edtTitulo = findViewById(R.id.edtTituloDev)
-        edtBiografia = findViewById(R.id.edtBiografiaDev)
-        btnEditar = findViewById(R.id.btnEditar)
-
         btnEditar.setOnClickListener {
-            val biografia = edtTitulo.text.toString().trim()
-            val experiencia = edtBiografia.text.toString().trim()
-
-            if (biografia.isEmpty() || experiencia.isEmpty()) {
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-            } else {
-                atualizarPerfil(biografia, experiencia)
-            }
+            atualizarPerfil()
         }
     }
 
-    private fun atualizarPerfil(biografia: String, experiencia: String) {
+    private fun atualizarPerfil() {
         val idUsuario = UUID.fromString(getIdUser(applicationContext))
+        val biografia = edtTitulo.text.toString().trim()
+        val experiencia = edtBiografia.text.toString().trim()
 
         val request = PerfilRequest(idUsuario, biografia, experiencia)
         val call = Apis.getApiUsuario().atualizarPerfil(request)
@@ -50,15 +41,28 @@ class EdicaoPerfilDev : AppCompatActivity() {
         call.enqueue(object : Callback<UsuarioModel> {
             override fun onResponse(call: Call<UsuarioModel>, response: Response<UsuarioModel>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(this@EdicaoPerfilDev, "Perfil atualizado com sucesso", Toast.LENGTH_SHORT).show()
-                    finish() // Fecha a tela de edição após o sucesso
+                    Toast.makeText(
+                        this@EdicaoPerfilDev,
+                        "Perfil atualizado com sucesso",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    finish()
                 } else {
-                    Toast.makeText(this@EdicaoPerfilDev, "Erro ao atualizar o perfil", Toast.LENGTH_SHORT).show()
+                    println("status code ${response.code()}")
+                    Toast.makeText(
+                        this@EdicaoPerfilDev,
+                        "Erro ao atualizar o perfil",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
             override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
-                Toast.makeText(this@EdicaoPerfilDev, "Erro de conexão", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@EdicaoPerfilDev,
+                    "Erro de conexão",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }

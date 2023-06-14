@@ -71,10 +71,10 @@
                 android:src="@mipmap/star" />
 
             <ImageView
+                android:id="@+id/botaoEditarPerfilEmpresa"
                 android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
-                android:onClick="telaEditarEmpresa"
                 android:src="@mipmap/edit" />
 
         </LinearLayout>

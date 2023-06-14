@@ -18,7 +18,9 @@ class ModalColaboradores : DialogFragment() {
         ): ModalColaboradores {
             val args = Bundle().apply {
                 putString("titulo", vaga.titulo)
-                putString("nomeDev", "") // TODO RECUPERAR NOME DEV
+                putString("nomeDev", vaga.desenvolvedor?.nome)
+                putString("emailDev", vaga.desenvolvedor?.email)
+                putString("telefoneDev", vaga.desenvolvedor?.telefone)
                 putString("frenteDesenvolvimento", vaga.funcao)
                 putString("senioridade", vaga.senioridade)
                 putString("descricao", vaga.descricao)
@@ -45,6 +47,8 @@ class ModalColaboradores : DialogFragment() {
         // Obter os dados da vaga do bundle
         val titulo = arguments?.getString("titulo")
         val nomeDev = arguments?.getString("nomeDev")
+        val emailDev = arguments?.getString("emailDev")
+        val telefoneDev = arguments?.getString("telefoneDev")
         val frenteDesenvolvimento = arguments?.getString("frenteDesenvolvimento")
         val senioridade = arguments?.getString("senioridade")
         val descricao = arguments?.getString("descricao")
@@ -52,19 +56,17 @@ class ModalColaboradores : DialogFragment() {
         // Configurar os dados nos elementos do modal
         view.findViewById<TextView>(R.id.txtModalTitulo).text = titulo
         view.findViewById<TextView>(R.id.txtNomeDev).text = nomeDev
+        view.findViewById<TextView>(R.id.txtEmailDev).text = emailDev
+        view.findViewById<TextView>(R.id.txtTelefoneDev).text = telefoneDev
         view.findViewById<TextView>(R.id.txtModalFrenteDesenvolvimento).text = frenteDesenvolvimento
         view.findViewById<TextView>(R.id.txtModalSenioridade).text = senioridade
         view.findViewById<TextView>(R.id.txtModalDescricao).text = descricao
 
         // Configurar o botão "Candidatar-se"
         view.findViewById<Button>(R.id.btnEncerrarContrato).setOnClickListener {
-            // Lógica para lidar com o clique do botão "Candidatar-se"
-
             // Exibir o ModalAvaliacaoVagaEncerrada
             val modalAvaliacaoColaboradores = ModalAvaliacaoColaboradores()
             modalAvaliacaoColaboradores.show(parentFragmentManager, "modal_avaliacao_colaboradores")
-
-            dismiss() // Fechar o modal após o clique no botão
         }
     }
 }

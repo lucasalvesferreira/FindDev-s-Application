@@ -22,17 +22,18 @@ class ModalCandidatos : DialogFragment() {
 
     companion object {
         fun newInstance(
-            vaga: VagaResponse
+            vaga: VagaResponse,
+            dev: UsuarioModel
         ): ModalCandidatos {
             val args = Bundle().apply {
                 putString("idVaga", vaga.id.toString())
-                putString("idDev", vaga.desenvolvedor?.id)
+                putString("idDev", dev.id)
                 putString("tituloVaga", vaga.titulo)
                 putString("funcaoVaga", vaga.funcao)
                 putString("senioridadeVaga", vaga.senioridade)
-                putString("nomeDev", vaga.desenvolvedor?.nome)
-                putString("emailDev", vaga.desenvolvedor?.email)
-                putString("telefoneDev", vaga.desenvolvedor?.telefone)
+                putString("nomeDev", dev.nome)
+                putString("emailDev", dev.email)
+                putString("telefoneDev", dev.telefone)
             }
             val fragment = ModalCandidatos()
             fragment.arguments = args
@@ -69,16 +70,9 @@ class ModalCandidatos : DialogFragment() {
         view.findViewById<TextView>(R.id.txtEmailCandidato).text = emailDev
         view.findViewById<TextView>(R.id.txtTelefoneCandidato).text = telefoneDev
 
-        // Configurar o botão "Candidatar-se"
+        // Configurar o botão "Contratar"
         view.findViewById<Button>(R.id.btnContratar).setOnClickListener {
-            // Lógica para lidar com o clique do botão "Candidatar-se"
             contratar()
-
-            // Exibir o ModalAvaliacaoVagaEncerrada
-            val modalCandidatoContratado = ModalCandidatoContratado()
-            modalCandidatoContratado.show(parentFragmentManager, "modal_candidato_contratado")
-
-            dismiss() // Fechar o modal após o clique no botão
         }
     }
 
@@ -92,7 +86,12 @@ class ModalCandidatos : DialogFragment() {
 
         patchMethod.enqueue(object : Callback<VagaResponse> {
             override fun onResponse(call: Call<VagaResponse>, response: Response<VagaResponse>) {
-                if (!response.isSuccessful) {
+                if (response.isSuccessful) {
+                    val modalCandidatoContratado = ModalCandidatoContratado()
+                    modalCandidatoContratado.show(parentFragmentManager, "modal_candidato_contratado")
+
+                    dismiss() // Fechar o modal após o clique no botão
+                } else {
                     println("status code: ${response.code()}")
                 }
             }

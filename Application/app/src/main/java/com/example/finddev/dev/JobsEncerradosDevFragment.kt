@@ -23,9 +23,11 @@ class JobsEncerradosDevFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_jobs_encerrados_dev, container, false)
 
         // Configurar o RecyclerView
-        recyclerViewVagas = findViewById(R.id.recyclerViewVagas)
-        recyclerViewVagas.layoutManager = LinearLayoutManager(this)
+        recyclerViewVagas = view.findViewById(R.id.recyclerViewVagas)
+        recyclerViewVagas.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewVagas.adapter = VagasAdapter(emptyList()) // Chame o método getListaVagas() para obter a lista de vagas
+
+        return view
     }
 
     private class VagaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -60,4 +62,6 @@ class JobsEncerradosDevFragment : Fragment() {
             return listaVagas.size
         }
     }
+
+
 }
